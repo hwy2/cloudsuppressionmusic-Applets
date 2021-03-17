@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "视频详情",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "hr-pull-load": "/components/hr-pull-load/hr-pull-load"
+  }
+}

@@ -1,0 +1,215 @@
+.videoDetails {
+  height: 100vh;
+}
+.videoDetails .videoMain {
+  width: 100%;
+  height: 100%;
+}
+.videoDetails .videoMain .videoPlay {
+  width: 100%;
+  touch-action: none;
+  height: 29vh;
+}
+.videoDetails .videoMain .videoPlay video {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+.videoDetails .videoMain .videosub {
+  background-color: #fff;
+  height: 71%;
+}
+.videoDetails .videoMain .videosub .levelNavigation {
+  height: 8%;
+}
+.videoDetails .videoMain .videosub .levelNavigation scroll-view {
+  height: 75rpx;
+  background-color: #fff;
+  box-shadow: 0 20rpx 10rpx #f8f8f8;
+  touch-action: none;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.videoDetails .videoMain .videosub .levelNavigation scroll-view .navigation {
+  float: left;
+  padding-left: 75rpx;
+  width: 85rpx;
+}
+.videoDetails .videoMain .videosub .levelNavigation scroll-view .navigation text {
+  font-size: 30rpx;
+  color: #000;
+  font-weight: bold;
+  line-height: 75rpx;
+}
+.videoDetails .videoMain .videosub .levelNavigation scroll-view .active text {
+  position: relative;
+}
+.videoDetails .videoMain .videosub .levelNavigation scroll-view .active text::before {
+  content: '';
+  position: absolute;
+  bottom: -8rpx;
+  left: 2.5px;
+  height: 5rpx;
+  width: 50rpx;
+  background-color: #04f88a;
+}
+.videoDetails .videoMain .videosub .substance {
+  overflow: auto;
+  height: 92%;
+  touch-action: pan-y;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .creator {
+  padding: 30rpx 0 30rpx 25rpx;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .creator image {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 60rpx;
+  vertical-align: middle;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .creator text {
+  padding-left: 10rpx;
+  color: #000;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .videoName {
+  padding: 0rpx 23rpx 30rpx 23rpx;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .videoName text {
+  font-size: 30rpx;
+  color: #000;
+  line-height: 1.5;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .likePlaying {
+  padding: 0 23rpx 30rpx 23rpx;
+  border-bottom: #f0f0f0 2rpx solid;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .likePlaying .p {
+  width: 170rpx;
+  float: left;
+  color: #9a9a9a;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .likePlaying .p .iconfont {
+  font-size: 28rpx;
+  vertical-align: baseline;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related {
+  padding: 30rpx 0 0;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related .related-title {
+  padding: 0 30rpx 30rpx 30rpx;
+  box-shadow: 0 20rpx 10rpx #f8f8f8;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related .related-title text {
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #000;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related scroll-view {
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related scroll-view .silde {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-bottom: 30rpx;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related scroll-view .silde .left {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related scroll-view .silde .left image {
+  width: 250rpx;
+  height: 140rpx;
+  border-radius: 8rpx;
+  background-color: #cecece;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related scroll-view .silde .right {
+  -webkit-box-flex: 6;
+  -webkit-flex: 6;
+          flex: 6;
+  box-sizing: border-box;
+}
+.videoDetails .videoMain .videosub .substance .briefIntroduction .related scroll-view .silde .right text {
+  font-size: 28rpx;
+  padding: 15rpx;
+  line-height: 1.5;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  height: 140rpx;
+  box-sizing: border-box;
+}
+.videoDetails .videoMain .videosub .substance .discuss {
+  height: 100%;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view {
+  padding: 30rpx 0 30rpx 0;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item {
+  padding-bottom: 30rpx;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 15rpx;
+  height: 80rpx;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top .left {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 12rpx 0;
+  position: relative;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top .left image {
+  width: 56rpx;
+  height: 56rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 56rpx;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top .center {
+  padding: 0 0 0 15rpx;
+  -webkit-box-flex: 6;
+  -webkit-flex: 6;
+          flex: 6;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top .center text:nth-of-type(1) {
+  color: #666;
+  font-size: 28rpx;
+  line-height: 1.5;
+  padding-bottom: 5rpx;
+  display: block;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top .center text:nth-of-type(2) {
+  font-size: 20rpx;
+  color: #999;
+  display: block;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top .right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  color: #999;
+  font-size: 26rpx;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .top .right .iconfont {
+  vertical-align: baseline;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .contentss {
+  padding: 20rpx 30rpx 0 80rpx;
+  box-sizing: border-box;
+}
+.videoDetails .videoMain .videosub .substance .discuss scroll-view .scroll-item .contentss text {
+  font-size: 30rpx;
+  color: #333;
+}
+

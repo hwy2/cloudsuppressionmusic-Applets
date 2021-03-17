@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "播放详情",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "bing-lyric": "/components/bing-lyric/bing-lyric",
+    "dc-slider": "/components/ly-drag-slider/dc-slider"
+  }
+}

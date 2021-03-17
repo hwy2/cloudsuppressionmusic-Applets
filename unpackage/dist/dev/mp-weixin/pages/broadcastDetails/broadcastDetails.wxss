@@ -1,0 +1,129 @@
+.broadcastDetails .topnavbar {
+  background: url('https://www.3dcw.cn/image/panel_01.png');
+  background-size: cover;
+  width: 100%;
+}
+.broadcastDetails .topnavbar .narBarTitle {
+  width: 400rpx;
+  text-align: center;
+  font-size: 30rpx;
+  display: block;
+  padding: 5rpx 0 5rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.broadcastDetails .details {
+  height: 90.4vh;
+  width: 100%;
+  background: url('https://www.3dcw.cn/image/panel_02.png');
+  background-size: cover;
+}
+.broadcastDetails .details .orientation {
+  position: relative;
+  display: block;
+  height: 940rpx;
+}
+.broadcastDetails .details .orientation .play {
+  position: absolute;
+  top: 60rpx;
+  left: 75%;
+  -webkit-transform: rotate(8deg) translateX(-75%);
+          transform: rotate(8deg) translateX(-75%);
+  width: 300rpx;
+  height: 250rpx;
+}
+.broadcastDetails .details .orientation .pause {
+  position: absolute;
+  top: 44rpx;
+  left: 67%;
+  -webkit-transform: rotate(8deg) translateX(-75%);
+          transform: rotate(8deg) translateX(-75%);
+  width: 226rpx;
+  height: 316rpx;
+  z-index: 2;
+}
+.broadcastDetails .details .orientation .disk {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 600rpx;
+  height: 600rpx;
+}
+.broadcastDetails .details .orientation .songimg {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 400rpx;
+  z-index: 2;
+}
+.broadcastDetails .details .lyric {
+  position: relative;
+  height: 68vh;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+.broadcastDetails .details .operation {
+  height: 22vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+.broadcastDetails .details .operation .tool,
+.broadcastDetails .details .operation .roadcast {
+  padding: 0 100rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  line-height: 110rpx;
+}
+.broadcastDetails .details .operation .tool .iconfont,
+.broadcastDetails .details .operation .roadcast .iconfont {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  text-align: center;
+  font-size: 40rpx;
+  color: #fff;
+  font-weight: 500;
+}
+.broadcastDetails .details .operation .progress {
+  width: 100%;
+  padding: 32rpx 15% 32rpx 16%;
+  box-sizing: border-box;
+  position: relative;
+}
+.broadcastDetails .details .operation .progress .start {
+  position: absolute;
+  top: 32rpx;
+  left: 3%;
+  line-height: 1;
+  color: #ffffff;
+}
+.broadcastDetails .details .operation .progress .end {
+  position: absolute;
+  top: 32rpx;
+  right: 3%;
+  line-height: 1;
+  color: #ffffff;
+}
+.broadcastDetails .details .operation .roadcast .iconfont:nth-of-type(3) {
+  font-size: 70rpx;
+  font-weight: 100;
+  line-height: 1;
+}
+

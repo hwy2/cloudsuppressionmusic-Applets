@@ -1,0 +1,229 @@
+.Daily {
+  height: 92vh;
+}
+.Daily .topBanner {
+  height: 25vh;
+  width: 100%;
+  position: relative;
+}
+.Daily .topBanner .bgc {
+  width: 100%;
+  height: 100%;
+}
+.Daily .topBanner .bgc .dateTime {
+  width: 160rpx;
+  height: 130rpx;
+  position: absolute;
+  bottom: 60rpx;
+  left: 60rpx;
+  z-index: 100;
+}
+.Daily .topBanner .bgc .dateTime .p {
+  color: #fff;
+  font-size: 25rpx;
+}
+.Daily .topBanner .bgc .dateTime .p .large {
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.Daily .topBanner .bgc .dateTime .history {
+  display: block;
+  width: 150rpx;
+  height: 40rpx;
+  background-color: #f3f3f3;
+  border-radius: 50rpx;
+}
+.Daily .topBanner .bgc .dateTime .history .push {
+  display: block;
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #888;
+  font-size: 24rpx;
+}
+.Daily .topBanner .coating {
+  width: 100%;
+  height: 25vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.Daily .bottomContainer {
+  background-color: #fff;
+  display: block;
+  height: 75vh;
+}
+.Daily .bottomContainer .bgc {
+  background-color: #fff;
+  height: 100%;
+  border-top: 3rpx solid #999;
+  touch-action: pan-y;
+  position: relative;
+  z-index: 101;
+}
+.Daily .bottomContainer .bgc .topStyle {
+  height: 3.4vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 104rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: -33rpx;
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 33rpx 33rpx 0 0;
+}
+.Daily .bottomContainer .bgc .topStyle .left,
+.Daily .bottomContainer .bgc .topStyle .right {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+          flex: 5;
+}
+.Daily .bottomContainer .bgc .topStyle .left .div,
+.Daily .bottomContainer .bgc .topStyle .right .div {
+  position: relative;
+}
+.Daily .bottomContainer .bgc .topStyle .left .div .hybrid1,
+.Daily .bottomContainer .bgc .topStyle .right .div .hybrid1 {
+  display: inline-block;
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 14rpx;
+  background-color: #e5e5e5;
+}
+.Daily .bottomContainer .bgc .topStyle .left .div .hybrid2,
+.Daily .bottomContainer .bgc .topStyle .right .div .hybrid2 {
+  display: inline-block;
+  width: 8rpx;
+  height: 39rpx;
+  border-radius: 8rpx;
+  background-color: #fff;
+  position: absolute;
+  top: -9rpx;
+  left: 3.5rpx;
+  box-shadow: 0 0 1rpx #999;
+}
+.Daily .bottomContainer .bgc .topStyle .right .div {
+  float: right;
+}
+.Daily .bottomContainer .bgc .songsBar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 18rpx 28rpx 18rpx;
+  box-sizing: border-box;
+  height: 6.6vh;
+}
+.Daily .bottomContainer .bgc .songsBar .left,
+.Daily .bottomContainer .bgc .songsBar .right {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+          flex: 5;
+}
+.Daily .bottomContainer .bgc .songsBar .left .iconfont,
+.Daily .bottomContainer .bgc .songsBar .right .iconfont {
+  font-size: 38rpx;
+  color: #242424;
+  margin-right: 18rpx;
+  vertical-align: middle;
+  line-height: 1.4;
+  height: 100%;
+  width: 100%;
+}
+.Daily .bottomContainer .bgc .songsBar .left .iconfont .icoText,
+.Daily .bottomContainer .bgc .songsBar .right .iconfont .icoText {
+  font-size: 27rpx;
+  color: #242424;
+  vertical-align: inherit;
+  line-height: 1;
+  padding-left: 10rpx;
+}
+.Daily .bottomContainer .bgc .songsBar .right {
+  text-align: right;
+}
+.Daily .bottomContainer .bgc .songWarp {
+  padding: 6rpx 28rpx;
+  height: 65.5vh;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H {
+  height: 65.5vh;
+  width: 694rpx;
+  display: block;
+  box-sizing: border-box;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 38rpx;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left {
+  -webkit-box-flex: 9.5;
+  -webkit-flex: 9.5;
+          flex: 9.5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .le {
+  -webkit-box-flex: 1.5;
+  -webkit-flex: 1.5;
+          flex: 1.5;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .le .img {
+  height: 74rpx;
+  width: 74rpx;
+  border-radius: 5rpx;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p {
+  width: 420rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p .text1 {
+  font-size: 28rpx;
+  color: #000;
+  font-weight: bold;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p2 {
+  font-size: 22rpx;
+  color: #999;
+  width: 420rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .right {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .right .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .right .icon .iconfont {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  font-size: 40rpx;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H:first-child {
+  padding-top: 0;
+}
+.Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H:last-child {
+  padding-bottom: 30rpx;
+}
+

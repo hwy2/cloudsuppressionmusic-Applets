@@ -1,0 +1,265 @@
+.songListDetails {
+	height: 100vh;
+	.topnavbar {
+		height: 7.76vh;
+		.narBarTitle {
+			width: 400upx;
+			display: block;
+			color: #1d1d1d;
+			padding: 10upx 0 10upx;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			overflow: hidden; //隐藏文字
+			text-overflow: ellipsis; //显示...
+			white-space: nowrap; //不换行
+		}
+	}
+
+	.information {
+		display: flex;
+		height: 22vh;
+		padding: 2vh 42upx 0;
+		background-color: #aea9ad;
+		overflow: hidden;
+
+		.left {
+			flex: 1;
+			position: relative;
+			.img {
+				width: 230upx;
+				height: 230upx;
+				border-radius: 6upx;
+			}
+			.iconfont {
+				position: absolute;
+				top: 10upx;
+				right: 10upx;
+				color: #fff;
+				font-size: 24upx;
+			}
+		}
+		.rigth {
+			flex: 2;
+			padding-left: 32upx;
+			box-sizing: border-box;
+			width: 436upx;
+
+			.topTitle {
+				.p {
+					width: 400upx;
+					font-size: 30upx;
+					color: #fff;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					display: block;
+				}
+			}
+
+			.user {
+				padding-top: 24upx;
+
+				.img {
+					width: 50upx;
+					height: 50upx;
+					border-radius: 50upx;
+					vertical-align: middle;
+					margin-right: 15upx;
+				}
+
+				.nickname {
+					font-size: 26upx;
+					color: #fff;
+				}
+			}
+			.details {
+				padding-top: 24upx;
+				height: 50upx;
+				.description {
+					height: ;
+					display: block;
+					font-size: 29upx;
+					color: rgba(255, 255, 255, 0.5);
+					line-height: 1.5;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					-webkit-line-clamp: 2; //长度超过2行显示……
+					-webkit-box-orient: vertical;
+					display: -webkit-box;
+				}
+			}
+		}
+	}
+
+	.bottomContainer {
+		background-color: #fff;
+		display: block;
+		height: 63.46vh;
+		.bgc {
+			// transform: translateY(-33upx);
+			background-color: #fff;
+			// border-radius: 33upx;
+			height: 100%;
+			border-top: 3upx solid #999;
+			touch-action: pan-y;
+			position: relative;
+			z-index: 101;
+
+			.topStyle {
+				height: 3.4vh;
+				display: flex;
+				padding: 0 104upx;
+				box-sizing: border-box;
+				position: absolute;
+				top: -33upx;
+				background-color: #ffffff;
+				width: 100%;
+				border-radius: 33upx 33upx 0 0;
+
+				.left,
+				.right {
+					flex: 5;
+
+					.div {
+						position: relative;
+
+						.hybrid1 {
+							display: inline-block;
+							width: 14upx;
+							height: 14upx;
+							border-radius: 14upx;
+							background-color: #e5e5e5;
+						}
+
+						.hybrid2 {
+							display: inline-block;
+							width: 8upx;
+							height: 39upx;
+							border-radius: 8upx;
+							background-color: #fff;
+							position: absolute;
+							top: -9upx;
+							left: 3.5upx;
+							box-shadow: 0 0 1upx #999;
+						}
+					}
+				}
+
+				.right {
+					.div {
+						float: right;
+					}
+				}
+			}
+
+			.songsBar {
+				display: flex;
+				padding: 18upx 28upx 18upx;
+				box-sizing: border-box;
+				height: 6.6vh;
+				.left,
+				.right {
+					flex: 5;
+
+					.iconfont {
+						font-size: 38upx;
+						color: #242424;
+						margin-right: 18upx;
+						vertical-align: middle;
+						line-height: 1.4;
+						height: 100%;
+						width: 100%;
+
+						.icoText {
+							font-size: 27upx;
+							color: #242424;
+							vertical-align: inherit;
+							line-height: 1;
+							padding-left: 10rpx;
+						}
+					}
+				}
+
+				.right {
+					text-align: right;
+				}
+			}
+
+			.songWarp {
+				padding: 6upx 28upx;
+				height: 56vh;
+
+				.scroll-view_H {
+					height: 100%;
+					width: 694upx;
+					display: block;
+					box-sizing: border-box;
+
+					.scroll-view-item_H {
+						display: flex;
+						padding-top: 38upx;
+
+						.left {
+							flex: 9.5;
+							display: flex;
+
+							.le {
+								flex: 1.5;
+								.img {
+									height: 74upx;
+									width: 74upx;
+									border-radius: 5upx;
+								}
+							}
+
+							.center {
+								flex: 8;
+
+								.p {
+									width: 420upx;
+									display: block;
+									overflow: hidden; //隐藏文字
+									text-overflow: ellipsis; //显示...
+									white-space: nowrap; //不换行
+									line-height: 1;
+									.text1 {
+										font-size: 32upx;
+										color: #000;
+										font-weight: bold;
+									}
+								}
+
+								.p2 {
+									font-size: 24upx;
+									color: #999;
+									width: 420upx;
+									overflow: hidden; //隐藏文字
+									text-overflow: ellipsis; //显示...
+									white-space: nowrap; //不换行
+								}
+							}
+						}
+						.right {
+							flex: 2;
+
+							.icon {
+								display: flex;
+
+								.iconfont {
+									flex: 2;
+									font-size: 40upx;
+								}
+							}
+						}
+					}
+					.scroll-view-item_H:first-child {
+						padding-top: 0;
+					}
+
+					.scroll-view-item_H:last-child {
+						padding-bottom: 60upx;
+					}
+				}
+			}
+		}
+	}
+}

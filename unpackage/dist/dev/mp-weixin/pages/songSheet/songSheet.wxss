@@ -1,0 +1,140 @@
+.songSheet {
+  height: 100vh;
+}
+.songSheet .navbarSorll {
+  width: 100%;
+  padding: 10rpx 20rpx 10rpx;
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #f7f7f7;
+}
+.songSheet .navbarSorll scroll-view {
+  width: 100%;
+  height: 46rpx;
+  white-space: nowrap;
+}
+.songSheet .navbarSorll scroll-view view {
+  display: inline-block;
+  width: 145rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #545454;
+  text-align: center;
+  touch-action: pan-x;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.songSheet .navbarSorll scroll-view view:last-child {
+  margin-right: 0;
+}
+.songSheet .navbarSorll scroll-view .active {
+  color: #04f88a;
+  font-size: 31rpx;
+  font-weight: bold;
+}
+.songSheet .navbarSorll .more {
+  position: fixed;
+  top: 0rpx;
+  right: 0;
+  height: 56rpx;
+  width: 56rpx;
+  text-align: center;
+  line-height: 56rpx;
+  background-color: #f7f7f7;
+}
+.songSheet .navbarSorll .more ._i {
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 50rpx;
+  text-align: center;
+  line-height: 56rpx;
+}
+.songSheet .sheet {
+  padding-top: 15rpx;
+  background-color: #fff;
+  overflow: auto;
+  height: 90vh;
+}
+.songSheet .sheet hr-pull-load {
+  width: 100%;
+  height: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.songSheet .sheet hr-pull-load uni-grid {
+  width: 100%;
+  display: block;
+  padding-bottom: 30rpx;
+}
+.songSheet .sheet hr-pull-load uni-grid uni-grid-item {
+  height: 320rpx;
+}
+.songSheet .sheet hr-pull-load uni-grid uni-grid-item .warp {
+  position: relative;
+  width: 220rpx;
+  height: 300rpx;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  box-shadow: 1rpx 1rpx 10rpx #c6c6c6;
+}
+.songSheet .sheet hr-pull-load uni-grid uni-grid-item .warp image {
+  width: 220rpx;
+  height: 220rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.songSheet .sheet hr-pull-load uni-grid uni-grid-item .warp .playVolume {
+  position: absolute;
+  top: 10rpx;
+  right: 12rpx;
+  color: #fff;
+  font-size: 16rpx;
+}
+.songSheet .sheet hr-pull-load uni-grid uni-grid-item .warp .playVolume view {
+  font-size: 26rpx;
+  padding-right: 20rpx;
+}
+.songSheet .sheet hr-pull-load uni-grid uni-grid-item .warp text {
+  display: block;
+  font-size: 25rpx;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  width: 90%;
+  margin: 0 auto;
+  word-break: break-all;
+  line-height: 1.5;
+  padding: 2rpx;
+}
+.songSheet uni-drawer .categories-warp {
+  padding: 20rpx;
+  height: 96.5vh;
+}
+.songSheet uni-drawer .categories-warp .bigcategories {
+  height: 100%;
+}
+.songSheet uni-drawer .categories-warp .bigcategories .scroll-view-big .bigText {
+  font-size: 28rpx;
+}
+.songSheet uni-drawer .categories-warp .bigcategories .scroll-view-big .smallcategories .scroll-view-small text {
+  float: left;
+  width: 30%;
+  height: 60rpx;
+  background-color: #f3f3f3;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-right: 3%;
+  margin-bottom: 3%;
+  font-size: 24rpx;
+}
+

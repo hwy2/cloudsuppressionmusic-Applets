@@ -1,0 +1,147 @@
+.videoList .navbarSorll {
+  width: 100%;
+  padding: 10rpx 20rpx 10rpx;
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #f7f7f7;
+}
+.videoList .navbarSorll scroll-view {
+  width: 100%;
+  height: 46rpx;
+  white-space: nowrap;
+}
+.videoList .navbarSorll scroll-view view {
+  display: inline-block;
+  width: 145rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #545454;
+  text-align: center;
+  touch-action: pan-x;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.videoList .navbarSorll scroll-view view:last-child {
+  margin-right: 0;
+}
+.videoList .navbarSorll scroll-view .active {
+  color: #04f88a;
+  font-size: 31rpx;
+  font-weight: bold;
+}
+.videoList .list {
+  background-color: #ffffff;
+  overflow: auto;
+  height: 90vh;
+  padding: 20rpx 0 0;
+  box-sizing: border-box;
+}
+.videoList .list hr-pull-load {
+  width: 100%;
+  height: 100%;
+}
+.videoList .list hr-pull-load uni-grid {
+  width: 100%;
+  height: 100%;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item {
+  height: 570rpx;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp {
+  width: 360rpx;
+  height: 550rpx;
+  border-radius: 15rpx;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 1rpx 1rpx 10rpx #c6c6c6;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .image {
+  height: 400rpx;
+  width: 100%;
+  border-radius: 15rpx 15rpx 0 0;
+  position: relative;
+  overflow: hidden;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .image image {
+  border-radius: 15rpx 15rpx 0 0;
+  width: 178%;
+  height: 100%;
+  -webkit-transform: translateX(-160rpx);
+          transform: translateX(-160rpx);
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .image image:nth-of-type(2) {
+  position: absolute;
+  bottom: 23rpx;
+  left: 173rpx;
+  z-index: 10;
+  width: 50rpx;
+  height: 50rpx;
+  border: solid #fff 3rpx;
+  border-radius: 60rpx;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .image text {
+  position: absolute;
+  bottom: 23rpx;
+  right: 23rpx;
+  z-index: 10;
+  color: #ffffff;
+  font-size: 20rpx;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .description {
+  padding: 10rpx 10rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .description .text {
+  font-size: 26rpx;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  line-height: 1.5;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .items {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  color: #b3b3b3;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .items .p:nth-of-type(1) {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .items .p:nth-of-type(1) .iconfont {
+  font-size: 26rpx;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .items .p:nth-of-type(2) {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item .warp .items .p:nth-of-type(2) .iconfont {
+  font-size: 26rpx;
+}
+.videoList .list hr-pull-load uni-grid uni-grid-item:last-child {
+  padding-bottom: 80rpx;
+}
+

@@ -1,0 +1,135 @@
+.broadcastDetails {
+	.topnavbar {
+		background: url('https://www.3dcw.cn/image/panel_01.png');
+		background-size: cover;
+		width: 100%;
+
+		.narBarTitle {
+			width: 400upx;
+			text-align: center;
+			font-size: 30upx;
+			display: block;
+			padding: 5upx 0 5upx;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			overflow: hidden; //隐藏文字
+			text-overflow: ellipsis; //显示...
+			white-space: nowrap; //不换行
+			font-weight: bold;
+		}
+	}
+
+	.details {
+		height: 90.4vh;
+		width: 100%;
+		background: url('https://www.3dcw.cn/image/panel_02.png');
+		background-size: cover;
+
+		.orientation {
+			position: relative;
+			display: block;
+			height: 940upx;
+
+			.play {
+				position: absolute;
+				top: 60upx;
+				left: 75%;
+				transform: rotate(8deg) translateX(-75%);
+				width: 300upx;
+				height: 250upx;
+			}
+
+			.pause {
+				position: absolute;
+				top: 44upx;
+				left: 67%;
+				transform: rotate(8deg) translateX(-75%);
+				width: 226upx;
+				height: 316upx;
+				z-index: 2;
+			}
+
+			.disk {
+				position: absolute;
+				top: 57%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 600upx;
+				height: 600upx;
+			}
+
+			.songimg {
+				position: absolute;
+				top: 57%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 400upx;
+				height: 400upx;
+				border-radius: 400upx;
+				z-index: 2;
+			}
+		}
+
+		.lyric {
+			position: relative;
+			height: 68vh;
+			width: 90%;
+			display: block;
+			margin: 0 auto;
+		}
+
+		.operation {
+			height: 22vh;
+			width: 100%;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+
+			.tool,
+			.roadcast {
+				padding: 0 100upx;
+				box-sizing: border-box;
+				display: flex;
+				justify-content: center;
+				line-height: 110upx;
+
+				.iconfont {
+					flex: 2;
+					text-align: center;
+					font-size: 40upx;
+					color: #fff;
+					font-weight: 500;
+				}
+			}
+
+			.progress {
+				width: 100%;
+				padding: 32upx 15% 32upx 16%;
+				box-sizing: border-box;
+				position: relative;
+				.start {
+					position: absolute;
+					top: 32upx;
+					left: 3%;
+					line-height: 1;
+					color: #ffffff;
+				}
+
+				.end {
+					position: absolute;
+					top: 32upx;
+					right: 3%;
+					line-height: 1;
+					color: #ffffff;
+				}
+			}
+
+			.roadcast {
+				.iconfont:nth-of-type(3) {
+					font-size: 70upx;
+					font-weight: 100;
+					line-height: 1;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,273 @@
+.me {
+	background-color: #e6e6e7;
+	padding-top: 0;
+	width: 750upx;
+	padding-bottom: 80upx;
+	.profile {
+		height: 162upx;
+		width: 750upx;
+		display: flex;
+		padding: 30upx;
+		box-sizing: border-box;
+
+		.left {
+			flex: 1;
+			.img {
+				width: 90upx;
+				height: 90upx;
+				border-radius: 50%;
+				border: 2px solid #fff;
+				display: block;
+			}
+		}
+		.center {
+			flex: 10;
+			box-sizing: border-box;
+			padding-left: 20upx;
+			.p1 {
+				font-size: 28upx;
+				color: #131413;
+				font-weight: bold;
+				font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+				line-height: 1.5;
+			}
+			.p2 {
+				padding: 12upx 0;
+				box-sizing: border-box;
+
+				.span {
+					padding: 5upx 15upx;
+					background-color: #eff5f5;
+					border-radius: 20upx;
+					font-style: italic;
+					color: #131413;
+					font-size: 24upx;
+					font-weight: bold;
+				}
+			}
+		}
+		.right {
+			flex: 1;
+			padding: 36upx 0;
+			box-sizing: border-box;
+
+			.iconfont {
+				font-size: 32upx;
+				font-weight: bold;
+				display: block;
+				margin: 0 auto;
+				width: 32upx;
+				line-height: 1;
+			}
+		}
+	}
+
+	.favoriteMusic {
+		width: 690upx;
+		border-radius: 20upx;
+		background-color: #fff;
+		margin: 0 auto;
+		padding: 30upx;
+		box-sizing: border-box;
+		display: flex;
+
+		.left {
+			flex: 2;
+
+			.embedded {
+				width: 110upx;
+				height: 110upx;
+				border-radius: 10upx;
+				background-color: rgba(255, 255, 255, 1);
+				text-align: center;
+				line-height: 110upx;
+				background: #fff;
+				background-size: 100% 100%;
+				position: relative;
+
+				.img {
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+
+		.center {
+			flex: 6;
+			box-sizing: border-box;
+			padding-top: 18upx;
+
+			.p1 {
+				font-size: 32upx;
+				color: #343434;
+				font-weight: 600;
+				font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+				line-height: 1.5;
+				padding-bottom: 5upx;
+				padding-left: 30upx;
+				display: block;
+			}
+
+			.p2 {
+				padding-left: 30upx;
+				display: block;
+				font-size: 24upx;
+				color: #999999;
+				font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+			}
+		}
+
+		.right {
+			flex: 3;
+			padding-top: 30upx;
+
+			.intelligence {
+				height: 220upx;
+				height: 54upx;
+				border-radius: 50upx;
+				border: 3upx solid #e6e6e6;
+				text-align: center;
+				line-height: 54upx;
+				font-size: 34upx;
+
+				.iconfont {
+					color: #04f88a;
+					vertical-align: middle;
+
+					.span {
+						vertical-align: top;
+						font-size: 24upx;
+						padding-left: 5upx;
+						color: #333333;
+						vertical-align: middle;
+						line-height: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.createSongList {
+		padding-top: 45upx;
+		padding-bottom: 45upx;
+
+		.bgc {
+			width: 690upx;
+			border-radius: 20upx;
+			background-color: #fafafc;
+			margin: 0 auto;
+			padding: 45upx 50upx;
+			box-sizing: border-box;
+
+			.top {
+				display: flex;
+				height: 45upx;
+
+				.left {
+					flex: 8;
+
+					.p {
+						font-size: 28upx;
+						color: #999999;
+						line-height: 45upx;
+						display: block;
+					}
+				}
+
+				.right {
+					flex: 3;
+					display: flex;
+					text-align: right;
+
+					.iconfont {
+						flex: 1;
+						line-height: 45upx;
+					}
+
+					.iconjia1 {
+						color: #8d8c8c;
+						vertical-align: top;
+						font-size: 50upx;
+						vertical-align: top;
+						font-weight: bold;
+					}
+
+					.iconziyuan {
+						font-weight: 900;
+						font-size: 45upx;
+						color: #8d8c8c;
+					}
+				}
+			}
+
+			.contentText {
+				.scroll-view {
+					padding-top: 30upx;
+
+					.scroll-item {
+						display: flex;
+						padding-bottom: 26upx;
+
+						.left {
+							flex: 10;
+							display: flex;
+							.le {
+								.img {
+									width: 100upx;
+									height: 100upx;
+									border-radius: 15upx;
+								}
+							}
+
+							.center {
+								flex: 8;
+								padding-top: 10upx;
+								padding-left: 30upx;
+
+								.name {
+									font-size: 31upx;
+									color: #333;
+									font-weight: bold;
+									line-height: 1.5;
+									width: 390upx;
+									display: block;
+									overflow: hidden; //隐藏文字
+									text-overflow: ellipsis; //显示...
+									white-space: nowrap; //不换行
+								}
+
+								.trackCount {
+									display: block;
+									color: #808080;
+									line-height: 1.5;
+									font-size: 24upx;
+								}
+							}
+						}
+
+						.right {
+							flex: 2;
+							text-align: right;
+							padding-top: 20upx;
+
+							.iconfont {
+								font-weight: 900;
+								font-size: 45upx;
+								color: #8d8c8c;
+								line-height: 45upx;
+							}
+						}
+					}
+
+					.scroll-item:last-child {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+
+	.collectionSongLists {
+		padding-top: 0;
+	}
+}

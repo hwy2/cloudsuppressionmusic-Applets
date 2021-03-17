@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "网抑云",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "uni-icons": "/components/uni-icons/uni-icons",
+    "uni-grid": "/components/uni-grid/uni-grid",
+    "uni-grid-item": "/components/uni-grid-item/uni-grid-item",
+    "uni-drawer": "/components/uni-drawer/uni-drawer",
+    "uni-search-bar": "/components/uni-search-bar/uni-search-bar",
+    "music-playbar": "/components/musicPlayBar/musicPlayBar"
+  }
+}

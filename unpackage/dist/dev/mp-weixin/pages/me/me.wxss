@@ -1,0 +1,272 @@
+.me {
+  background-color: #e6e6e7;
+  padding-top: 0;
+  width: 750rpx;
+  padding-bottom: 80rpx;
+}
+.me .profile {
+  height: 162rpx;
+  width: 750rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.me .profile .left {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+}
+.me .profile .left .img {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: block;
+}
+.me .profile .center {
+  -webkit-box-flex: 10;
+  -webkit-flex: 10;
+          flex: 10;
+  box-sizing: border-box;
+  padding-left: 20rpx;
+}
+.me .profile .center .p1 {
+  font-size: 28rpx;
+  color: #131413;
+  font-weight: bold;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 1.5;
+}
+.me .profile .center .p2 {
+  padding: 12rpx 0;
+  box-sizing: border-box;
+}
+.me .profile .center .p2 .span {
+  padding: 5rpx 15rpx;
+  background-color: #eff5f5;
+  border-radius: 20rpx;
+  font-style: italic;
+  color: #131413;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.me .profile .right {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  padding: 36rpx 0;
+  box-sizing: border-box;
+}
+.me .profile .right .iconfont {
+  font-size: 32rpx;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  width: 32rpx;
+  line-height: 1;
+}
+.me .favoriteMusic {
+  width: 690rpx;
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.me .favoriteMusic .left {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}
+.me .favoriteMusic .left .embedded {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  text-align: center;
+  line-height: 110rpx;
+  background: #fff;
+  background-size: 100% 100%;
+  position: relative;
+}
+.me .favoriteMusic .left .embedded .img {
+  height: 100%;
+  width: 100%;
+}
+.me .favoriteMusic .center {
+  -webkit-box-flex: 6;
+  -webkit-flex: 6;
+          flex: 6;
+  box-sizing: border-box;
+  padding-top: 18rpx;
+}
+.me .favoriteMusic .center .p1 {
+  font-size: 32rpx;
+  color: #343434;
+  font-weight: 600;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 1.5;
+  padding-bottom: 5rpx;
+  padding-left: 30rpx;
+  display: block;
+}
+.me .favoriteMusic .center .p2 {
+  padding-left: 30rpx;
+  display: block;
+  font-size: 24rpx;
+  color: #999999;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.me .favoriteMusic .right {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
+  padding-top: 30rpx;
+}
+.me .favoriteMusic .right .intelligence {
+  height: 220rpx;
+  height: 54rpx;
+  border-radius: 50rpx;
+  border: 3rpx solid #e6e6e6;
+  text-align: center;
+  line-height: 54rpx;
+  font-size: 34rpx;
+}
+.me .favoriteMusic .right .intelligence .iconfont {
+  color: #04f88a;
+  vertical-align: middle;
+}
+.me .favoriteMusic .right .intelligence .iconfont .span {
+  vertical-align: top;
+  font-size: 24rpx;
+  padding-left: 5rpx;
+  color: #333333;
+  vertical-align: middle;
+  line-height: 1;
+}
+.me .createSongList {
+  padding-top: 45rpx;
+  padding-bottom: 45rpx;
+}
+.me .createSongList .bgc {
+  width: 690rpx;
+  border-radius: 20rpx;
+  background-color: #fafafc;
+  margin: 0 auto;
+  padding: 45rpx 50rpx;
+  box-sizing: border-box;
+}
+.me .createSongList .bgc .top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 45rpx;
+}
+.me .createSongList .bgc .top .left {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+}
+.me .createSongList .bgc .top .left .p {
+  font-size: 28rpx;
+  color: #999999;
+  line-height: 45rpx;
+  display: block;
+}
+.me .createSongList .bgc .top .right {
+  -webkit-box-flex: 3;
+  -webkit-flex: 3;
+          flex: 3;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  text-align: right;
+}
+.me .createSongList .bgc .top .right .iconfont {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  line-height: 45rpx;
+}
+.me .createSongList .bgc .top .right .iconjia1 {
+  color: #8d8c8c;
+  font-size: 50rpx;
+  vertical-align: top;
+  font-weight: bold;
+}
+.me .createSongList .bgc .top .right .iconziyuan {
+  font-weight: 900;
+  font-size: 45rpx;
+  color: #8d8c8c;
+}
+.me .createSongList .bgc .contentText .scroll-view {
+  padding-top: 30rpx;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-bottom: 26rpx;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item .left {
+  -webkit-box-flex: 10;
+  -webkit-flex: 10;
+          flex: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item .left .le .img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 15rpx;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item .left .center {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+  padding-top: 10rpx;
+  padding-left: 30rpx;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item .left .center .name {
+  font-size: 31rpx;
+  color: #333;
+  font-weight: bold;
+  line-height: 1.5;
+  width: 390rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item .left .center .trackCount {
+  display: block;
+  color: #808080;
+  line-height: 1.5;
+  font-size: 24rpx;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item .right {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  text-align: right;
+  padding-top: 20rpx;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item .right .iconfont {
+  font-weight: 900;
+  font-size: 45rpx;
+  color: #8d8c8c;
+  line-height: 45rpx;
+}
+.me .createSongList .bgc .contentText .scroll-view .scroll-item:last-child {
+  padding-bottom: 0;
+}
+.me .collectionSongLists {
+  padding-top: 0;
+}
+

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "歌单详情",
+  "enablePullDownRefresh": false,
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar",
+    "music-playbar": "/components/musicPlayBar/musicPlayBar"
+  }
+}

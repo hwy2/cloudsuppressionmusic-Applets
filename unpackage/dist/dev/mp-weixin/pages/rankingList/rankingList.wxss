@@ -1,0 +1,188 @@
+.rankingList {
+  height: 86vh;
+  overflow: auto;
+  padding-bottom: 150rpx;
+  background-color: #f8f8f8;
+}
+.rankingList .listRecommendation,
+.rankingList .featureList,
+.rankingList .globalList,
+.rankingList .regionalList,
+.rankingList .musicStyleList {
+  width: 98%;
+  border-radius: 20rpx;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.rankingList .listRecommendation .top,
+.rankingList .featureList .top,
+.rankingList .globalList .top,
+.rankingList .regionalList .top,
+.rankingList .musicStyleList .top {
+  padding: 15rpx 0;
+}
+.rankingList .listRecommendation .top text,
+.rankingList .featureList .top text,
+.rankingList .globalList .top text,
+.rankingList .regionalList .top text,
+.rankingList .musicStyleList .top text {
+  display: block;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: black;
+  padding-left: 32rpx;
+}
+.rankingList .listRecommendation uni-grid,
+.rankingList .featureList uni-grid,
+.rankingList .globalList uni-grid,
+.rankingList .regionalList uni-grid,
+.rankingList .musicStyleList uni-grid {
+  padding: 0 32rpx;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.rankingList .listRecommendation uni-grid uni-grid-item,
+.rankingList .featureList uni-grid uni-grid-item,
+.rankingList .globalList uni-grid uni-grid-item,
+.rankingList .regionalList uni-grid uni-grid-item,
+.rankingList .musicStyleList uni-grid uni-grid-item {
+  width: 30%;
+  height: 240rpx;
+  float: left;
+  border-radius: 15rpx;
+}
+.rankingList .listRecommendation uni-grid uni-grid-item .image,
+.rankingList .featureList uni-grid uni-grid-item .image,
+.rankingList .globalList uni-grid uni-grid-item .image,
+.rankingList .regionalList uni-grid uni-grid-item .image,
+.rankingList .musicStyleList uni-grid uni-grid-item .image {
+  position: relative;
+  width: 100%;
+  border-radius: 15px;
+}
+.rankingList .listRecommendation uni-grid uni-grid-item .image::before,
+.rankingList .featureList uni-grid uni-grid-item .image::before,
+.rankingList .globalList uni-grid uni-grid-item .image::before,
+.rankingList .regionalList uni-grid uni-grid-item .image::before,
+.rankingList .musicStyleList uni-grid uni-grid-item .image::before {
+  content: '';
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  box-shadow: inset 0px -3rpx 10rpx #c0c0c0;
+  border-radius: 15rpx;
+}
+.rankingList .listRecommendation uni-grid uni-grid-item .image image,
+.rankingList .featureList uni-grid uni-grid-item .image image,
+.rankingList .globalList uni-grid uni-grid-item .image image,
+.rankingList .regionalList uni-grid uni-grid-item .image image,
+.rankingList .musicStyleList uni-grid uni-grid-item .image image {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 15rpx;
+  display: block;
+  margin: 0 auto;
+}
+.rankingList .listRecommendation uni-grid uni-grid-item .image text,
+.rankingList .featureList uni-grid uni-grid-item .image text,
+.rankingList .globalList uni-grid uni-grid-item .image text,
+.rankingList .regionalList uni-grid uni-grid-item .image text,
+.rankingList .musicStyleList uni-grid uni-grid-item .image text {
+  position: absolute;
+  bottom: 15rpx;
+  left: 40rpx;
+  color: #fff;
+  font-size: 18rpx;
+}
+.rankingList .listRecommendation uni-grid uni-grid-item .text,
+.rankingList .featureList uni-grid uni-grid-item .text,
+.rankingList .globalList uni-grid uni-grid-item .text,
+.rankingList .regionalList uni-grid uni-grid-item .text,
+.rankingList .musicStyleList uni-grid uni-grid-item .text {
+  width: 100%;
+  text-align: center;
+}
+.rankingList .listRecommendation uni-grid uni-grid-item .text text,
+.rankingList .featureList uni-grid uni-grid-item .text text,
+.rankingList .globalList uni-grid uni-grid-item .text text,
+.rankingList .regionalList uni-grid uni-grid-item .text text,
+.rankingList .musicStyleList uni-grid uni-grid-item .text text {
+  width: 90%;
+  display: block;
+  font-size: 24rpx;
+  color: #1d1d1d;
+  padding: 10rpx 0 10rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rankingList .officialList .top {
+  padding: 15px 0;
+}
+.rankingList .officialList .top text {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: black;
+  padding-left: 32rpx;
+}
+.rankingList .officialList scroll-view {
+  padding: 0 32rpx;
+  height: 720rpx;
+  box-sizing: border-box;
+}
+.rankingList .officialList scroll-view .scroll-item {
+  width: 100%;
+  height: 180rpx;
+  float: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.rankingList .officialList scroll-view .scroll-item .left {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  position: relative;
+}
+.rankingList .officialList scroll-view .scroll-item .left image {
+  width: 165rpx;
+  height: 165rpx;
+  border-radius: 12rpx;
+  display: block;
+}
+.rankingList .officialList scroll-view .scroll-item .left text {
+  position: absolute;
+  bottom: 30rpx;
+  left: 15rpx;
+  color: #fff;
+  font-size: 18rpx;
+}
+.rankingList .officialList scroll-view .scroll-item .right {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+          flex: 5;
+  padding: 15rpx 0 0 15rpx;
+  box-sizing: border-box;
+}
+.rankingList .officialList scroll-view .scroll-item .right text {
+  display: block;
+  padding-bottom: 5rpx;
+  font-size: 25rpx;
+  color: #494949;
+}
+.rankingList .officialList scroll-view .scroll-item .right text:nth-of-type(1) {
+  color: #1aad19;
+}
+.rankingList .officialList scroll-view .scroll-item .right text:nth-of-type(2) {
+  color: #53ee6d;
+}
+.rankingList .officialList scroll-view .scroll-item .right text:nth-of-type(3) {
+  color: #a1dcc1;
+}
+

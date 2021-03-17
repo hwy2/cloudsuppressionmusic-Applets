@@ -1,0 +1,262 @@
+.login {
+  background: -webkit-linear-gradient(top, #04f88a, #41b883);
+  background: linear-gradient(to bottom, #04f88a, #41b883);
+  height: 100vh;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.login .topProfile {
+  padding-top: 100rpx;
+}
+.login .topProfile .portrait {
+  height: 150rpx;
+  width: 100%;
+  position: relative;
+}
+.login .topProfile .portrait image {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 99;
+}
+.login .topProfile .portrait .vr_wrap {
+  background: #fff;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 50px 10px #fbfbfb;
+  -webkit-animation: mymove 2s infinite;
+          animation: mymove 2s infinite;
+  /*animation-direction:alternate;*/
+  border-radius: 50%;
+}
+.login .topProfile .portrait .vr_wrap2 {
+  background: #fff;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 50px 10px #fbfbfb;
+  -webkit-animation: mymove1 2s infinite;
+          animation: mymove1 2s infinite;
+  /*animation-direction:alternate;*/
+}
+.login .topProfile .welcome {
+  padding: 30rpx 0;
+  text-align: center;
+  height: 15vh;
+}
+.login .topProfile .welcome text:nth-of-type(1) {
+  font-size: 50rpx;
+  font-weight: 500;
+  color: #333;
+  display: block;
+}
+.login .topProfile .welcome text:nth-of-type(2) {
+  font-size: 36rpx;
+  font-weight: 100;
+  display: block;
+}
+.login .forms form {
+  padding: 100rpx 0;
+}
+.login .forms form .row {
+  padding-bottom: 60rpx;
+  position: relative;
+}
+.login .forms form .row .iconzhuce {
+  position: absolute;
+  right: 20%;
+  bottom: 0rpx;
+  color: #FFFFFF;
+  font-size: 32rpx;
+}
+.login .forms form .row .iconzhuce text {
+  font-size: 28rpx;
+  padding: 0;
+  vertical-align: middle;
+  line-height: unset;
+  padding-left: 10rpx;
+}
+.login .forms form .row view {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+}
+.login .forms form .row view ._i {
+  position: absolute;
+  top: 50%;
+  left: 140rpx;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.login .forms form .row view input {
+  width: 500rpx;
+  height: 90rpx;
+  border: 5rpx solid #666;
+  border-radius: 50rpx;
+  display: block;
+  margin: 0 auto;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 28rpx;
+}
+.login .forms form .row view input:focus {
+  -webkit-animation: bigger 0.5s;
+  animation: bigger 0.5s;
+  width: 600rpx;
+  border-color: #00ff40;
+}
+.login .forms form .row view input:focus + ._i {
+  -webkit-animation: moveLeft 0.5s;
+          animation: moveLeft 0.5s;
+  left: 90rpx;
+}
+.login .forms form .row button {
+  border: 0;
+  width: 300rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  background-color: #04f88a;
+  text-align: center;
+  margin: 30rpx auto 0;
+  display: block;
+  color: #fff;
+  font-size: 40rpx;
+  box-shadow: 5rpx 5rpx 15rpx #0cec87;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.login .forms form .row input[type='button']:hover {
+  background-color: #00ff6a;
+}
+.login .forms form .row text {
+  font-size: 28rpx;
+  text-align: right;
+  padding-right: 125rpx;
+  line-height: 1.5;
+  padding-top: 15rpx;
+  color: #fff;
+}
+@-webkit-keyframes bigger {
+  0% {
+    width: 500rpx;
+  }
+  100% {
+    width: 600rpx;
+    border-color: #00ff40;
+  }
+}
+@keyframes bigger {
+  0% {
+    width: 500rpx;
+  }
+  100% {
+    width: 600rpx;
+    border-color: #00ff40;
+  }
+}
+@-webkit-keyframes moveLeft {
+  0% {
+    left: 140rpx;
+  }
+  100% {
+    left: 90rpx;
+  }
+}
+@keyframes moveLeft {
+  0% {
+    left: 140rpx;
+  }
+  100% {
+    left: 90rpx;
+  }
+}
+@-webkit-keyframes mymove {
+  0% {
+    box-shadow: 0px 0px 0px 2rpx #fff;
+    height: 150rpx;
+    width: 150rpx;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 20rpx #fff;
+    height: 260rpx;
+    width: 260rpx;
+  }
+  100% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+@keyframes mymove {
+  0% {
+    box-shadow: 0px 0px 0px 2rpx #fff;
+    height: 150rpx;
+    width: 150rpx;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 20rpx #fff;
+    height: 260rpx;
+    width: 260rpx;
+  }
+  100% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+@-webkit-keyframes mymove1 {
+  0% {
+    box-shadow: 0px 0px 0px 2rpx #fff;
+    height: 150rpx;
+    width: 150rpx;
+  }
+  50% {
+    box-shadow: 0px 0px 0px 20rpx #fff;
+    width: 260rpx;
+    height: 260rpx;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+@keyframes mymove1 {
+  0% {
+    box-shadow: 0px 0px 0px 2rpx #fff;
+    height: 150rpx;
+    width: 150rpx;
+  }
+  50% {
+    box-shadow: 0px 0px 0px 20rpx #fff;
+    width: 260rpx;
+    height: 260rpx;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+}
+

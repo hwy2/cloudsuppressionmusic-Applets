@@ -1,0 +1,162 @@
+.rankingList {
+	height: 86vh;
+	overflow: auto;
+	padding-bottom: 150upx;
+	background-color: #f8f8f8;
+
+	// 榜单推荐
+	.listRecommendation,
+	.featureList,
+	.globalList,
+	.regionalList,
+	.musicStyleList {
+		width: 98%;
+		border-radius: 20upx;
+		background-color: #fff;
+		margin: 0 auto;
+		.top {
+			padding: 15upx 0;
+
+			text {
+				display: block;
+				font-size: 28upx;
+				font-weight: bold;
+				color: black;
+				padding-left: 32upx;
+			}
+		}
+
+		uni-grid {
+			padding: 0 32upx;
+			width: 100%;
+			display: block;
+			box-sizing: border-box;
+			uni-grid-item {
+				width: 30%;
+				height: 240upx;
+				float: left;
+				border-radius: 15upx;
+
+				.image {
+					position: relative;
+					width: 100%;
+					border-radius: 15px;
+
+					&::before {
+						content: '';
+						width: 180upx;
+						height: 180upx;
+						position: absolute;
+						left: 50%;
+						bottom: 0;
+						transform: translateX(-50%);
+						box-shadow: inset 0px -3upx 10upx #c0c0c0;
+						border-radius: 15upx;
+					}
+
+					image {
+						width: 180upx;
+						height: 180upx;
+						border-radius: 15upx;
+						display: block;
+						margin: 0 auto;
+					}
+
+					text {
+						position: absolute;
+						bottom: 15upx;
+						left: 40upx;
+						color: #fff;
+						font-size: 18upx;
+					}
+				}
+
+				.text {
+					width: 100%;
+					text-align: center;
+					text {
+						width: 90%;
+						display: block;
+						font-size: 24upx;
+						color: #1d1d1d;
+						padding: 10upx 0 10upx;
+						font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+						overflow: hidden; //隐藏文字
+						text-overflow: ellipsis; //显示...
+						white-space: nowrap; //不换行
+					}
+				}
+			}
+		}
+	}
+
+	//官方榜
+	.officialList {
+		.top {
+			padding: 15px 0;
+
+			text {
+				font-size: 28upx;
+				font-weight: bold;
+				color: black;
+				padding-left: 32upx;
+			}
+		}
+
+		scroll-view {
+			padding: 0 32upx;
+			height: 720upx;
+			box-sizing: border-box;
+			.scroll-item {
+				width: 100%;
+				height: 180upx;
+				float: left;
+				display: flex;
+
+				.left {
+					flex: 2;
+					position: relative;
+
+					image {
+						width: 165upx;
+						height: 165upx;
+						border-radius: 12upx;
+						display: block;
+						// margin: 0 auto;
+					}
+
+					text {
+						position: absolute;
+						bottom: 30upx;
+						left: 15upx;
+						color: #fff;
+						font-size: 18upx;
+					}
+				}
+
+				.right {
+					flex: 5;
+					padding: 15upx 0 0 15upx;
+					box-sizing: border-box;
+
+					text {
+						display: block;
+						padding-bottom: 5upx;
+						font-size: 25upx;
+						color: #494949;
+					}
+
+					text:nth-of-type(1) {
+						color: #1aad19;
+					}
+					text:nth-of-type(2) {
+						color: #53ee6d;
+					}
+					text:nth-of-type(3) {
+						color: #a1dcc1;
+					}
+				}
+			}
+		}
+	}
+}

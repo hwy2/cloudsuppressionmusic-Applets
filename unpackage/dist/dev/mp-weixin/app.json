@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/login/login",
+    "pages/dailyRecommendation/recommendation",
+    "pages/songSheet/songSheet",
+    "pages/rankingList/rankingList",
+    "pages/search/search",
+    "pages/me/me",
+    "pages/video/video",
+    "pages/sheetDetails/sheetDetails",
+    "pages/broadcastDetails/broadcastDetails",
+    "pages/rankingDetails/rankingDetails",
+    "pages/videoDetails/videoDetails"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "usingComponents": {},
+  "sitemapLocation": "sitemap25.json"
+}

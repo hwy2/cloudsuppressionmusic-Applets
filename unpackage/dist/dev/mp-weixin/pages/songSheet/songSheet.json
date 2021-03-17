@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "歌单广场",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "hr-pull-load": "/components/hr-pull-load/hr-pull-load",
+    "uni-grid": "/components/uni-grid/uni-grid",
+    "uni-grid-item": "/components/uni-grid-item/uni-grid-item",
+    "uni-drawer": "/components/uni-drawer/uni-drawer",
+    "s-pull-scroll": "/components/s-pull-scroll/index",
+    "music-playbar": "/components/musicPlayBar/musicPlayBar"
+  }
+}

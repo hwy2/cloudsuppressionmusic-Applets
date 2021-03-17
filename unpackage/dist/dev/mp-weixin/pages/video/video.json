@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "视频",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "hr-pull-load": "/components/hr-pull-load/hr-pull-load",
+    "uni-grid": "/components/uni-grid/uni-grid",
+    "uni-grid-item": "/components/uni-grid-item/uni-grid-item",
+    "music-playbar": "/components/musicPlayBar/musicPlayBar"
+  }
+}
