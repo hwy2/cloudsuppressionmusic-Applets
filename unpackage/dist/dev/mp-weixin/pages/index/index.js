@@ -973,6 +973,35 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
 
         } });
 
+    },
+    openLatestMusic: function openLatestMusic() {
+      uni.getStorage({
+        key: 'profile',
+        success: function success(res) {
+          uni.navigateTo({
+            url: '/pages/latestMusic/latestMusic',
+            animationType: 'pop-in',
+            animationDuration: 200 });
+
+        },
+        fail: function fail(err) {
+          console.log(err);
+
+          uni.showModal({
+            title: '',
+            content: '请登录',
+            success: function success(res) {
+              if (res.confirm) {
+                uni.navigateTo({
+                  url: '/pages/login/login',
+                  animationType: 'pop-in',
+                  animationDuration: 200 });
+
+              }
+            } });
+
+        } });
+
     } },
 
   created: function created() {

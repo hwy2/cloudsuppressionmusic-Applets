@@ -1,8 +1,9 @@
 .rankingList {
   height: 86vh;
   overflow: auto;
-  padding-bottom: 150rpx;
-  background-color: #f8f8f8;
+  padding-bottom: 120rpx;
+  background-color: #f7f7f7;
+  padding-top: 20rpx;
 }
 .rankingList .listRecommendation,
 .rankingList .featureList,
@@ -12,7 +13,8 @@
   width: 98%;
   border-radius: 20rpx;
   background-color: #fff;
-  margin: 0 auto;
+  margin: 0 auto 20rpx;
+  box-shadow: 10rpx 10rpx 20rpx #f0f0f0;
 }
 .rankingList .listRecommendation .top,
 .rankingList .featureList .top,
@@ -133,7 +135,7 @@
 }
 .rankingList .officialList scroll-view {
   padding: 0 32rpx;
-  height: 720rpx;
+  height: auto;
   box-sizing: border-box;
 }
 .rankingList .officialList scroll-view .scroll-item {
@@ -143,12 +145,27 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+  margin: 0 0 15rpx;
+  padding: 20rpx 0;
 }
 .rankingList .officialList scroll-view .scroll-item .left {
   -webkit-box-flex: 2;
   -webkit-flex: 2;
           flex: 2;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  padding-left: 10rpx;
 }
 .rankingList .officialList scroll-view .scroll-item .left image {
   width: 165rpx;

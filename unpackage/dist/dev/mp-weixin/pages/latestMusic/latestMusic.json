@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "最新音乐",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "music-playbar": "/components/musicPlayBar/musicPlayBar"
+  }
+}

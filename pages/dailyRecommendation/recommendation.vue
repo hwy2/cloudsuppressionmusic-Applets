@@ -128,6 +128,7 @@ export default {
 					}
 				},
 				fail(err) {
+					uni.hideLoading();
 					console.log('每日推荐获取失败:' + err);
 				}
 			});

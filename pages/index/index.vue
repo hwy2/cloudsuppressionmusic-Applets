@@ -188,7 +188,7 @@
 					</view>
 					<view class="right">
 						<view>
-							<text v-if="!clickFlag">更多新歌</text>
+							<text v-if="!clickFlag" @click="openLatestMusic">更多新歌</text>
 							<text v-else>更多新碟</text>
 						</view>
 					</view>
@@ -729,6 +729,35 @@ export default {
 				fail(err) {
 					console.log(err);
 
+					uni.showModal({
+						title: '',
+						content: '请登录',
+						success: function(res) {
+							if (res.confirm) {
+								uni.navigateTo({
+									url: '/pages/login/login',
+									animationType: 'pop-in',
+									animationDuration: 200
+								});
+							}
+						}
+					});
+				}
+			});
+		},
+		openLatestMusic:function() {
+			uni.getStorage({
+				key: 'profile',
+				success(res) {
+					uni.navigateTo({
+						url: '/pages/latestMusic/latestMusic',
+						animationType: 'pop-in',
+						animationDuration: 200
+					});
+				},
+				fail(err) {
+					console.log(err);
+			
 					uni.showModal({
 						title: '',
 						content: '请登录',

@@ -11,7 +11,8 @@
     "pages/sheetDetails/sheetDetails",
     "pages/broadcastDetails/broadcastDetails",
     "pages/rankingDetails/rankingDetails",
-    "pages/videoDetails/videoDetails"
+    "pages/videoDetails/videoDetails",
+    "pages/latestMusic/latestMusic"
   ],
   "subPackages": [],
   "window": {
@@ -23,6 +24,5 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "usingComponents": {},
-  "sitemapLocation": "sitemap25.json"
+  "usingComponents": {}
 }

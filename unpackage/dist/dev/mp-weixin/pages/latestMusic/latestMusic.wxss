@@ -1,0 +1,203 @@
+.latestMusic .navbarSorll {
+  width: 100%;
+  padding: 10rpx 20rpx 10rpx;
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #f7f7f7;
+}
+.latestMusic .navbarSorll scroll-view {
+  width: 100%;
+  height: 46rpx;
+  white-space: nowrap;
+}
+.latestMusic .navbarSorll scroll-view view {
+  display: inline-block;
+  width: 120rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #545454;
+  text-align: center;
+  touch-action: pan-x;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.latestMusic .navbarSorll scroll-view view:last-child {
+  margin-right: 0;
+}
+.latestMusic .navbarSorll scroll-view .active {
+  font-size: 31rpx;
+  font-weight: bold;
+  position: relative;
+}
+.latestMusic .navbarSorll scroll-view .active::before {
+  content: "";
+  height: 10rpx;
+  border-radius: 10rpx;
+  width: 50rpx;
+  background-color: rgba(27, 248, 145, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.latestMusic .contentArea {
+  overflow: auto;
+  height: 90vh;
+  padding: 0;
+  box-sizing: border-box;
+}
+.latestMusic .contentArea .top {
+  margin: 0;
+  padding: 0;
+}
+.latestMusic .contentArea .top .banner {
+  width: 750rpx;
+  height: 333rpx;
+}
+.latestMusic .contentArea .bottomContainer {
+  background-color: #fff;
+  display: block;
+}
+.latestMusic .contentArea .bottomContainer .bgc {
+  background-color: #fff;
+  height: 100%;
+  border-top: 3rpx solid #999;
+  touch-action: pan-y;
+  position: relative;
+  z-index: 101;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songsBar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 18rpx 28rpx 18rpx;
+  box-sizing: border-box;
+  height: 6.6vh;
+  -webkit-transform: translateY(-60rpx);
+          transform: translateY(-60rpx);
+  background-color: #ffffff;
+  border-radius: 40rpx;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .left,
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .right {
+  -webkit-box-flex: 5;
+  -webkit-flex: 5;
+          flex: 5;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .left .iconfont,
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .right .iconfont {
+  font-size: 38rpx;
+  color: #242424;
+  margin-right: 18rpx;
+  vertical-align: middle;
+  line-height: 1.4;
+  height: 100%;
+  width: 100%;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .left .iconfont .icoText,
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .right .iconfont .icoText {
+  font-size: 27rpx;
+  color: #242424;
+  vertical-align: inherit;
+  line-height: 1;
+  padding-left: 10rpx;
+  vertical-align: middle;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .left .iconfont .sumber,
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .right .iconfont .sumber {
+  color: #919191;
+  font-size: 24rpx;
+  vertical-align: middle;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songsBar .right {
+  text-align: right;
+}
+.latestMusic .contentArea .bottomContainer .bgc .clear {
+  margin-top: -60rpx;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp {
+  padding: 6rpx 28rpx;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H {
+  width: 694rpx;
+  display: block;
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding-top: 38rpx;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left {
+  -webkit-box-flex: 9.5;
+  -webkit-flex: 9.5;
+          flex: 9.5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .le {
+  -webkit-box-flex: 1.5;
+  -webkit-flex: 1.5;
+          flex: 1.5;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .le .img {
+  height: 74rpx;
+  width: 74rpx;
+  border-radius: 5rpx;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p {
+  width: 420rpx;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p .text1 {
+  font-size: 28rpx;
+  color: #000;
+  font-weight: bold;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p2 {
+  font-size: 22rpx;
+  color: #999;
+  width: 420rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .right {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .right .icon {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .right .icon .iconfont {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  font-size: 40rpx;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H:first-child {
+  padding-top: 0;
+}
+.latestMusic .contentArea .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H:last-child {
+  padding-bottom: 30rpx;
+}
+

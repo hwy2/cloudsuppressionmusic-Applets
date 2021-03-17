@@ -1,0 +1,206 @@
+.latestMusic {
+	.navbarSorll {
+		width: 100%;
+		padding: 10upx 20upx 10upx;
+		overflow: auto;
+		box-sizing: border-box;
+		position: relative;
+		background-color: #f7f7f7;
+
+		scroll-view {
+			width: 100%;
+			height: 46upx;
+			white-space: nowrap;
+			view {
+				display: inline-block;
+				width: 120upx;
+				margin-right: 20upx;
+				font-size: 30upx;
+				line-height: 1.5;
+				color: #545454;
+				text-align: center;
+				touch-action: pan-x;
+				overflow: hidden; //隐藏文字
+				text-overflow: ellipsis; //显示...
+				white-space: nowrap; //不换行
+			}
+			view:last-child {
+				margin-right: 0;
+			}
+			.active {
+				// color: #04f88a;
+				font-size: 31upx;
+				font-weight: bold;
+				position: relative;
+				
+				&::before{
+					content: "";
+					height: 10upx;
+					border-radius: 10upx;
+					width: 50upx;
+					background-color: rgba(27,248,145,0.8);
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+
+	.contentArea {
+		overflow: auto;
+		height: 90vh;
+		padding: 0;
+		box-sizing: border-box;
+		.top {
+			margin: 0;
+			padding: 0;
+			.banner {
+				width: 750upx;
+				height: 333upx;
+			}
+		}
+
+		.bottomContainer {
+			background-color: #fff;
+			display: block;
+			// height: 75vh;
+			.bgc {
+				// transform: translateY(-33upx);
+				background-color: #fff;
+				// border-radius: 33upx;
+				height: 100%;
+				border-top: 3upx solid #999;
+				touch-action: pan-y;
+				position: relative;
+				z-index: 101;
+				.songsBar {
+					display: flex;
+					padding: 18upx 28upx 18upx;
+					box-sizing: border-box;
+					height: 6.6vh;
+					transform: translateY(-60upx);
+					background-color: #ffffff;
+					border-radius: 40upx;
+
+					.left,
+					.right {
+						flex: 5;
+
+						.iconfont {
+							font-size: 38upx;
+							color: #242424;
+							margin-right: 18upx;
+							vertical-align: middle;
+							line-height: 1.4;
+							height: 100%;
+							width: 100%;
+
+							.icoText {
+								font-size: 27upx;
+								color: #242424;
+								vertical-align: inherit;
+								line-height: 1;
+								padding-left: 10rpx;
+								vertical-align: middle;
+							}
+							
+							.sumber{
+								color: #919191;
+								font-size: 24upx;
+								vertical-align: middle;
+							}
+						}
+					}
+
+					.right {
+						text-align: right;
+					}
+				}
+
+				.clear {
+					margin-top: -60upx;
+				}
+
+				.songWarp {
+					padding: 6upx 28upx;
+					// height: 65.5vh;
+
+					.scroll-view_H {
+						// height: 65.5vh;
+						width: 694upx;
+						display: block;
+						box-sizing: border-box;
+						padding-bottom: 30upx;
+
+						.scroll-view-item_H {
+							display: flex;
+							padding-top: 38upx;
+
+							.left {
+								flex: 9.5;
+								display: flex;
+
+								.le {
+									flex: 1.5;
+									.img {
+										height: 74upx;
+										width: 74upx;
+										border-radius: 5upx;
+									}
+								}
+
+								.center {
+									flex: 8;
+
+									.p {
+										width: 420upx;
+										display: block;
+										overflow: hidden; //隐藏文字
+										text-overflow: ellipsis; //显示...
+										white-space: nowrap; //不换行
+										line-height: 1.4;
+										.text1 {
+											font-size: 28upx;
+											color: #000;
+											font-weight: bold;
+										}
+									}
+
+									.p2 {
+										font-size: 22upx;
+										color: #999;
+										width: 420upx;
+										overflow: hidden; //隐藏文字
+										text-overflow: ellipsis; //显示...
+										white-space: nowrap; //不换行
+									}
+								}
+							}
+							.right {
+								flex: 2;
+
+								.icon {
+									display: flex;
+
+									.iconfont {
+										flex: 2;
+										font-size: 40upx;
+									}
+								}
+							}
+						}
+						.scroll-view-item_H:first-child {
+							padding-top: 0;
+						}
+
+						.scroll-view-item_H:last-child {
+							padding-bottom: 30upx;
+						}
+					}
+				}
+			}
+		}
+	}
+}

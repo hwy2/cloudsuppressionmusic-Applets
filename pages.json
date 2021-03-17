@@ -94,7 +94,16 @@
 			}
 
 		}
-	],
+	    ,{
+            "path" : "pages/latestMusic/latestMusic",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "最新音乐",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

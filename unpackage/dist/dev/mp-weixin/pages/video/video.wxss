@@ -28,15 +28,27 @@
   margin-right: 0;
 }
 .videoList .navbarSorll scroll-view .active {
-  color: #04f88a;
   font-size: 31rpx;
   font-weight: bold;
+  position: relative;
+}
+.videoList .navbarSorll scroll-view .active::before {
+  content: "";
+  height: 10rpx;
+  border-radius: 10rpx;
+  width: 50rpx;
+  background-color: rgba(27, 248, 145, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
 }
 .videoList .list {
   background-color: #ffffff;
   overflow: auto;
   height: 90vh;
-  padding: 20rpx 0 0;
+  padding: 0;
   box-sizing: border-box;
 }
 .videoList .list hr-pull-load {

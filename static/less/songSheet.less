@@ -29,9 +29,22 @@
 				margin-right: 0;
 			}
 			.active {
-				color: #04f88a;
+				// color: #04f88a;
 				font-size: 31upx;
 				font-weight: bold;
+				position: relative;
+				
+				&::before{
+					content: "";
+					height: 10upx;
+					border-radius: 10upx;
+					width: 50upx;
+					background-color: rgba(27,248,145,0.8);
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
 			}
 		}
 
@@ -90,7 +103,7 @@
 							height: 220upx;
 							display: block;
 							margin: 0 auto;
-							border-radius: 20upx;
+							border-radius: 20upx 20upx 0 0;
 							overflow: hidden;
 						}
 

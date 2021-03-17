@@ -1,8 +1,9 @@
 .rankingList {
 	height: 86vh;
 	overflow: auto;
-	padding-bottom: 150upx;
-	background-color: #f8f8f8;
+	padding-bottom: 120upx;
+	background-color: #f7f7f7;
+	padding-top: 20upx;
 
 	// 榜单推荐
 	.listRecommendation,
@@ -13,7 +14,8 @@
 		width: 98%;
 		border-radius: 20upx;
 		background-color: #fff;
-		margin: 0 auto;
+		margin: 0 auto 20upx;
+		box-shadow: 10upx 10upx 20upx #f0f0f0;
 		.top {
 			padding: 15upx 0;
 
@@ -105,18 +107,25 @@
 
 		scroll-view {
 			padding: 0 32upx;
-			height: 720upx;
+			height: auto;
 			box-sizing: border-box;
 			.scroll-item {
 				width: 100%;
 				height: 180upx;
 				float: left;
 				display: flex;
+				border-radius: 10upx;
+				background-color: #ffffff;
+				margin: 0 0 15upx;
+				padding: 20upx 0;
 
 				.left {
 					flex: 2;
 					position: relative;
-
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					padding-left: 10upx;
 					image {
 						width: 165upx;
 						height: 165upx;
