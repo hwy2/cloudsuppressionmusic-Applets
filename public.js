@@ -140,7 +140,11 @@ Vue.prototype.nextSong = function(number, songlist) {
 	if (songlist.length > 1 && number < songlist.length - 1) {
 		this.$store.commit("setserialNumber", number + 1);
 		if (!songlist[number + 1].picUrl) {
-			songlist[number + 1]["picUrl"] = songlist[number + 1].al.picUrl;
+			if(songlist[number + 1].al){
+				songlist[number + 1]["picUrl"] = songlist[number + 1].al.picUrl;
+			}else if(songlist[number + 1].album){
+				songlist[number + 1]["picUrl"] = songlist[number + 1].album.picUrl;
+			}
 		}
 		this.getplayMusic(songlist[number + 1].id ? songlist[number + 1].id : songlist[number + 1].resourceId, songlist[
 			number + 1]);
@@ -197,7 +201,11 @@ Vue.prototype.playAudio = function() {
 	} else {
 		bgAudioMannager.src = this.$store.getters.getsongPlayUrl;
 	}
+}
 
+// 跳转到指定位置
+Vue.prototype.jumpSeek = function(time){
+	bgAudioMannager.seek(time/1000)
 }
 
 // 暂停

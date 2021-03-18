@@ -26,7 +26,7 @@
 					<i class="iconfont icongengduo2"></i>
 				</view>
 				<view class="progress">
-					<dc-slider :value="sliderValue" max="100"></dc-slider>
+					<dc-slider :value="sliderValue" max="100" @changing="changing" @changed="changed"></dc-slider>
 					<text class="start">{{ songCurrentTime | formatDateTime(this) }}</text>
 					<text class="end">{{ songDuration | formatDateTime(this) }}</text>
 				</view>
@@ -241,6 +241,19 @@ export default {
 		},
 		showLyricFun: function() {
 			this.showLyric ? this.$store.commit('setshowLyric', false) : this.$store.commit('setshowLyric', true);
+		},
+		changing: function(e) {
+			console.log('----changing----');
+			console.log(e);
+		},
+		changed: function(e) {
+			console.log('----changend----');
+			console.log(e);
+			
+			this.$store.commit("setsongCurrentTime", e.value/100*this.songDuration);
+			this.jumpSeek(e.value/100*this.songDuration);
+			this.lyricsCurTime = (e.value/100*this.songDuration/1000).toFixed(0);
+			console.log((e.value/100*this.songDuration/1000).toFixed(0))
 		}
 	},
 	watch: {
@@ -282,6 +295,8 @@ export default {
 			this.lyricsCurTime = (this.songCurrentTime / 1000).toFixed(0);
 			console.log('歌词进度：', this.lyricsCurTime);
 		}
+		
+		this.getCurrentTime();
 	}
 };
 </script>

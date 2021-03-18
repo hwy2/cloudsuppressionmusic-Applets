@@ -215,7 +215,8 @@ export default {
 			this.moveLock = true;
 			let m = sdilderPos.touchE;
 			let page_x = m.pageX;
-			let Pos_v = ((page_x) / sliderWidth) * 100;
+			let Pos_v = ((page_x-sliderLeft) / sliderWidth) * 100;
+			// let Pos_v = ((page_x) / sliderWidth) * 100;//原先代码
 			let val = Math.round(Pos_v);
 			if (val > 100) {
 				this.defVal = 100;

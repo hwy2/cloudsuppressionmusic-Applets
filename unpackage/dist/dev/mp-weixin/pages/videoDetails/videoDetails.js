@@ -498,7 +498,7 @@ var components
 try {
   components = {
     hrPullLoad: function() {
-      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 169))
+      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 176))
     }
   }
 } catch (e) {

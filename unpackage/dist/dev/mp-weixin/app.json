@@ -24,5 +24,6 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "usingComponents": {}
+  "usingComponents": {},
+  "sitemapLocation": "sitemap63.json"
 }

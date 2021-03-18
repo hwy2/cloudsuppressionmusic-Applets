@@ -191,11 +191,12 @@ export default {
 		
 		getSelect:function(index, name){
 			this.dailySongs=[];
+			this.imgSrc = this.category[index].imgSrc;
 			this.category.forEach(item => {
 				item['activity'] = false;
 			});
 			this.category[index].activity = true;
-			this.imgSrc = this.category[index].imgSrc;
+	
 			if(name=="推荐"){
 				this.getPersonalized(this.cookie);
 			}else{

@@ -80,7 +80,7 @@
   -webkit-transform: translateY(-60rpx);
           transform: translateY(-60rpx);
   background-color: #ffffff;
-  border-radius: 40rpx;
+  border-radius: 40rpx 40rpx 0 0;
 }
 .latestMusic .contentArea .bottomContainer .bgc .songsBar .left,
 .latestMusic .contentArea .bottomContainer .bgc .songsBar .right {
