@@ -94,10 +94,10 @@ var components
 try {
   components = {
     uniGrid: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 125))
+      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 132))
     },
     uniGridItem: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 132))
+      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 139))
     }
   }
 } catch (e) {
@@ -367,7 +367,7 @@ __webpack_require__(/*! @/static/less/rankingList.less */ 50); //
 //
 //
 //
-var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid/uni-grid.vue */ 125));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGridItem = function uniGridItem() {__webpack_require__.e(/*! require.ensure | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid-item/uni-grid-item.vue */ 132));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar, uniGrid: uniGrid, uniGridItem: uniGridItem }, data: function data() {return { allList: [], //全部榜单
+var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid/uni-grid.vue */ 132));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGridItem = function uniGridItem() {__webpack_require__.e(/*! require.ensure | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid-item/uni-grid-item.vue */ 139));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar, uniGrid: uniGrid, uniGridItem: uniGridItem }, data: function data() {return { allList: [], //全部榜单
       listRecommendation: [], //榜单推荐
       officialList: [], //官方榜
       featureList: [], //特色榜
@@ -377,13 +377,13 @@ var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.en
       songListId: '' //歌单id
     };}, computed: { isShow: { //播放状态
       get: function get() {return this.$store.state.isShow;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
-        this.$store.commit('setisShow', v);} } }, methods: { getToplist: function getToplist() {var that = this;uni.showLoading({ title: '加载中...', mask: true });uni.request({ url: 'https://wx.3dcw.cn/toplist/detail', method: 'GET', success: function success(res) {console.log(res.data.list);res.data.list.forEach(function (item) {//官方榜
+        this.$store.commit('setisShow', v);} } }, methods: { getToplist: function getToplist() {var that = this;uni.showLoading({ title: '加载中...', mask: true });uni.request({ url: 'https://wx.3dcw.cn/toplist/detail', method: 'GET', success: function success(res) {console.log(res.data);res.data.list.forEach(function (item) {//官方榜
             if (item.ToplistType) {that.officialList.push(item);} // 推荐榜
-            if (item.name === '硬地原创音乐榜') {that.listRecommendation.push(item);}if (item.name === '云音乐电音榜') {that.listRecommendation.push(item);}if (item.name === '云音乐国电榜') {that.listRecommendation.push(item);} // 特色榜
+            if (item.name === '硬地原创音乐榜') {that.listRecommendation.push(item);}if (item.name === 'iTunes榜') {that.listRecommendation.push(item);}if (item.name === '云音乐欧美热歌榜') {that.listRecommendation.push(item);} // 特色榜
             if (item.name === '抖音排行榜') {that.featureList.push(item);}if (item.name === '云音乐古典音乐榜') {that.featureList.push(item);}if (item.name === '云音乐达人榜') {that.featureList.push(item);} // 全球榜
-            if (item.name === '美国Billboard周榜') {that.globalList.push(item);}if (item.name === 'UK排行榜周榜') {that.globalList.push(item);}if (item.name === 'iTunes榜') {that.globalList.push(item);}if (item.name === '日本Oricon数字单曲周榜') {that.globalList.push(item);}if (item.name === '法国 NRJ Vos Hits 周榜') {that.globalList.push(item);}if (item.name === '云音乐欧美新歌榜') {that.globalList.push(item);} // 地区榜
+            if (item.name === '美国Billboard榜') {that.globalList.push(item);}if (item.name === 'UK排行榜周榜') {that.globalList.push(item);}if (item.name === 'iTunes榜') {that.globalList.push(item);}if (item.name === '日本Oricon榜') {that.globalList.push(item);}if (item.name === '法国 NRJ Vos Hits 周榜') {that.globalList.push(item);}if (item.name === '云音乐欧美新歌榜') {that.globalList.push(item);} // 地区榜
             if (item.name === '云音乐欧美热歌榜') {that.regionalList.push(item);}if (item.name === '云音乐日语榜') {that.regionalList.push(item);}if (item.name === '云音乐韩语榜') {that.regionalList.push(item);} // 曲风榜
-            if (item.name === '云音乐电音榜') {that.musicStyleList.push(item);}if (item.name === '云音乐ACG音乐榜') {that.musicStyleList.push(item);}if (item.name === '云音乐民谣榜') {that.musicStyleList.push(item);}if (item.name === '云音乐说唱榜') {that.musicStyleList.push(item);}if (item.name === '云音乐摇滚榜') {that.musicStyleList.push(item);}if (item.name === '云音乐古风榜') {that.musicStyleList.push(item);}});
+            if (item.name === '云音乐电音榜') {that.musicStyleList.push(item);}if (item.name === '云音乐ACG榜') {that.musicStyleList.push(item);}if (item.name === '云音乐民谣榜') {that.musicStyleList.push(item);}if (item.name === '云音乐说唱榜') {that.musicStyleList.push(item);}if (item.name === '云音乐摇滚榜') {that.musicStyleList.push(item);}if (item.name === '云音乐古风榜') {that.musicStyleList.push(item);}});
           uni.hideLoading();
         },
         fail: function fail(err) {

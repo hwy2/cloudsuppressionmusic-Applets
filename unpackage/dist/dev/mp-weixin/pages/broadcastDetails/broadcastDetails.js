@@ -94,10 +94,10 @@ var components
 try {
   components = {
     uniNavBar: function() {
-      return __webpack_require__.e(/*! import() | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-nav-bar/uni-nav-bar.vue */ 110))
+      return __webpack_require__.e(/*! import() | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-nav-bar/uni-nav-bar.vue */ 117))
     },
     bingLyric: function() {
-      return __webpack_require__.e(/*! import() | components/bing-lyric/bing-lyric */ "components/bing-lyric/bing-lyric").then(__webpack_require__.bind(null, /*! @/components/bing-lyric/bing-lyric.vue */ 198))
+      return __webpack_require__.e(/*! import() | components/bing-lyric/bing-lyric */ "components/bing-lyric/bing-lyric").then(__webpack_require__.bind(null, /*! @/components/bing-lyric/bing-lyric.vue */ 205))
     }
   }
 } catch (e) {
@@ -258,7 +258,7 @@ __webpack_require__(/*! @/static/less/broadcastDetails.less */ 87); //
 //
 //
 //
-var DcSlider = function DcSlider() {__webpack_require__.e(/*! require.ensure | components/ly-drag-slider/dc-slider */ "components/ly-drag-slider/dc-slider").then((function () {return resolve(__webpack_require__(/*! @/components/ly-drag-slider/dc-slider.vue */ 205));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var bingLyric = function bingLyric() {__webpack_require__.e(/*! require.ensure | components/bing-lyric/bing-lyric */ "components/bing-lyric/bing-lyric").then((function () {return resolve(__webpack_require__(/*! @/components/bing-lyric/bing-lyric.vue */ 198));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { DcSlider: DcSlider, bingLyric: bingLyric }, data: function data() {return { headerPadding: '', percentage: 0, currentTimes: 0, durations: 0, currentLyric: [], currentLineNum: 0, playingLyric: '', sliderValue: '', //进度条当前进度
+var DcSlider = function DcSlider() {__webpack_require__.e(/*! require.ensure | components/ly-drag-slider/dc-slider */ "components/ly-drag-slider/dc-slider").then((function () {return resolve(__webpack_require__(/*! @/components/ly-drag-slider/dc-slider.vue */ 212));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var bingLyric = function bingLyric() {__webpack_require__.e(/*! require.ensure | components/bing-lyric/bing-lyric */ "components/bing-lyric/bing-lyric").then((function () {return resolve(__webpack_require__(/*! @/components/bing-lyric/bing-lyric.vue */ 205));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { DcSlider: DcSlider, bingLyric: bingLyric }, data: function data() {return { headerPadding: '', percentage: 0, currentTimes: 0, durations: 0, currentLyric: [], currentLineNum: 0, playingLyric: '', sliderValue: '', //进度条当前进度
       cuAreaStyle: { width: '100%' }, lyricsCurTime: 0 //当前歌词进度
     };}, onLoad: function onLoad() {this.headerPadding = uni.getSystemInfoSync()['statusBarHeight'] + 'px';}, filters: { //拦截器
     formatDateTime: function formatDateTime(data, that) {return that.formatMilliseconds(data);} }, computed: { isPlay: { //播放状态

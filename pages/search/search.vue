@@ -18,7 +18,7 @@
 				></zy-search>
 			</view>
 
-			<view class="resultBlock" v-if="!showHot">
+			<view class="resultBlock" v-if="!showHot" @touchstart="start" @touchend="end">
 				<!-- 搜索分类 -->
 				<view class="classificationList" v-show="resultForT">
 					<view class="navbarSorll">
@@ -128,25 +128,10 @@
 								<view class="warp" @click="openVideoDatails(item.vid)">
 									<view class="image">
 										<image :src="item.coverUrl" :alt="item.data.title" ref="imageError" mode="aspectFill" />
-										<!-- <image :src="item.data.creator.avatarUrl" :alt="item.data.creator.nickname" mode="aspectFill" /> -->
-
-										<!-- <text>{{ item.data.durationms | formatMilliseconds }}</text> -->
 									</view>
 									<view class="description">
 										<text class="text">{{ item.title }}</text>
 									</view>
-									<!-- <view class="items">
-										<view class="p">
-											<i class=" iconfont iconicon--">
-												<text>{{ item.data.playTime | retainDoubleDigit }}</text>
-											</i>
-										</view>
-										<view class="p">
-											<i class=" iconfont icondianzan">
-												<text>{{ item.data.praisedCount }}</text>
-											</i>
-										</view>
-									</view> -->
 								</view>
 							</uni-grid-item>
 						</uni-grid>
@@ -225,7 +210,12 @@ export default {
 			subscriberVisible: false, //用户显示
 			containerPadding: '',
 			keywords: '', //搜索词
-			page: 1 //页数
+			page: 1, //页数
+			startData: {
+				//滑动偏移量
+				clientX: 0,
+				clientY: 0
+			}
 		};
 	},
 	computed: {
@@ -294,16 +284,16 @@ export default {
 		},
 		getSearchResult: function(keyword, typeId) {
 			let that = this;
-			(this.singleVisible = false),
-				(this.playlistsVisible = false),
-				(this.videosVisible = false),
-				(this.singerVisible = false),
-				(this.albumVisible = false),
-				(this.subscriberVisible = false),
-				uni.showLoading({
-					mask: true,
-					title: '加载中...'
-				});
+			this.singleVisible = false;
+			this.playlistsVisible = false;
+			this.videosVisible = false;
+			this.singerVisible = false;
+			this.albumVisible = false;
+			this.subscriberVisible = false;
+			uni.showLoading({
+				mask: true,
+				title: '加载中...'
+			});
 			uni.request({
 				url: 'https://wx.3dcw.cn/search',
 				data: {
@@ -313,57 +303,64 @@ export default {
 				},
 				success: res => {
 					that.resultForT = true;
-					if (typeId == 1) {
-						this.singleVisible = true;
-						this.playlistsVisible = false;
-						this.videosVisible = false;
-						this.singerVisible = false;
-						this.albumVisible = false;
-						this.subscriberVisible = false;
-						this.singleList = res.data.result.songs;
-					} else if (typeId == 1000) {
-						this.singleVisible = false;
-						this.playlistsVisible = true;
-						this.videosVisible = false;
-						this.singerVisible = false;
-						this.albumVisible = false;
-						this.subscriberVisible = false;
-						this.playlistsList = res.data.result.playlists;
-					} else if (typeId == 1014) {
-						this.singleVisible = false;
-						this.playlistsVisible = false;
-						this.videosVisible = true;
-						this.singerVisible = false;
-						this.albumVisible = false;
-						this.subscriberVisible = false;
-						this.videosList = res.data.result.videos;
-						console.log(this.videosList )
-					} else if (typeId == 100) {
-						this.singleVisible = false;
-						this.playlistsVisible = false;
-						this.videosVisible = false;
-						this.singerVisible = true;
-						this.albumVisible = false;
-						this.subscriberVisible = false;
-						this.singerList = res.data.result.artists;
-					} else if (typeId == 10) {
-						this.singleVisible = false;
-						this.playlistsVisible = false;
-						this.videosVisible = false;
-						this.singerVisible = false;
-						this.albumVisible = true;
-						this.subscriberVisible = false;
-						this.albumList = res.data.result.albums;
-					} else if (typeId == 1002) {
-						this.singleVisible = false;
-						this.playlistsVisible = false;
-						this.videosVisible = false;
-						this.singerVisible = false;
-						this.albumVisible = false;
-						this.subscriberVisible = true;
-						this.subscriberList = res.data.result.userprofiles;
-					} else {
-						return;
+
+					switch (typeId) {
+						case 1:
+							this.singleVisible = true;
+							this.playlistsVisible = false;
+							this.videosVisible = false;
+							this.singerVisible = false;
+							this.albumVisible = false;
+							this.subscriberVisible = false;
+							this.singleList = res.data.result.songs;
+							break;
+						case 1000:
+							this.singleVisible = false;
+							this.playlistsVisible = true;
+							this.videosVisible = false;
+							this.singerVisible = false;
+							this.albumVisible = false;
+							this.subscriberVisible = false;
+							this.playlistsList = res.data.result.playlists;
+							break;
+						case 1014:
+							this.singleVisible = false;
+							this.playlistsVisible = false;
+							this.videosVisible = true;
+							this.singerVisible = false;
+							this.albumVisible = false;
+							this.subscriberVisible = false;
+							this.videosList = res.data.result.videos;
+							break;
+						case 100:
+							this.singleVisible = false;
+							this.playlistsVisible = false;
+							this.videosVisible = false;
+							this.singerVisible = true;
+							this.albumVisible = false;
+							this.subscriberVisible = false;
+							this.singerList = res.data.result.artists;
+							break;
+						case 10:
+							this.singleVisible = false;
+							this.playlistsVisible = false;
+							this.videosVisible = false;
+							this.singerVisible = false;
+							this.albumVisible = true;
+							this.subscriberVisible = false;
+							this.albumList = res.data.result.albums;
+							break;
+						case 1002:
+							this.singleVisible = false;
+							this.playlistsVisible = false;
+							this.videosVisible = false;
+							this.singerVisible = false;
+							this.albumVisible = false;
+							this.subscriberVisible = true;
+							this.subscriberList = res.data.result.userprofiles;
+							break;
+						default:
+							break;
 					}
 					uni.hideLoading();
 				},
@@ -512,8 +509,8 @@ export default {
 				}
 			});
 		},
-		openVideoDatails:function(id){
-			let that =this;
+		openVideoDatails: function(id) {
+			let that = this;
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
@@ -531,7 +528,7 @@ export default {
 				},
 				fail(err) {
 					console.log(err);
-			
+
 					uni.showModal({
 						title: '',
 						content: '请登录',
@@ -547,6 +544,50 @@ export default {
 					});
 				}
 			});
+		},
+		start(e) {
+			this.startData.clientX = e.changedTouches[0].clientX;
+			this.startData.clientY = e.changedTouches[0].clientY;
+		},
+		end: function(e) {
+			// console.log(e)
+			const subX = e.changedTouches[0].clientX - this.startData.clientX;
+			const subY = e.changedTouches[0].clientY - this.startData.clientY;
+			if (subX > 50) {
+				console.log('右滑');
+				let i = 0;
+				while (i < this.searchCategory.length) {
+					if (this.searchCategory[i].active && i <= this.searchCategory.length - 1 && i - 1 >= 0) {
+						this.searchCategory[i].active = false;
+						this.searchCategory[i - 1].active = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i - 1);
+						});
+						this.scrollLeft = '';
+						this.selectCategoryFun(this.searchCategory[i - 1], i - 1);
+						break;
+					}
+					i++;
+				}
+			} else if (subX < -50) {
+				console.log('左滑');
+				let i = 0;
+				while (i < this.searchCategory.length) {
+					if (this.searchCategory[i].active && i <= this.searchCategory.length - 1 && i + 1 <= this.searchCategory.length - 1) {
+						this.searchCategory[i].active = false;
+						this.searchCategory[i + 1].active = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i + 1);
+						});
+						this.scrollLeft = '';
+						this.selectCategoryFun(this.searchCategory[i + 1], i + 1);
+						break;
+					}
+					i++;
+				}
+			} else {
+				console.log('无效');
+			}
 		}
 	},
 	onLoad() {

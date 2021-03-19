@@ -321,7 +321,7 @@ __webpack_require__(/*! @/static/less/me.less */ 64); //
 //
 //
 //
-var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { userDetail: [], //用户信息
+var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { userDetail: [], //用户信息
       userPlaylist: [], //用户歌单
       rendering: false, //渲染完成
       createSongLists: [], //创建歌单

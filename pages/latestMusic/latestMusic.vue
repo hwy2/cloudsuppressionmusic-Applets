@@ -10,26 +10,25 @@
 		</view>
 
 		<!-- 内容区 -->
-		<view class="contentArea">
-			<view class="top">
-				<image class="banner" :src="imgSrc" mode="scaleToFill"></image>
-			</view>
+		<view class="contentArea" @touchstart="start" @touchend="end">
+			<view class="top"><image class="banner" :src="imgSrc" mode="scaleToFill"></image></view>
 			<!-- song列表 -->
 			<view class="bottomContainer">
 				<view class="bgc">
 					<!-- song 工具栏 -->
 					<view class="songsBar">
 						<view class="left">
-							<view class="iconfont iconbofang-" @click="playMusicAll()"><text class="icoText">播放全部</text><text class="sumber">({{dailySongs.length}})</text></view>
+							<view class="iconfont iconbofang-" @click="playMusicAll()">
+								<text class="icoText">播放全部</text>
+								<text class="sumber">({{ dailySongs.length }})</text>
+							</view>
 						</view>
 						<!-- <view class="right">
 							<view class="iconfont icongengduo1"><text class="icoText">多 选</text></view>
 						</view> -->
 					</view>
-					
-					<view class="clear">
-						
-					</view>
+
+					<view class="clear"></view>
 
 					<!-- song 详情 -->
 					<view class="songWarp">
@@ -50,7 +49,7 @@
 								</view>
 								<view class="left" @click="playMusic(item)" v-else>
 									<view class="le"><image :src="item.album.picUrl" mode="aspectFit" class="img" /></view>
-								
+
 									<view class="center">
 										<view class="p">
 											<text class="text1">{{ item.name }}</text>
@@ -82,7 +81,7 @@
 
 <script>
 import '@/static/less/latestMusic.less';
-import musicPlaybar from"@/components/musicPlayBar/musicPlayBar.vue";
+import musicPlaybar from '@/components/musicPlayBar/musicPlayBar.vue';
 export default {
 	components: { musicPlaybar },
 	data() {
@@ -92,38 +91,41 @@ export default {
 					activity: true,
 					id: 0,
 					name: '推荐',
-					imgSrc:"https://www.3dcw.cn/image/d2a.jpg"
+					imgSrc: 'https://www.3dcw.cn/image/d2a.jpg'
 				},
 				{
 					activity: false,
 					id: 7,
 					name: '华语',
-					imgSrc:"https://www.3dcw.cn/image/d28.jpg"
+					imgSrc: 'https://www.3dcw.cn/image/d28.jpg'
 				},
 				{
 					activity: false,
 					id: 96,
 					name: '欧美',
-					imgSrc:"https://www.3dcw.cn/image/d27.jpg"
+					imgSrc: 'https://www.3dcw.cn/image/d27.jpg'
 				},
 				{
 					activity: false,
 					id: 8,
 					name: '日本',
-					imgSrc:"https://www.3dcw.cn/image/d29.jpg"
+					imgSrc: 'https://www.3dcw.cn/image/d29.jpg'
 				},
 				{
 					activity: false,
 					id: 16,
 					name: '韩国',
-					imgSrc:"https://www.3dcw.cn/image/d2_.jpg"
+					imgSrc: 'https://www.3dcw.cn/image/d2_.jpg'
 				}
 			],
-			dailySongs:[],
-			cookie:'',
-			imgSrc:"https://www.3dcw.cn/image/d2a.jpg",
-			
-			
+			dailySongs: [],
+			cookie: '',
+			imgSrc: 'https://www.3dcw.cn/image/d2a.jpg',
+			startData: {
+				//滑动偏移量
+				clientX: 0,
+				clientY: 0
+			}
 		};
 	},
 	computed: {
@@ -139,96 +141,136 @@ export default {
 		}
 	},
 	methods: {
-		
-		getPersonalized:function(cookie){
-			let that =this;
+		getPersonalized: function(cookie) {
+			let that = this;
 			uni.showLoading({
 				title: '加载中...',
 				mask: true
 			});
 			uni.request({
-				url:"https://wx.3dcw.cn/personalized/newsong",
-				method:"GET",
-				data:{
-					cookie:cookie,
-					limit:50
+				url: 'https://wx.3dcw.cn/personalized/newsong',
+				method: 'GET',
+				data: {
+					cookie: cookie,
+					limit: 50
 				},
-				success: (res) => {
-					console.log(res)
-					that.dailySongs = res.data.result
+				success: res => {
+					console.log(res);
+					that.dailySongs = res.data.result;
 					uni.hideLoading();
 				},
-				fail: (err) => {
-					console.log(err)
+				fail: err => {
+					console.log(err);
 					uni.hideLoading();
 				}
-			})
+			});
 		},
-		getTopSong:function(id){
-			let that =this;
+		getTopSong: function(id) {
+			let that = this;
 			uni.showLoading({
 				title: '加载中...',
 				mask: true
 			});
 			uni.request({
-				url:"https://wx.3dcw.cn/top/song",
-				method:"GET",
-				data:{
-					cookie:that.cookie,
-					type:id
+				url: 'https://wx.3dcw.cn/top/song',
+				method: 'GET',
+				data: {
+					cookie: that.cookie,
+					type: id
 				},
-				success: (res) => {
-					console.log(res)
-					that.dailySongs = res.data.data
+				success: res => {
+					console.log(res);
+					that.dailySongs = res.data.data;
 					uni.hideLoading();
 				},
-				fail: (err) => {
-					console.log(err)
+				fail: err => {
+					console.log(err);
 					uni.hideLoading();
 				}
-			})
+			});
 		},
-		
-		getSelect:function(index, name){
-			this.dailySongs=[];
+
+		getSelect: function(index, name) {
+			this.dailySongs = [];
 			this.imgSrc = this.category[index].imgSrc;
 			this.category.forEach(item => {
 				item['activity'] = false;
 			});
 			this.category[index].activity = true;
-	
-			if(name=="推荐"){
+
+			if (name == '推荐') {
 				this.getPersonalized(this.cookie);
-			}else{
+			} else {
 				this.getTopSong(this.category[index].id);
 			}
-			
 		},
-		playMusicAll:function(){
+		playMusicAll: function() {
 			uni.showLoading({
-				mask:true,
-				title:"加载中"
-			})
+				mask: true,
+				title: '加载中'
+			});
 			this.$store.commit('setplaylist', this.dailySongs);
 			this.$store.commit('setserialNumber', 0);
 			let songlist = this.dailySongs;
 			this.playMusic(songlist[0]);
 		},
-		
+
 		playMusic: function(songInfo) {
-			if(this.category[0].activity){
+			if (this.category[0].activity) {
 				songInfo['picUrl'] = songInfo.picUrl;
-			}else{
+			} else {
 				songInfo['picUrl'] = songInfo.album.picUrl;
 			}
-			
+
 			this.getplayMusic(songInfo.id, songInfo);
 		},
-		
-		
+		start(e) {
+			this.startData.clientX = e.changedTouches[0].clientX;
+			this.startData.clientY = e.changedTouches[0].clientY;
+		},
+		end: function(e) {
+			// console.log(e)
+			const subX = e.changedTouches[0].clientX - this.startData.clientX;
+			const subY = e.changedTouches[0].clientY - this.startData.clientY;
+			if (subX > 50) {
+				console.log('右滑');
+				let i=0;
+				while(i<this.category.length){
+					if (this.category[i].activity && i <= this.category.length - 1 && i - 1 >= 0) {
+						this.category[i].activity = false;
+						this.category[i - 1].activity = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i - 1);
+						});
+						this.scrollLeft = '';
+						this.getSelect(i - 1, this.category[i - 1].name);
+						break;
+					}
+					i++;
+				}
+			} else if (subX < -50) {
+				console.log('左滑');
+				let i=0;
+				while(i<this.category.length){
+					if (this.category[i].activity && i <= this.category.length - 1 && i + 1 <= this.category.length - 1) {
+						this.category[i].activity = false;
+						this.category[i + 1].activity = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i + 1);
+						});
+						this.scrollLeft = '';
+						this.getSelect(i + 1, this.category[i + 1].name);
+						break;
+					}
+					i++;
+				}
+			} else {
+				console.log('无效');
+			}
+		}
 	},
 	created() {
-		let that =this;
+		let that = this;
 		uni.getStorage({
 			key: 'cookie',
 			success: function(res) {
@@ -241,7 +283,7 @@ export default {
 					icon: 'none',
 					title: '未登录，无法查看'
 				});
-		
+
 				setTimeout(function() {
 					uni.hideToast();
 				}, 3000);

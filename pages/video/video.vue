@@ -191,7 +191,6 @@ export default {
 				}
 			});
 		},
-
 		getVideoList: function() {
 			let that = this;
 			uni.showLoading({
@@ -219,11 +218,10 @@ export default {
 			this.getExampleData();
 		},
 		getExampleData: function() {
-			let params = {},
-				that = this;
+			let params = {},that=this;
 			this.page++;
-			params['id'] = that.videoGroupId;
-			params['cookie'] = that.cookie;
+			params['id'] = this.videoGroupId;
+			params['cookie'] = this.cookie;
 			params['offset'] = (this.page - 1) * 21;
 			params['t'] = Date.parse(new Date());
 
@@ -238,8 +236,8 @@ export default {
 				},
 				fail: function(err) {
 					console.log(err);
-					this.$refs.hrPullLoad.reSet();
-					this.bottomTips = '';
+					that.$refs.hrPullLoad.reSet();
+					that.bottomTips = '';
 				}
 			});
 		},
@@ -301,54 +299,43 @@ export default {
 			// console.log(e)
 			const subX = e.changedTouches[0].clientX - this.startData.clientX;
 			const subY = e.changedTouches[0].clientY - this.startData.clientY;
-			let that = this;
-			if (subY > 50 || subY < -50) {
-				console.log('上下滑');
-			} else {
-				if (subX > 50) {
-					console.log('右滑');
-					try {
-						that.videoGroupList.forEach(function(item, index, array) {
-							if (item.active) {
-								if (index <= that.videoGroupList.length - 1 && (index - 1) >= 0) {
-									array[index].active = false;
-									array[index - 1].active = true;
-									that.$nextTick(function() {
-										that.scrollLeft = 'text' + (index - 1);
-										console.log(that.scrollLeft);
-									});
-									that.scrollLeft = '';
-									that.setVideoGroupID(array[index - 1].id, index - 1);
-								}
-
-								throw new Error('跳出循环');
-							}
+			
+			if (subX > 50) {
+				console.log('右滑');
+				let i=0;
+				while(i<this.videoGroupList.length){
+					if (this.videoGroupList[i].active && i <= this.videoGroupList.length - 1 && i - 1 >= 0) {
+						this.videoGroupList[i].active = false;
+						this.videoGroupList[i - 1].active = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i - 1);
 						});
-					} catch (e) {}
-				} else if (subX < -50) {
-					console.log('左滑');
-					try {
-						that.videoGroupList.forEach(function(item, index, array) {
-							if (item.active) {
-								if (index <= that.videoGroupList.length - 1) {
-									array[index].active = false;
-									array[index + 1].active = true;
-									that.$nextTick(function() {
-										that.scrollLeft = 'text' + (index + 1);
-										console.log(that.scrollLeft);
-									});
-									that.scrollLeft = '';
-									that.setVideoGroupID(array[index + 1].id, index + 1);
-								}
-
-								throw new Error('跳出循环');
-							}
-						});
-					} catch (e) {}
-				} else {
-					console.log('无效');
+						this.scrollLeft = '';
+						this.setVideoGroupID( this.videoGroupList[i - 1].id,i - 1);
+						break;
+					}
+					i++;
 				}
+			} else if (subX < -50) {
+				console.log('左滑');
+				let i=0;
+				while(i<this.videoGroupList.length){
+					if (this.videoGroupList[i].active && i <= this.videoGroupList.length - 1 && i + 1 <= this.videoGroupList.length - 1) {
+						this.videoGroupList[i].active = false;
+						this.videoGroupList[i + 1].active = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i + 1);
+						});
+						this.scrollLeft = '';
+						this.setVideoGroupID(this.videoGroupList[i +1].id,i + 1);
+						break;
+					}
+					i++;
+				}
+			} else {
+				console.log('无效');
 			}
+						
 		}
 	},
 	created() {

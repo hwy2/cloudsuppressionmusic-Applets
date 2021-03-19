@@ -11,7 +11,7 @@
 		</view>
 
 		<!-- 内容区 -->
-		<view class="sheet" @touchmove.stop.prevent>
+		<view class="sheet" @touchmove.stop.prevent @touchstart="start" @touchend="end">
 			<hr-pull-load
 				@refresh="refresh"
 				@loadMore="loadMore"
@@ -86,7 +86,12 @@ export default {
 			songSheetType: '', //歌单类别
 			navbarWidth: '100%', //歌单类别导航长度
 			bottomTips: '',
-			scrollLeft: ''
+			scrollLeft: '',
+			startData: {
+				//滑动偏移量
+				clientX: 0,
+				clientY: 0
+			}
 		};
 	},
 	onLoad(options) {
@@ -160,6 +165,10 @@ export default {
 			});
 		},
 		gethighquality: function(index, category) {
+			uni.showLoading({
+				mask: true,
+				title: '加载中...'
+			});
 			this.highqualityList = [];
 			this.page = 1; //重新初始化
 			//获取精品歌单
@@ -167,10 +176,9 @@ export default {
 				obj.activity = false;
 			});
 			this.categoryHot[index].activity = true;
-
+			this.category = category;
 			let params = {},
 				that = this;
-			this.category = category;
 			params['limit'] = 21;
 			if (category != '' && category != '推荐') {
 				params['cat'] = category;
@@ -294,8 +302,8 @@ export default {
 				},
 				fail: function(err) {
 					console.log(err);
-					this.$refs.hrPullLoad.reSet();
-					this.bottomTips = '';
+					that.$refs.hrPullLoad.reSet();
+					that.bottomTips = '';
 				}
 			});
 		},
@@ -310,18 +318,16 @@ export default {
 				mask: true,
 				title: '加载中...'
 			});
-			let checkTag = 0;
-			let selectedTag = 0;
-			let that = this;
+			let checkTag = 0,
+				i = 0;
 			//检查已有标签是否有当前选择的标签
-			that.categoryHot.forEach(function(item, index) {
-				if (item.name === name) {
-					checkTag = index;
+			while (i < this.categoryHot.length) {
+				if (this.categoryHot[i].name === name) {
+					checkTag = i;
+					break;
 				}
-				if (item.activity) {
-					selectedTag = index;
-				}
-			});
+				i++;
+			}
 
 			if (!checkTag) {
 				//添加标签
@@ -337,7 +343,6 @@ export default {
 				this.$nextTick(function() {
 					this.scrollLeft = 'text' + checkTag;
 				});
-
 				this.scrollLeft = '';
 			} else {
 				this.$nextTick(function() {
@@ -386,6 +391,50 @@ export default {
 					});
 				}
 			});
+		},
+		start(e) {
+			this.startData.clientX = e.changedTouches[0].clientX;
+			this.startData.clientY = e.changedTouches[0].clientY;
+		},
+		end: function(e) {
+			// console.log(e)
+			const subX = e.changedTouches[0].clientX - this.startData.clientX;
+			const subY = e.changedTouches[0].clientY - this.startData.clientY;
+			if (subX > 50) {
+				console.log('右滑');
+				let i = 0;
+				while (i < this.categoryHot.length) {
+					if (this.categoryHot[i].activity && i <= this.categoryHot.length - 1 && i - 1 >= 0) {
+						this.categoryHot[i].activity = false;
+						this.categoryHot[i - 1].activity = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i - 1);
+						});
+						this.scrollLeft = '';
+						this.gethighquality(i - 1, this.categoryHot[i - 1].name);
+						break;
+					}
+					i++;
+				}
+			} else if (subX < -50) {
+				console.log('左滑');
+				let i = 0;
+				while (i < this.categoryHot.length) {
+					if (this.categoryHot[i].activity && i <= this.categoryHot.length - 1 && i + 1 <= this.categoryHot.length - 1) {
+						this.categoryHot[i].activity = false;
+						this.categoryHot[i + 1].activity = true;
+						this.$nextTick(function() {
+							this.scrollLeft = 'text' + (i + 1);
+						});
+						this.scrollLeft = '';
+						this.gethighquality(i + 1, this.categoryHot[i + 1].name);
+						break;
+					}
+					i++;
+				}
+			} else {
+				console.log('无效');
+			}
 		}
 	},
 	created() {

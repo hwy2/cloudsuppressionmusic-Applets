@@ -147,7 +147,7 @@ export default {
 				url: 'https://wx.3dcw.cn/toplist/detail',
 				method: 'GET',
 				success: function(res) {
-					console.log(res.data.list)
+					console.log(res.data)
 					res.data.list.forEach(item => {
 						//官方榜
 						if (item.ToplistType) {
@@ -158,10 +158,10 @@ export default {
 						if (item.name === '硬地原创音乐榜') {
 							that.listRecommendation.push(item);
 						}
-						if (item.name === '云音乐电音榜') {
+						if (item.name === 'iTunes榜') {
 							that.listRecommendation.push(item);
 						}
-						if (item.name === '云音乐国电榜') {
+						if (item.name === '云音乐欧美热歌榜') {
 							that.listRecommendation.push(item);
 						}
 
@@ -177,7 +177,7 @@ export default {
 						}
 
 						// 全球榜
-						if (item.name === '美国Billboard周榜') {
+						if (item.name === '美国Billboard榜') {
 							that.globalList.push(item);
 						}
 						if (item.name === 'UK排行榜周榜') {
@@ -186,7 +186,7 @@ export default {
 						if (item.name === 'iTunes榜') {
 							that.globalList.push(item);
 						}
-						if (item.name === '日本Oricon数字单曲周榜') {
+						if (item.name === '日本Oricon榜') {
 							that.globalList.push(item);
 						}
 						if (item.name === '法国 NRJ Vos Hits 周榜') {
@@ -211,7 +211,7 @@ export default {
 						if (item.name === '云音乐电音榜') {
 							that.musicStyleList.push(item);
 						}
-						if (item.name === '云音乐ACG音乐榜') {
+						if (item.name === '云音乐ACG榜') {
 							that.musicStyleList.push(item);
 						}
 						if (item.name === '云音乐民谣榜') {

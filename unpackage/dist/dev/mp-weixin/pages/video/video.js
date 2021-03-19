@@ -94,13 +94,13 @@ var components
 try {
   components = {
     hrPullLoad: function() {
-      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 183))
     },
     uniGrid: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 125))
+      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 132))
     },
     uniGridItem: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 132))
+      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 139))
     }
   }
 } catch (e) {
@@ -269,7 +269,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-__webpack_require__(/*! @/static/less/video.less */ 71);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+__webpack_require__(/*! @/static/less/video.less */ 71);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 {
   components: { musicPlaybar: musicPlaybar },
@@ -376,7 +376,6 @@ __webpack_require__(/*! @/static/less/video.less */ 71);function _toConsumableAr
         } });
 
     },
-
     getVideoList: function getVideoList() {
       var that = this;
       uni.showLoading({
@@ -404,11 +403,10 @@ __webpack_require__(/*! @/static/less/video.less */ 71);function _toConsumableAr
       this.getExampleData();
     },
     getExampleData: function getExampleData() {
-      var params = {},
-      that = this;
+      var params = {},that = this;
       this.page++;
-      params['id'] = that.videoGroupId;
-      params['cookie'] = that.cookie;
+      params['id'] = this.videoGroupId;
+      params['cookie'] = this.cookie;
       params['offset'] = (this.page - 1) * 21;
       params['t'] = Date.parse(new Date());
 
@@ -423,8 +421,8 @@ __webpack_require__(/*! @/static/less/video.less */ 71);function _toConsumableAr
         },
         fail: function fail(err) {
           console.log(err);
-          this.$refs.hrPullLoad.reSet();
-          this.bottomTips = '';
+          that.$refs.hrPullLoad.reSet();
+          that.bottomTips = '';
         } });
 
     },
@@ -482,58 +480,47 @@ __webpack_require__(/*! @/static/less/video.less */ 71);function _toConsumableAr
       this.startData.clientX = e.changedTouches[0].clientX;
       this.startData.clientY = e.changedTouches[0].clientY;
     },
-    end: function end(e) {
+    end: function end(e) {var _this = this;
       // console.log(e)
       var subX = e.changedTouches[0].clientX - this.startData.clientX;
       var subY = e.changedTouches[0].clientY - this.startData.clientY;
-      var that = this;
-      if (subY > 50 || subY < -50) {
-        console.log('上下滑');
-      } else {
-        if (subX > 50) {
+
+      if (subX > 50) {(function () {
           console.log('右滑');
-          try {
-            that.videoGroupList.forEach(function (item, index, array) {
-              if (item.active) {
-                if (index <= that.videoGroupList.length - 1 && index - 1 >= 0) {
-                  array[index].active = false;
-                  array[index - 1].active = true;
-                  that.$nextTick(function () {
-                    that.scrollLeft = 'text' + (index - 1);
-                    console.log(that.scrollLeft);
-                  });
-                  that.scrollLeft = '';
-                  that.setVideoGroupID(array[index - 1].id, index - 1);
-                }
-
-                throw new Error('跳出循环');
-              }
-            });
-          } catch (e) {}
-        } else if (subX < -50) {
+          var i = 0;
+          while (i < _this.videoGroupList.length) {
+            if (_this.videoGroupList[i].active && i <= _this.videoGroupList.length - 1 && i - 1 >= 0) {
+              _this.videoGroupList[i].active = false;
+              _this.videoGroupList[i - 1].active = true;
+              _this.$nextTick(function () {
+                this.scrollLeft = 'text' + (i - 1);
+              });
+              _this.scrollLeft = '';
+              _this.setVideoGroupID(_this.videoGroupList[i - 1].id, i - 1);
+              break;
+            }
+            i++;
+          }})();
+      } else if (subX < -50) {(function () {
           console.log('左滑');
-          try {
-            that.videoGroupList.forEach(function (item, index, array) {
-              if (item.active) {
-                if (index <= that.videoGroupList.length - 1) {
-                  array[index].active = false;
-                  array[index + 1].active = true;
-                  that.$nextTick(function () {
-                    that.scrollLeft = 'text' + (index + 1);
-                    console.log(that.scrollLeft);
-                  });
-                  that.scrollLeft = '';
-                  that.setVideoGroupID(array[index + 1].id, index + 1);
-                }
-
-                throw new Error('跳出循环');
-              }
-            });
-          } catch (e) {}
-        } else {
-          console.log('无效');
-        }
+          var i = 0;
+          while (i < _this.videoGroupList.length) {
+            if (_this.videoGroupList[i].active && i <= _this.videoGroupList.length - 1 && i + 1 <= _this.videoGroupList.length - 1) {
+              _this.videoGroupList[i].active = false;
+              _this.videoGroupList[i + 1].active = true;
+              _this.$nextTick(function () {
+                this.scrollLeft = 'text' + (i + 1);
+              });
+              _this.scrollLeft = '';
+              _this.setVideoGroupID(_this.videoGroupList[i + 1].id, i + 1);
+              break;
+            }
+            i++;
+          }})();
+      } else {
+        console.log('无效');
       }
+
     } },
 
   created: function created() {

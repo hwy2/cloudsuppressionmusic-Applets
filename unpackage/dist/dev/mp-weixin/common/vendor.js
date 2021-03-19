@@ -1982,6 +1982,19 @@ store;exports.default = _default;
 
 /***/ }),
 
+/***/ 116:
+/*!*********************************************************************!*\
+  !*** G:/vue/Applets/cloudsuppressionmusic/static/less/newDisc.less ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+    if(false) { var cssReload; }
+  
+
+/***/ }),
+
 /***/ 12:
 /*!********************************************!*\
   !*** ./node_modules/vuex/dist/vuex.esm.js ***!
@@ -3095,7 +3108,7 @@ var index = {
 
 /***/ }),
 
-/***/ 122:
+/***/ 129:
 /*!**************************************************************************!*\
   !*** G:/vue/Applets/cloudsuppressionmusic/components/uni-icons/icons.js ***!
   \**************************************************************************/
@@ -3542,7 +3555,7 @@ _vue.default.prototype.getAudioUrl = function () {
 
 /***/ }),
 
-/***/ 165:
+/***/ 172:
 /*!**************************************************************************!*\
   !*** G:/vue/Applets/cloudsuppressionmusic/components/uni-popup/popup.js ***!
   \**************************************************************************/
@@ -3550,7 +3563,7 @@ _vue.default.prototype.getAudioUrl = function () {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 166));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _message = _interopRequireDefault(__webpack_require__(/*! ./message.js */ 173));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 // 定义 type 类型:弹出类型：top/bottom/center
 var config = {
   // 顶部弹出
@@ -3577,7 +3590,7 @@ var config = {
 
 /***/ }),
 
-/***/ 166:
+/***/ 173:
 /*!****************************************************************************!*\
   !*** G:/vue/Applets/cloudsuppressionmusic/components/uni-popup/message.js ***!
   \****************************************************************************/
@@ -3608,7 +3621,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 188:
+/***/ 195:
 /*!**********************************************************************************!*\
   !*** G:/vue/Applets/cloudsuppressionmusic/components/s-pull-scroll/back-top.png ***!
   \**********************************************************************************/
@@ -9670,19 +9683,6 @@ internalMixin(Vue);
 /*!*******************************************************************!*\
   !*** G:/vue/Applets/cloudsuppressionmusic/static/less/index.less ***!
   \*******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-    if(false) { var cssReload; }
-  
-
-/***/ }),
-
-/***/ 267:
-/*!*********************************************************************!*\
-  !*** G:/vue/Applets/cloudsuppressionmusic/static/less/newDisc.less ***!
-  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

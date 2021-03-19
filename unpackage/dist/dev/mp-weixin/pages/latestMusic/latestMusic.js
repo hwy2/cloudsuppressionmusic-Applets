@@ -210,7 +210,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 __webpack_require__(/*! @/static/less/latestMusic.less */ 109); //
 //
 //
@@ -292,17 +291,19 @@ __webpack_require__(/*! @/static/less/latestMusic.less */ 109); //
 //
 //
 //
-//
-var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { category: [{ activity: true, id: 0, name: '推荐', imgSrc: "https://www.3dcw.cn/image/d2a.jpg" }, { activity: false, id: 7, name: '华语', imgSrc: "https://www.3dcw.cn/image/d28.jpg" }, { activity: false, id: 96, name: '欧美', imgSrc: "https://www.3dcw.cn/image/d27.jpg" }, { activity: false, id: 8, name: '日本', imgSrc: "https://www.3dcw.cn/image/d29.jpg" }, { activity: false, id: 16, name: '韩国', imgSrc: "https://www.3dcw.cn/image/d2_.jpg" }], dailySongs: [], cookie: '', imgSrc: "https://www.3dcw.cn/image/d2a.jpg" };}, computed: { isShow: { //播放状态
+var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { category: [{ activity: true, id: 0, name: '推荐', imgSrc: 'https://www.3dcw.cn/image/d2a.jpg' }, { activity: false, id: 7, name: '华语', imgSrc: 'https://www.3dcw.cn/image/d28.jpg' }, { activity: false, id: 96, name: '欧美', imgSrc: 'https://www.3dcw.cn/image/d27.jpg' }, { activity: false, id: 8, name: '日本', imgSrc: 'https://www.3dcw.cn/image/d29.jpg' }, { activity: false, id: 16, name: '韩国', imgSrc: 'https://www.3dcw.cn/image/d2_.jpg' }], dailySongs: [], cookie: '', imgSrc: 'https://www.3dcw.cn/image/d2a.jpg', startData: { //滑动偏移量
+        clientX: 0, clientY: 0 } };}, computed: { isShow: { //播放状态
       get: function get() {return this.$store.state.isShow;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
-        this.$store.commit('setisShow', v);} } }, methods: { getPersonalized: function getPersonalized(cookie) {var that = this;uni.showLoading({ title: '加载中...', mask: true });uni.request({ url: "https://wx.3dcw.cn/personalized/newsong", method: "GET", data: { cookie: cookie, limit: 50 }, success: function success(res) {console.log(res);that.dailySongs = res.data.result;uni.hideLoading();}, fail: function fail(err) {console.log(err);uni.hideLoading();} });}, getTopSong: function getTopSong(id) {var that = this;
+        this.$store.commit('setisShow', v);} } }, methods: { getPersonalized: function getPersonalized(cookie) {var that = this;uni.showLoading({ title: '加载中...', mask: true });uni.request({ url: 'https://wx.3dcw.cn/personalized/newsong', method: 'GET', data: { cookie: cookie, limit: 50 }, success: function success(res) {console.log(res);that.dailySongs = res.data.result;uni.hideLoading();}, fail: function fail(err) {console.log(err);uni.hideLoading();} });},
+    getTopSong: function getTopSong(id) {
+      var that = this;
       uni.showLoading({
         title: '加载中...',
         mask: true });
 
       uni.request({
-        url: "https://wx.3dcw.cn/top/song",
-        method: "GET",
+        url: 'https://wx.3dcw.cn/top/song',
+        method: 'GET',
         data: {
           cookie: that.cookie,
           type: id },
@@ -327,17 +328,16 @@ var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.en
       });
       this.category[index].activity = true;
 
-      if (name == "推荐") {
+      if (name == '推荐') {
         this.getPersonalized(this.cookie);
       } else {
         this.getTopSong(this.category[index].id);
       }
-
     },
     playMusicAll: function playMusicAll() {
       uni.showLoading({
         mask: true,
-        title: "加载中" });
+        title: '加载中' });
 
       this.$store.commit('setplaylist', this.dailySongs);
       this.$store.commit('setserialNumber', 0);
@@ -353,9 +353,51 @@ var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.en
       }
 
       this.getplayMusic(songInfo.id, songInfo);
+    },
+    start: function start(e) {
+      this.startData.clientX = e.changedTouches[0].clientX;
+      this.startData.clientY = e.changedTouches[0].clientY;
+    },
+    end: function end(e) {var _this = this;
+      // console.log(e)
+      var subX = e.changedTouches[0].clientX - this.startData.clientX;
+      var subY = e.changedTouches[0].clientY - this.startData.clientY;
+      if (subX > 50) {(function () {
+          console.log('右滑');
+          var i = 0;
+          while (i < _this.category.length) {
+            if (_this.category[i].activity && i <= _this.category.length - 1 && i - 1 >= 0) {
+              _this.category[i].activity = false;
+              _this.category[i - 1].activity = true;
+              _this.$nextTick(function () {
+                this.scrollLeft = 'text' + (i - 1);
+              });
+              _this.scrollLeft = '';
+              _this.getSelect(i - 1, _this.category[i - 1].name);
+              break;
+            }
+            i++;
+          }})();
+      } else if (subX < -50) {(function () {
+          console.log('左滑');
+          var i = 0;
+          while (i < _this.category.length) {
+            if (_this.category[i].activity && i <= _this.category.length - 1 && i + 1 <= _this.category.length - 1) {
+              _this.category[i].activity = false;
+              _this.category[i + 1].activity = true;
+              _this.$nextTick(function () {
+                this.scrollLeft = 'text' + (i + 1);
+              });
+              _this.scrollLeft = '';
+              _this.getSelect(i + 1, _this.category[i + 1].name);
+              break;
+            }
+            i++;
+          }})();
+      } else {
+        console.log('无效');
+      }
     } },
-
-
 
   created: function created() {
     var that = this;

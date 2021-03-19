@@ -94,19 +94,19 @@ var components
 try {
   components = {
     uniNavBar: function() {
-      return __webpack_require__.e(/*! import() | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-nav-bar/uni-nav-bar.vue */ 110))
+      return __webpack_require__.e(/*! import() | components/uni-nav-bar/uni-nav-bar */ "components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/components/uni-nav-bar/uni-nav-bar.vue */ 117))
     },
     zySearch: function() {
-      return __webpack_require__.e(/*! import() | components/zy-search/zy-search */ "components/zy-search/zy-search").then(__webpack_require__.bind(null, /*! @/components/zy-search/zy-search.vue */ 191))
+      return __webpack_require__.e(/*! import() | components/zy-search/zy-search */ "components/zy-search/zy-search").then(__webpack_require__.bind(null, /*! @/components/zy-search/zy-search.vue */ 198))
     },
     hrPullLoad: function() {
-      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 183))
     },
     uniGrid: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 125))
+      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 132))
     },
     uniGridItem: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 132))
+      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 139))
     }
   }
 } catch (e) {
@@ -311,22 +311,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-__webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var zySearch = function zySearch() {__webpack_require__.e(/*! require.ensure | components/zy-search/zy-search */ "components/zy-search/zy-search").then((function () {return resolve(__webpack_require__(/*! ../../components/zy-search/zy-search.vue */ 191));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+__webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var zySearch = function zySearch() {__webpack_require__.e(/*! require.ensure | components/zy-search/zy-search */ "components/zy-search/zy-search").then((function () {return resolve(__webpack_require__(/*! ../../components/zy-search/zy-search.vue */ 198));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 {
@@ -390,8 +375,13 @@ __webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableA
       subscriberVisible: false, //用户显示
       containerPadding: '',
       keywords: '', //搜索词
-      page: 1 //页数
-    };
+      page: 1, //页数
+      startData: {
+        //滑动偏移量
+        clientX: 0,
+        clientY: 0 } };
+
+
   },
   computed: {
     isShow: {
@@ -459,12 +449,12 @@ __webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableA
     },
     getSearchResult: function getSearchResult(keyword, typeId) {var _this2 = this;
       var that = this;
-      this.singleVisible = false,
-      this.playlistsVisible = false,
-      this.videosVisible = false,
-      this.singerVisible = false,
-      this.albumVisible = false,
-      this.subscriberVisible = false,
+      this.singleVisible = false;
+      this.playlistsVisible = false;
+      this.videosVisible = false;
+      this.singerVisible = false;
+      this.albumVisible = false;
+      this.subscriberVisible = false;
       uni.showLoading({
         mask: true,
         title: '加载中...' });
@@ -478,58 +468,65 @@ __webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableA
 
         success: function success(res) {
           that.resultForT = true;
-          if (typeId == 1) {
-            _this2.singleVisible = true;
-            _this2.playlistsVisible = false;
-            _this2.videosVisible = false;
-            _this2.singerVisible = false;
-            _this2.albumVisible = false;
-            _this2.subscriberVisible = false;
-            _this2.singleList = res.data.result.songs;
-          } else if (typeId == 1000) {
-            _this2.singleVisible = false;
-            _this2.playlistsVisible = true;
-            _this2.videosVisible = false;
-            _this2.singerVisible = false;
-            _this2.albumVisible = false;
-            _this2.subscriberVisible = false;
-            _this2.playlistsList = res.data.result.playlists;
-          } else if (typeId == 1014) {
-            _this2.singleVisible = false;
-            _this2.playlistsVisible = false;
-            _this2.videosVisible = true;
-            _this2.singerVisible = false;
-            _this2.albumVisible = false;
-            _this2.subscriberVisible = false;
-            _this2.videosList = res.data.result.videos;
-            console.log(_this2.videosList);
-          } else if (typeId == 100) {
-            _this2.singleVisible = false;
-            _this2.playlistsVisible = false;
-            _this2.videosVisible = false;
-            _this2.singerVisible = true;
-            _this2.albumVisible = false;
-            _this2.subscriberVisible = false;
-            _this2.singerList = res.data.result.artists;
-          } else if (typeId == 10) {
-            _this2.singleVisible = false;
-            _this2.playlistsVisible = false;
-            _this2.videosVisible = false;
-            _this2.singerVisible = false;
-            _this2.albumVisible = true;
-            _this2.subscriberVisible = false;
-            _this2.albumList = res.data.result.albums;
-          } else if (typeId == 1002) {
-            _this2.singleVisible = false;
-            _this2.playlistsVisible = false;
-            _this2.videosVisible = false;
-            _this2.singerVisible = false;
-            _this2.albumVisible = false;
-            _this2.subscriberVisible = true;
-            _this2.subscriberList = res.data.result.userprofiles;
-          } else {
-            return;
-          }
+
+          switch (typeId) {
+            case 1:
+              _this2.singleVisible = true;
+              _this2.playlistsVisible = false;
+              _this2.videosVisible = false;
+              _this2.singerVisible = false;
+              _this2.albumVisible = false;
+              _this2.subscriberVisible = false;
+              _this2.singleList = res.data.result.songs;
+              break;
+            case 1000:
+              _this2.singleVisible = false;
+              _this2.playlistsVisible = true;
+              _this2.videosVisible = false;
+              _this2.singerVisible = false;
+              _this2.albumVisible = false;
+              _this2.subscriberVisible = false;
+              _this2.playlistsList = res.data.result.playlists;
+              break;
+            case 1014:
+              _this2.singleVisible = false;
+              _this2.playlistsVisible = false;
+              _this2.videosVisible = true;
+              _this2.singerVisible = false;
+              _this2.albumVisible = false;
+              _this2.subscriberVisible = false;
+              _this2.videosList = res.data.result.videos;
+              break;
+            case 100:
+              _this2.singleVisible = false;
+              _this2.playlistsVisible = false;
+              _this2.videosVisible = false;
+              _this2.singerVisible = true;
+              _this2.albumVisible = false;
+              _this2.subscriberVisible = false;
+              _this2.singerList = res.data.result.artists;
+              break;
+            case 10:
+              _this2.singleVisible = false;
+              _this2.playlistsVisible = false;
+              _this2.videosVisible = false;
+              _this2.singerVisible = false;
+              _this2.albumVisible = true;
+              _this2.subscriberVisible = false;
+              _this2.albumList = res.data.result.albums;
+              break;
+            case 1002:
+              _this2.singleVisible = false;
+              _this2.playlistsVisible = false;
+              _this2.videosVisible = false;
+              _this2.singerVisible = false;
+              _this2.albumVisible = false;
+              _this2.subscriberVisible = true;
+              _this2.subscriberList = res.data.result.userprofiles;
+              break;
+            default:
+              break;}
+
           uni.hideLoading();
         },
         fail: function fail(err) {
@@ -712,6 +709,50 @@ __webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableA
 
         } });
 
+    },
+    start: function start(e) {
+      this.startData.clientX = e.changedTouches[0].clientX;
+      this.startData.clientY = e.changedTouches[0].clientY;
+    },
+    end: function end(e) {var _this3 = this;
+      // console.log(e)
+      var subX = e.changedTouches[0].clientX - this.startData.clientX;
+      var subY = e.changedTouches[0].clientY - this.startData.clientY;
+      if (subX > 50) {(function () {
+          console.log('右滑');
+          var i = 0;
+          while (i < _this3.searchCategory.length) {
+            if (_this3.searchCategory[i].active && i <= _this3.searchCategory.length - 1 && i - 1 >= 0) {
+              _this3.searchCategory[i].active = false;
+              _this3.searchCategory[i - 1].active = true;
+              _this3.$nextTick(function () {
+                this.scrollLeft = 'text' + (i - 1);
+              });
+              _this3.scrollLeft = '';
+              _this3.selectCategoryFun(_this3.searchCategory[i - 1], i - 1);
+              break;
+            }
+            i++;
+          }})();
+      } else if (subX < -50) {(function () {
+          console.log('左滑');
+          var i = 0;
+          while (i < _this3.searchCategory.length) {
+            if (_this3.searchCategory[i].active && i <= _this3.searchCategory.length - 1 && i + 1 <= _this3.searchCategory.length - 1) {
+              _this3.searchCategory[i].active = false;
+              _this3.searchCategory[i + 1].active = true;
+              _this3.$nextTick(function () {
+                this.scrollLeft = 'text' + (i + 1);
+              });
+              _this3.scrollLeft = '';
+              _this3.selectCategoryFun(_this3.searchCategory[i + 1], i + 1);
+              break;
+            }
+            i++;
+          }})();
+      } else {
+        console.log('无效');
+      }
     } },
 
   onLoad: function onLoad() {

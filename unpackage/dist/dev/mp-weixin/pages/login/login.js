@@ -94,10 +94,10 @@ var components
 try {
   components = {
     uniPopup: function() {
-      return Promise.all(/*! import() | components/uni-popup/uni-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-popup/uni-popup")]).then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 160))
+      return Promise.all(/*! import() | components/uni-popup/uni-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-popup/uni-popup")]).then(__webpack_require__.bind(null, /*! @/components/uni-popup/uni-popup.vue */ 167))
     },
     uniPopupMessage: function() {
-      return __webpack_require__.e(/*! import() | components/uni-popup-message/uni-popup-message */ "components/uni-popup-message/uni-popup-message").then(__webpack_require__.bind(null, /*! @/components/uni-popup-message/uni-popup-message.vue */ 169))
+      return __webpack_require__.e(/*! import() | components/uni-popup-message/uni-popup-message */ "components/uni-popup-message/uni-popup-message").then(__webpack_require__.bind(null, /*! @/components/uni-popup-message/uni-popup-message.vue */ 176))
     }
   }
 } catch (e) {
@@ -231,7 +231,7 @@ __webpack_require__(/*! ../../static/less/login.less */ 29); //
 //
 //
 //
-var uniPopup = function uniPopup() {Promise.all(/*! require.ensure | components/uni-popup/uni-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-popup/uni-popup")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-popup/uni-popup.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniPopupMessage = function uniPopupMessage() {__webpack_require__.e(/*! require.ensure | components/uni-popup-message/uni-popup-message */ "components/uni-popup-message/uni-popup-message").then((function () {return resolve(__webpack_require__(/*! @/components/uni-popup-message/uni-popup-message.vue */ 169));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { uniPopup: uniPopup, uniPopupMessage: uniPopupMessage }, data: function data() {return { userPhone: '', //手机号
+var uniPopup = function uniPopup() {Promise.all(/*! require.ensure | components/uni-popup/uni-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-popup/uni-popup")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-popup/uni-popup.vue */ 167));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniPopupMessage = function uniPopupMessage() {__webpack_require__.e(/*! require.ensure | components/uni-popup-message/uni-popup-message */ "components/uni-popup-message/uni-popup-message").then((function () {return resolve(__webpack_require__(/*! @/components/uni-popup-message/uni-popup-message.vue */ 176));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { uniPopup: uniPopup, uniPopupMessage: uniPopupMessage }, data: function data() {return { userPhone: '', //手机号
       userPassword: '', //密码
       loginmessage: '' //提示内容
     };}, methods: { login: function login() {var _this = this; //登录验证

@@ -94,16 +94,16 @@ var components
 try {
   components = {
     hrPullLoad: function() {
-      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 176))
+      return __webpack_require__.e(/*! import() | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then(__webpack_require__.bind(null, /*! @/components/hr-pull-load/hr-pull-load.vue */ 183))
     },
     uniGrid: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 125))
+      return __webpack_require__.e(/*! import() | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then(__webpack_require__.bind(null, /*! @/components/uni-grid/uni-grid.vue */ 132))
     },
     uniGridItem: function() {
-      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 132))
+      return __webpack_require__.e(/*! import() | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then(__webpack_require__.bind(null, /*! @/components/uni-grid-item/uni-grid-item.vue */ 139))
     },
     uniDrawer: function() {
-      return __webpack_require__.e(/*! import() | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then(__webpack_require__.bind(null, /*! @/components/uni-drawer/uni-drawer.vue */ 139))
+      return __webpack_require__.e(/*! import() | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then(__webpack_require__.bind(null, /*! @/components/uni-drawer/uni-drawer.vue */ 146))
     }
   }
 } catch (e) {
@@ -240,7 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-__webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var sPullScroll = function sPullScroll() {Promise.all(/*! require.ensure | components/s-pull-scroll/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/s-pull-scroll/index")]).then((function () {return resolve(__webpack_require__(/*! @/components/s-pull-scroll/index.vue */ 183));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid/uni-grid.vue */ 125));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGridItem = function uniGridItem() {__webpack_require__.e(/*! require.ensure | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid-item/uni-grid-item.vue */ 132));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var hrPullLoad = function hrPullLoad() {__webpack_require__.e(/*! require.ensure | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then((function () {return resolve(__webpack_require__(/*! @/components/hr-pull-load/hr-pull-load.vue */ 176));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 153));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniDrawer = function uniDrawer() {__webpack_require__.e(/*! require.ensure | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then((function () {return resolve(__webpack_require__(/*! @/components/uni-drawer/uni-drawer.vue */ 139));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+__webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var sPullScroll = function sPullScroll() {Promise.all(/*! require.ensure | components/s-pull-scroll/index */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/s-pull-scroll/index")]).then((function () {return resolve(__webpack_require__(/*! @/components/s-pull-scroll/index.vue */ 190));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | components/uni-grid/uni-grid */ "components/uni-grid/uni-grid").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid/uni-grid.vue */ 132));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniGridItem = function uniGridItem() {__webpack_require__.e(/*! require.ensure | components/uni-grid-item/uni-grid-item */ "components/uni-grid-item/uni-grid-item").then((function () {return resolve(__webpack_require__(/*! @/components/uni-grid-item/uni-grid-item.vue */ 139));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var hrPullLoad = function hrPullLoad() {__webpack_require__.e(/*! require.ensure | components/hr-pull-load/hr-pull-load */ "components/hr-pull-load/hr-pull-load").then((function () {return resolve(__webpack_require__(/*! @/components/hr-pull-load/hr-pull-load.vue */ 183));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniDrawer = function uniDrawer() {__webpack_require__.e(/*! require.ensure | components/uni-drawer/uni-drawer */ "components/uni-drawer/uni-drawer").then((function () {return resolve(__webpack_require__(/*! @/components/uni-drawer/uni-drawer.vue */ 146));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -267,7 +267,12 @@ __webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumab
       songSheetType: '', //歌单类别
       navbarWidth: '100%', //歌单类别导航长度
       bottomTips: '',
-      scrollLeft: '' };
+      scrollLeft: '',
+      startData: {
+        //滑动偏移量
+        clientX: 0,
+        clientY: 0 } };
+
 
   },
   onLoad: function onLoad(options) {
@@ -341,6 +346,10 @@ __webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumab
 
     },
     gethighquality: function gethighquality(index, category) {
+      uni.showLoading({
+        mask: true,
+        title: '加载中...' });
+
       this.highqualityList = [];
       this.page = 1; //重新初始化
       //获取精品歌单
@@ -348,10 +357,9 @@ __webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumab
         obj.activity = false;
       });
       this.categoryHot[index].activity = true;
-
+      this.category = category;
       var params = {},
       that = this;
-      this.category = category;
       params['limit'] = 21;
       if (category != '' && category != '推荐') {
         params['cat'] = category;
@@ -475,8 +483,8 @@ __webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumab
         },
         fail: function fail(err) {
           console.log(err);
-          this.$refs.hrPullLoad.reSet();
-          this.bottomTips = '';
+          that.$refs.hrPullLoad.reSet();
+          that.bottomTips = '';
         } });
 
     },
@@ -491,18 +499,16 @@ __webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumab
         mask: true,
         title: '加载中...' });
 
-      var checkTag = 0;
-      var selectedTag = 0;
-      var that = this;
+      var checkTag = 0,
+      i = 0;
       //检查已有标签是否有当前选择的标签
-      that.categoryHot.forEach(function (item, index) {
-        if (item.name === name) {
-          checkTag = index;
+      while (i < this.categoryHot.length) {
+        if (this.categoryHot[i].name === name) {
+          checkTag = i;
+          break;
         }
-        if (item.activity) {
-          selectedTag = index;
-        }
-      });
+        i++;
+      }
 
       if (!checkTag) {
         //添加标签
@@ -518,7 +524,6 @@ __webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumab
         this.$nextTick(function () {
           this.scrollLeft = 'text' + checkTag;
         });
-
         this.scrollLeft = '';
       } else {
         this.$nextTick(function () {
@@ -567,6 +572,50 @@ __webpack_require__(/*! @/static/less/songSheet.less */ 43);function _toConsumab
 
         } });
 
+    },
+    start: function start(e) {
+      this.startData.clientX = e.changedTouches[0].clientX;
+      this.startData.clientY = e.changedTouches[0].clientY;
+    },
+    end: function end(e) {var _this = this;
+      // console.log(e)
+      var subX = e.changedTouches[0].clientX - this.startData.clientX;
+      var subY = e.changedTouches[0].clientY - this.startData.clientY;
+      if (subX > 50) {(function () {
+          console.log('右滑');
+          var i = 0;
+          while (i < _this.categoryHot.length) {
+            if (_this.categoryHot[i].activity && i <= _this.categoryHot.length - 1 && i - 1 >= 0) {
+              _this.categoryHot[i].activity = false;
+              _this.categoryHot[i - 1].activity = true;
+              _this.$nextTick(function () {
+                this.scrollLeft = 'text' + (i - 1);
+              });
+              _this.scrollLeft = '';
+              _this.gethighquality(i - 1, _this.categoryHot[i - 1].name);
+              break;
+            }
+            i++;
+          }})();
+      } else if (subX < -50) {(function () {
+          console.log('左滑');
+          var i = 0;
+          while (i < _this.categoryHot.length) {
+            if (_this.categoryHot[i].activity && i <= _this.categoryHot.length - 1 && i + 1 <= _this.categoryHot.length - 1) {
+              _this.categoryHot[i].activity = false;
+              _this.categoryHot[i + 1].activity = true;
+              _this.$nextTick(function () {
+                this.scrollLeft = 'text' + (i + 1);
+              });
+              _this.scrollLeft = '';
+              _this.gethighquality(i + 1, _this.categoryHot[i + 1].name);
+              break;
+            }
+            i++;
+          }})();
+      } else {
+        console.log('无效');
+      }
     } },
 
   created: function created() {
