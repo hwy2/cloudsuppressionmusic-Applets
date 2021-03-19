@@ -6,7 +6,7 @@
 				<view class="top"><text>榜单推荐</text></view>
 
 				<uni-grid :column="3" :show-border="false" :square="false">
-					<uni-grid-item v-for="(item, index) in listRecommendation" :key="index" >
+					<uni-grid-item v-for="(item, index) in listRecommendation" :key="index">
 						<view class="image" @click="oprankingDetails(item.id)">
 							<image :src="item.coverImgUrl" mode=""></image>
 							<text>{{ item.updateFrequency }}</text>
@@ -19,11 +19,11 @@
 			</view>
 
 			<!-- 官方榜 -->
-			<view class="officialList" v-if=" officialList != '' && officialList.length > 0">
+			<view class="officialList" v-if="officialList != '' && officialList.length > 0">
 				<view class="top"><text>官方榜</text></view>
 				<scroll-view scroll-y="true">
 					<view class="scroll-item" v-for="(item, index) in officialList" :key="index" @click="oprankingDetails(item.id)">
-						<view class="left"  >
+						<view class="left">
 							<image :src="item.coverImgUrl" mode=""></image>
 							<text>{{ item.updateFrequency }}</text>
 						</view>
@@ -35,11 +35,11 @@
 			</view>
 
 			<!-- 特色榜 -->
-			<view class="featureList" v-if=" featureList != '' && featureList.length > 0">
+			<view class="featureList" v-if="featureList != '' && featureList.length > 0">
 				<view class="top"><text>特色榜</text></view>
 				<uni-grid :column="3" :show-border="false" :square="false">
 					<uni-grid-item v-for="(item, index) in featureList" :key="index">
-						<view class="image"  @click="oprankingDetails(item.id)">
+						<view class="image" @click="oprankingDetails(item.id)">
 							<image :src="item.coverImgUrl" mode=""></image>
 							<text>{{ item.updateFrequency }}</text>
 						</view>
@@ -51,11 +51,11 @@
 			</view>
 
 			<!-- 全球榜 -->
-			<view class="globalList"  v-if=" globalList != '' && globalList.length > 0">
+			<view class="globalList" v-if="globalList != '' && globalList.length > 0">
 				<view class="top"><text>全球榜</text></view>
 				<uni-grid :column="3" :show-border="false" :square="false">
 					<uni-grid-item v-for="(item, index) in globalList" :key="index">
-						<view class="image"  @click="oprankingDetails(item.id)">
+						<view class="image" @click="oprankingDetails(item.id)">
 							<image :src="item.coverImgUrl" mode=""></image>
 							<text>{{ item.updateFrequency }}</text>
 						</view>
@@ -67,11 +67,11 @@
 			</view>
 
 			<!-- 地区榜 -->
-			<view class="regionalList" v-if=" regionalList != '' && regionalList.length > 0">
+			<view class="regionalList" v-if="regionalList != '' && regionalList.length > 0">
 				<view class="top"><text>地区榜</text></view>
 				<uni-grid :column="3" :show-border="false" :square="false">
 					<uni-grid-item v-for="(item, index) in regionalList" :key="index">
-						<view class="image"  @click="oprankingDetails(item.id)">
+						<view class="image" @click="oprankingDetails(item.id)">
 							<image :src="item.coverImgUrl" mode=""></image>
 							<text>{{ item.updateFrequency }}</text>
 						</view>
@@ -87,7 +87,7 @@
 				<view class="top"><text>曲风榜</text></view>
 				<uni-grid :column="3" :show-border="false" :square="false">
 					<uni-grid-item v-for="(item, index) in musicStyleList" :key="index">
-						<view class="image"  @click="oprankingDetails(item.id)">
+						<view class="image" @click="oprankingDetails(item.id)">
 							<image :src="item.coverImgUrl" mode=""></image>
 							<text>{{ item.updateFrequency }}</text>
 						</view>
@@ -147,84 +147,81 @@ export default {
 				url: 'https://wx.3dcw.cn/toplist/detail',
 				method: 'GET',
 				success: function(res) {
-					console.log(res.data)
+					console.log(res.data);
 					res.data.list.forEach(item => {
 						//官方榜
 						if (item.ToplistType) {
 							that.officialList.push(item);
 						}
 
-						// 推荐榜
-						if (item.name === '硬地原创音乐榜') {
-							that.listRecommendation.push(item);
+						switch (item.id) {
+							case 5363564122: //硬地原创音乐榜
+								that.listRecommendation.push(item);
+								break;
+							case 11641012: //iTunes榜
+								that.listRecommendation.push(item);
+								break;
+							case 2809513713: //云音乐欧美热歌榜
+								that.listRecommendation.push(item);
+								break;
+							// case '抖音排行榜':
+							// 	that.featureList.push(item);
+							// 	break;
+							case 71384707: //云音乐古典榜
+								that.featureList.push(item);
+								break;
+							// case '云音乐达人榜':
+							// 	that.featureList.push(item);
+							// 	break;
+							case 60198: //美国Billboard榜
+								that.globalList.push(item);
+								break;
+							case 180106: //UK排行榜周榜
+								that.globalList.push(item);
+								break;
+							case 60131: //日本Oricon榜
+								that.globalList.push(item);
+								break;
+							case 27135204: //法国 NRJ Vos Hits 周榜
+								that.globalList.push(item);
+								break;
+							case 2809577409: //云音乐欧美新歌榜
+								that.globalList.push(item);
+								break;
+							case 5059644681: //云音乐日语榜
+								that.regionalList.push(item);
+								break;
+							case 745956260: //云音乐韩语榜
+								that.regionalList.push(item);
+								break;
+							case 1978921795: //云音乐电音榜
+								that.musicStyleList.push(item);
+								break;
+							case 71385702: //云音乐ACG榜
+								that.musicStyleList.push(item);
+								break;
+							case 5059661515: //云音乐民谣榜
+								that.musicStyleList.push(item);
+								break;
+							case 991319590: //云音乐说唱榜
+								that.musicStyleList.push(item);
+								break;
+							case 5059633707: //云音乐摇滚榜
+								that.musicStyleList.push(item);
+								break;
+							case 5059642708: //云音乐古风榜
+								that.musicStyleList.push(item);
+								break;
+							default:
+								break;
 						}
-						if (item.name === 'iTunes榜') {
-							that.listRecommendation.push(item);
-						}
-						if (item.name === '云音乐欧美热歌榜') {
-							that.listRecommendation.push(item);
-						}
-
-						// 特色榜
-						if (item.name === '抖音排行榜') {
-							that.featureList.push(item);
-						}
-						if (item.name === '云音乐古典音乐榜') {
-							that.featureList.push(item);
-						}
-						if (item.name === '云音乐达人榜') {
-							that.featureList.push(item);
-						}
-
-						// 全球榜
-						if (item.name === '美国Billboard榜') {
-							that.globalList.push(item);
-						}
-						if (item.name === 'UK排行榜周榜') {
-							that.globalList.push(item);
-						}
-						if (item.name === 'iTunes榜') {
-							that.globalList.push(item);
-						}
-						if (item.name === '日本Oricon榜') {
-							that.globalList.push(item);
-						}
-						if (item.name === '法国 NRJ Vos Hits 周榜') {
-							that.globalList.push(item);
-						}
-						if (item.name === '云音乐欧美新歌榜') {
-							that.globalList.push(item);
-						}
-
-						// 地区榜
-						if (item.name === '云音乐欧美热歌榜') {
-							that.regionalList.push(item);
-						}
-						if (item.name === '云音乐日语榜') {
-							that.regionalList.push(item);
-						}
-						if (item.name === '云音乐韩语榜') {
-							that.regionalList.push(item);
-						}
-
-						// 曲风榜
-						if (item.name === '云音乐电音榜') {
-							that.musicStyleList.push(item);
-						}
-						if (item.name === '云音乐ACG榜') {
-							that.musicStyleList.push(item);
-						}
-						if (item.name === '云音乐民谣榜') {
-							that.musicStyleList.push(item);
-						}
-						if (item.name === '云音乐说唱榜') {
-							that.musicStyleList.push(item);
-						}
-						if (item.name === '云音乐摇滚榜') {
-							that.musicStyleList.push(item);
-						}
-						if (item.name === '云音乐古风榜') {
-							that.musicStyleList.push(item);
+						switch (item.id) {
+							case 11641012: //iTunes榜
+								that.globalList.push(item);
+								break;
+							case 2809513713: //云音乐欧美热歌榜
+								that.regionalList.push(item);
+								break;
 						}
 					});
 
@@ -234,9 +231,8 @@ export default {
 					console.log(err);
 				}
 			});
-		}
-		,oprankingDetails:function(sheetID){
-			
+		},
+		oprankingDetails: function(sheetID) {
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
@@ -253,7 +249,7 @@ export default {
 				},
 				fail(err) {
 					console.log(err);
-			
+
 					uni.showModal({
 						title: '',
 						content: '请登录',

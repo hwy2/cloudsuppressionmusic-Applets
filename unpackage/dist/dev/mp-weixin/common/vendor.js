@@ -1905,8 +1905,10 @@ var store = new _vuex.default.Store({
     isShow: false, //显示播放栏
     songDuration: "00:00", //音频长度
     songCurrentTime: '00:00', //播放当前进度
-    showLyric: false //显示歌词
+    showLyric: false, //显示歌词
+    isDark: true //黑夜模式
   },
+
   getters: {
     getsongInfo: function getsongInfo(state) {
       return state.songInfo;
@@ -1934,6 +1936,9 @@ var store = new _vuex.default.Store({
     },
     getshowLyric: function getshowLyric(state) {
       return state.showLyric;
+    },
+    getisDark: function getisDark(state) {
+      return state.isDark;
     } },
 
   mutations: {
@@ -1971,6 +1976,10 @@ var store = new _vuex.default.Store({
     },
     setshowLyric: function setshowLyric(state, status) {
       state.showLyric = status;
+      uni.setStorageSync("store", state);
+    },
+    setisDark: function setisDark(state, status) {
+      state.isDark = status;
       uni.setStorageSync("store", state);
     } },
 

@@ -378,36 +378,32 @@ var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.en
     };}, computed: { isShow: { //播放状态
       get: function get() {return this.$store.state.isShow;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
         this.$store.commit('setisShow', v);} } }, methods: { getToplist: function getToplist() {var that = this;uni.showLoading({ title: '加载中...', mask: true });uni.request({ url: 'https://wx.3dcw.cn/toplist/detail', method: 'GET', success: function success(res) {console.log(res.data);res.data.list.forEach(function (item) {//官方榜
-            if (item.ToplistType) {that.officialList.push(item);} // 推荐榜
-            if (item.name === '硬地原创音乐榜') {that.listRecommendation.push(item);}if (item.name === 'iTunes榜') {that.listRecommendation.push(item);}if (item.name === '云音乐欧美热歌榜') {that.listRecommendation.push(item);} // 特色榜
-            if (item.name === '抖音排行榜') {that.featureList.push(item);}if (item.name === '云音乐古典音乐榜') {that.featureList.push(item);}if (item.name === '云音乐达人榜') {that.featureList.push(item);} // 全球榜
-            if (item.name === '美国Billboard榜') {that.globalList.push(item);}if (item.name === 'UK排行榜周榜') {that.globalList.push(item);}if (item.name === 'iTunes榜') {that.globalList.push(item);}if (item.name === '日本Oricon榜') {that.globalList.push(item);}if (item.name === '法国 NRJ Vos Hits 周榜') {that.globalList.push(item);}if (item.name === '云音乐欧美新歌榜') {that.globalList.push(item);} // 地区榜
-            if (item.name === '云音乐欧美热歌榜') {that.regionalList.push(item);}if (item.name === '云音乐日语榜') {that.regionalList.push(item);}if (item.name === '云音乐韩语榜') {that.regionalList.push(item);} // 曲风榜
-            if (item.name === '云音乐电音榜') {that.musicStyleList.push(item);}if (item.name === '云音乐ACG榜') {that.musicStyleList.push(item);}if (item.name === '云音乐民谣榜') {that.musicStyleList.push(item);}if (item.name === '云音乐说唱榜') {that.musicStyleList.push(item);}if (item.name === '云音乐摇滚榜') {that.musicStyleList.push(item);}if (item.name === '云音乐古风榜') {that.musicStyleList.push(item);}});
-          uni.hideLoading();
-        },
-        fail: function fail(err) {
-          console.log(err);
-        } });
-
-    },
-    oprankingDetails: function oprankingDetails(sheetID) {
-
-      uni.getStorage({
-        key: 'profile',
-        success: function success(res) {
-          uni.navigateTo({
-            url: '/pages/rankingDetails/rankingDetails',
-            success: function success(res) {
-              res.eventChannel.emit('sheetDetails', {
-                songListId: sheetID });
-
-            },
-            animationType: 'pop-in',
-            animationDuration: 200 });
-
-        },
-        fail: function fail(err) {
+            if (item.ToplistType) {that.officialList.push(item);}switch (item.id) {case 5363564122: //硬地原创音乐榜
+                that.listRecommendation.push(item);break;case 11641012: //iTunes榜
+                that.listRecommendation.push(item);break;case 2809513713: //云音乐欧美热歌榜
+                that.listRecommendation.push(item);break; // case '抖音排行榜':
+              // 	that.featureList.push(item);
+              // 	break;
+              case 71384707: //云音乐古典榜
+                that.featureList.push(item);break; // case '云音乐达人榜':
+              // 	that.featureList.push(item);
+              // 	break;
+              case 60198: //美国Billboard榜
+                that.globalList.push(item);break;case 180106: //UK排行榜周榜
+                that.globalList.push(item);break;case 60131: //日本Oricon榜
+                that.globalList.push(item);break;case 27135204: //法国 NRJ Vos Hits 周榜
+                that.globalList.push(item);break;case 2809577409: //云音乐欧美新歌榜
+                that.globalList.push(item);break;case 5059644681: //云音乐日语榜
+                that.regionalList.push(item);break;case 745956260: //云音乐韩语榜
+                that.regionalList.push(item);break;case 1978921795: //云音乐电音榜
+                that.musicStyleList.push(item);break;case 71385702: //云音乐ACG榜
+                that.musicStyleList.push(item);break;case 5059661515: //云音乐民谣榜
+                that.musicStyleList.push(item);break;case 991319590: //云音乐说唱榜
+                that.musicStyleList.push(item);break;case 5059633707: //云音乐摇滚榜
+                that.musicStyleList.push(item);break;case 5059642708: //云音乐古风榜
+                that.musicStyleList.push(item);break;default:break;}switch (item.id) {case 11641012: //iTunes榜
+                that.globalList.push(item);break;case 2809513713: //云音乐欧美热歌榜
+                that.regionalList.push(item);break;}});uni.hideLoading();}, fail: function fail(err) {console.log(err);} });}, oprankingDetails: function oprankingDetails(sheetID) {uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/rankingDetails/rankingDetails', success: function success(res) {res.eventChannel.emit('sheetDetails', { songListId: sheetID });}, animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {
           console.log(err);
 
           uni.showModal({

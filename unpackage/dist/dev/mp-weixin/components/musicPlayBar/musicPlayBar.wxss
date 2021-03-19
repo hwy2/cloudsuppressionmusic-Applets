@@ -132,4 +132,8 @@
   -webkit-flex: 1;
           flex: 1;
 }
+.dark {
+  background-color: #333;
+  border-top: 1px solid #222;
+}
 

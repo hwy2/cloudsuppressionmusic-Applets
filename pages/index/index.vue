@@ -1,5 +1,5 @@
 <template>
-	<view class="home">
+	<view class="home" :class="isDark ? 'dark' : ''">
 		<!-- 状态栏、标题栏 -->
 		<view class="topnavbar">
 			<view class="status_bar" :style="{ height: headerPadding }"></view>
@@ -20,7 +20,7 @@
 			<view class="banner">
 				<swiper class="swiper" :indicator-dots="false" :autoplay="true" :interval="3000" :duration="500" :circular="true">
 					<swiper-item v-for="(item, index) in swipeList" :key="index">
-						<view class="swiper-item ">
+						<view class="swiper-item">
 							<image :src="item.pic" mode="aspectFit"></image>
 							<view :style="{ background: item.titleColor }">{{ item.typeTitle }}</view>
 						</view>
@@ -57,9 +57,9 @@
 
 				<view class="concentration">
 					<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="0">
-						<view class="scroll-view-item_H  silde" v-for="item in recommendedSongList.creatives" :key="item.creativeId">
+						<view class="scroll-view-item_H silde" v-for="item in recommendedSongList.creatives" :key="item.creativeId">
 							<view class="warp">
-								<view class=" box" @click="sheetDetails(item.creativeId)">
+								<view class="box" @click="sheetDetails(item.creativeId)">
 									<image :src="item.uiElement.image.imageUrl" mode="aspectFit"></image>
 									<view>
 										<i class="iconfont iconicon--">{{ item.resources[0].resourceExtInfo.playCount | retainDoubleDigit }}</i>
@@ -94,7 +94,7 @@
 				<view class="concentration">
 					<swiper class="swiper" :indicator-dots="false" :autoplay="false" :interval="3000" :duration="500" :circular="false">
 						<swiper-item v-for="(item, index) in personalTailor.creatives" :key="index">
-							<scroll-view class=" smallList" scroll-x="true" scroll-left="0">
+							<scroll-view class="smallList" scroll-x="true" scroll-left="0">
 								<view
 									class="towsilde"
 									v-for="(song, indexs) in item.resources"
@@ -130,7 +130,7 @@
 					<view class="contentsd">
 						<swiper class="swiper" :indicator-dots="false" :autoplay="true" :interval="5000" :duration="500" :circular="true">
 							<swiper-item v-for="(item, index) in musicCalendar.creatives" :key="index">
-								<view class="swiper-item ">
+								<view class="swiper-item">
 									<view class="left">
 										<text v-if="index == 0">今天</text>
 										<text v-else>明天</text>
@@ -160,9 +160,9 @@
 
 				<view class="concentration">
 					<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="0">
-						<view class="scroll-view-item_H  silde" v-for="item in exclusiveScene.creatives" :key="item.creativeId">
+						<view class="scroll-view-item_H silde" v-for="item in exclusiveScene.creatives" :key="item.creativeId">
 							<view class="warp">
-								<view class=" box" @click="sheetDetails(item.creativeId)">
+								<view class="box" @click="sheetDetails(item.creativeId)">
 									<image :src="item.uiElement.image.imageUrl" mode="aspectFit"></image>
 									<view>
 										<i class="iconfont iconicon--">{{ item.resources[0].resourceExtInfo.playCount | retainDoubleDigit }}</i>
@@ -201,7 +201,7 @@
 						<swiper-item>
 							<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
 								<view
-									class="scroll-view-item_H  silde"
+									class="scroll-view-item_H silde"
 									v-for="(song, indexs) in newSong.creatives[1].resources"
 									:key="indexs"
 									@click="playMusic(song.resourceExtInfo.songData, song.uiElement.image.imageUrl)"
@@ -225,7 +225,7 @@
 						<swiper-item>
 							<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
 								<view
-									class="scroll-view-item_H  silde"
+									class="scroll-view-item_H silde"
 									v-for="(song, indexs) in newSong.creatives[0].resources"
 									:key="indexs"
 									@click="playMusic(song.resourceExtInfo.songData, song.uiElement.image.imageUrl)"
@@ -250,7 +250,7 @@
 					<swiper v-if="clickFlag" class="swiper" :indicator-dots="false" :autoplay="true" :interval="8000" :duration="500" :circular="true">
 						<swiper-item>
 							<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
-								<view class="scroll-view-item_H  silde" v-for="(song, indexs) in newSong.creatives[3].resources" :key="indexs">
+								<view class="scroll-view-item_H silde" v-for="(song, indexs) in newSong.creatives[3].resources" :key="indexs">
 									<view class="left"><image :src="song.uiElement.image.imageUrl" mode="aspectFit" /></view>
 									<view class="center">
 										<view>
@@ -269,7 +269,7 @@
 
 						<swiper-item>
 							<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
-								<view class="scroll-view-item_H  silde" v-for="(song, indexs) in newSong.creatives[2].resources" :key="indexs">
+								<view class="scroll-view-item_H silde" v-for="(song, indexs) in newSong.creatives[2].resources" :key="indexs">
 									<view class="left"><image :src="song.uiElement.image.imageUrl" mode="aspectFit" /></view>
 									<view class="center">
 										<view>
@@ -413,6 +413,16 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setsongInfo', v);
 			}
+		},
+		isDark: {
+			//音乐信息
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				// 使用vuex中的mutations中定义好的方法来改变
+				this.$store.commit('setisDark', v);
+			}
 		}
 	},
 	methods: {
@@ -427,39 +437,29 @@ export default {
 					// t: Date.parse(new Date())
 				},
 				success(res) {
+					console.log(res.data.data.blocks);
 					that.swipeList = res.data.data.blocks[0].extInfo.banners;
-					res.data.data.blocks.forEach(function(item) {
-						if (item.uiElement) {
-							if (item.uiElement.subTitle) {
-								if (item.uiElement.subTitle.title == '推荐歌单') {
-									that.recommendedSongList = item;
-								}
-
-								if (item.uiElement.subTitle.title == '专属场景歌单') {
-									that.exclusiveScene = item;
-								}
-
-								if (item.uiElement.subTitle.title == '音乐日历') {
-									that.musicCalendar = item;
-								}
+					let temp = [['推荐歌单', '专属场景歌单', '音乐日历'], ['recommendedSongList', 'exclusiveScene', 'musicCalendar']];
+					res.data.data.blocks
+						.filter(item => {
+							return item?.uiElement?.subTitle || item?.uiElement?.mainTitle;
+						})
+						.forEach(item => {
+							let index = temp[0].findIndex(k => k == item.uiElement?.subTitle?.title || k == item.uiElement?.mainTitle?.title);
+							if (index >= 0) {
+								that[temp[1][index]] = item;
 							}
-							if (item.uiElement.mainTitle) {
-								if (item.uiElement.mainTitle.title == '私人定制') {
-									that.personalTailor = item;
-								}
+							if (item.uiElement?.mainTitle?.title == '私人定制') {
+								that.personalTailor = item;
 							}
-						}
-						if (item.creatives) {
-							if (item.creatives[0].uiElement) {
-								if (item.creatives[0].uiElement.mainTitle) {
-									if (item.creatives[0].uiElement.mainTitle.title == '新歌') {
-										that.newSong = item;
-									}
-								}
-							}
-						}
-					});
+						});
+					that.newSong = res.data.data.blocks.filter(item => {
+						return item?.creatives?.[0]?.uiElement?.mainTitle?.title == '新歌';
+					})[0];
 					uni.hideLoading();
+				},
+				fail: err => {
+					console.log(e);
 				}
 			});
 		},
@@ -475,17 +475,21 @@ export default {
 				success(res) {
 					let a = 0;
 					for (let i = 0; i < res.data.data.length; i++) {
-						if (res.data.data[i].name == '每日推荐') {
-							that.iconList.push(res.data.data[i]);
-							a++;
-						}
-						if (res.data.data[i].name == '歌单') {
-							that.iconList.push(res.data.data[i]);
-							a++;
-						}
-						if (res.data.data[i].name == '排行榜') {
-							that.iconList.push(res.data.data[i]);
-							a++;
+						switch (res.data.data[i].name) {
+							case '每日推荐':
+								that.iconList.push(res.data.data[i]);
+								a++;
+								break;
+							case '歌单':
+								that.iconList.push(res.data.data[i]);
+								a++;
+								break;
+							case '排行榜':
+								that.iconList.push(res.data.data[i]);
+								a++;
+								break;
+							default:
+								break;
 						}
 						if (a >= 3) {
 							break;
@@ -807,17 +811,11 @@ export default {
 		}
 	},
 	created() {
-		let that = this;
 		this.geticon();
-		// uni.getStorage({
-		// 	key: 'store',
-		// 	success: function(res) {
-		// 		that.initAudioContext(res.data.songPlayUrl,that.songInfo,that.isPlay);
-		// 		that.pauseAudio();
-		// 	}
-		// });
 		let data = new Date();
 		this.day = data.getDate() <= 9 ? '0' + data.getDate() : data.getDate();
+		this.$store.commit('setisDark', false);
+		console.log('isDark:', this.isDark);
 	},
 	beforeCreate() {
 		let that = this;

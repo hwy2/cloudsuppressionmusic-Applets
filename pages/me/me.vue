@@ -193,23 +193,6 @@ export default {
 			let that = this;
 			let songlist = that.$store.getters.getsongInfo;
 			that.getIntelligence(songlist.id ? songlist.id : songlist.resourceId);
-			// uni.request({
-			// 	url: 'https://wx.3dcw.cn/playlist/detail',
-			// 	method: 'GET',
-			// 	data: {
-			// 		cookie: that.cookie,
-			// 		t: Date.parse(new Date()),
-			// 		id: that.songListId
-			// 	},
-			// 	success: function(res) {
-			// 		if (res.data.code === 200) {
-			// 			that.getIntelligence(res.data.playlist.tracks[0].id);
-			// 		}
-			// 	},fail: (err) => {
-			// 		uni.hideLoading()
-			// 		console.log(err)
-			// 	}
-			// });
 		},
 		notImplemented: function() {
 			uni.showToast({

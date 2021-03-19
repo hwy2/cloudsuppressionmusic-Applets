@@ -1,12 +1,15 @@
-.container {
+.home {
+  height: 100%;
+}
+.home .container {
   padding: 149rpx 20rpx 108rpx;
   font-size: 14rpx;
   line-height: 24rpx;
 }
-.container .search {
+.home .container .search {
   padding: 16rpx 0;
 }
-.container .search .warp {
+.home .container .search .warp {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -34,7 +37,7 @@
   border-radius: 10rpx;
   background-color: #f8f8f8;
 }
-.container .search .warp .uni-searchbar__box-icon-search {
+.home .container .search .warp .uni-searchbar__box-icon-search {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -50,36 +53,36 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.container .search .warp .uni-searchbar__text-placeholder {
+.home .container .search .warp .uni-searchbar__text-placeholder {
   font-size: 28rpx;
   color: #808080;
   margin-left: 10rpx;
   width: 620rpx;
 }
-.container .banner {
+.home .container .banner {
   width: 710rpx;
   display: block;
   margin: 0 auto;
   height: 300rpx;
 }
-.container .banner .swiper {
+.home .container .banner .swiper {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
-.container .banner .swiper .swiper-item {
+.home .container .banner .swiper .swiper-item {
   width: 100%;
   height: 100%;
   position: relative;
   border-radius: 10rpx;
 }
-.container .banner .swiper .swiper-item image {
+.home .container .banner .swiper .swiper-item image {
   height: 300rpx;
   width: 100%;
   border-radius: 10rpx;
   display: block;
 }
-.container .banner .swiper .swiper-item view {
+.home .container .banner .swiper .swiper-item view {
   position: absolute;
   bottom: 12rpx;
   right: 0;
@@ -94,13 +97,13 @@
   padding: 0 15rpx;
   font-size: 20rpx;
 }
-.container .navigation {
+.home .container .navigation {
   padding-top: 20rpx;
 }
-.container .navigation uni-grid uni-grid-item {
+.home .container .navigation uni-grid uni-grid-item {
   padding-bottom: 20rpx;
 }
-.container .navigation uni-grid uni-grid-item .holder {
+.home .container .navigation uni-grid uni-grid-item .holder {
   width: 80rpx;
   height: 80rpx;
   border-radius: 80rpx;
@@ -112,11 +115,11 @@
   text-align: center;
   position: relative;
 }
-.container .navigation uni-grid uni-grid-item .holder image {
+.home .container .navigation uni-grid uni-grid-item .holder image {
   width: 100%;
   height: 100%;
 }
-.container .navigation uni-grid uni-grid-item .holder text {
+.home .container .navigation uni-grid uni-grid-item .holder text {
   position: absolute;
   top: 53%;
   left: 50%;
@@ -127,31 +130,31 @@
   line-height: 1;
   text-align: center;
 }
-.container .navigation uni-grid uni-grid-item .explain {
+.home .container .navigation uni-grid uni-grid-item .explain {
   text-align: center;
   font-size: 26rpx;
 }
-.container .recommendation {
+.home .container .recommendation {
   padding: 28rpx 0;
 }
-.container .recommendation .topTile {
+.home .container .recommendation .topTile {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.container .recommendation .topTile .left {
+.home .container .recommendation .topTile .left {
   -webkit-box-flex: 6;
   -webkit-flex: 6;
           flex: 6;
 }
-.container .recommendation .topTile .left text {
+.home .container .recommendation .topTile .left text {
   font-size: 30rpx;
   font-weight: bold;
   color: #000;
   position: relative;
   display: block;
 }
-.container .recommendation .topTile .left text text {
+.home .container .recommendation .topTile .left text text {
   position: absolute;
   top: -30rpx;
   left: 0;
@@ -159,12 +162,12 @@
   color: #888;
   font-weight: 100;
 }
-.container .recommendation .topTile .right {
+.home .container .recommendation .topTile .right {
   -webkit-box-flex: 2;
   -webkit-flex: 2;
           flex: 2;
 }
-.container .recommendation .topTile .right view {
+.home .container .recommendation .topTile .right view {
   float: right;
   display: block;
   width: 122rpx;
@@ -175,34 +178,34 @@
   line-height: 42rpx;
   font-size: 21rpx;
 }
-.container .recommendation .concentration {
+.home .container .recommendation .concentration {
   padding: 28rpx 0 0;
   width: 100%;
   height: 290rpx;
   overflow-y: hidden;
 }
-.container .recommendation .concentration .scroll-view_H {
+.home .container .recommendation .concentration .scroll-view_H {
   height: 290rpx;
   overflow-y: hidden;
   overflow-x: auto;
   width: 710rpx;
   white-space: nowrap;
 }
-.container .recommendation .concentration .scroll-view_H .silde {
+.home .container .recommendation .concentration .scroll-view_H .silde {
   width: 200rpx;
   display: inline-block;
   margin-right: 18rpx;
   position: relative;
   height: 100%;
 }
-.container .recommendation .concentration .scroll-view_H .silde .warp {
+.home .container .recommendation .concentration .scroll-view_H .silde .warp {
   height: 250rpx;
   overflow: hidden;
 }
-.container .recommendation .concentration .scroll-view_H .silde .warp .box {
+.home .container .recommendation .concentration .scroll-view_H .silde .warp .box {
   height: 180rpx;
 }
-.container .recommendation .concentration .scroll-view_H .silde .warp .box image {
+.home .container .recommendation .concentration .scroll-view_H .silde .warp .box image {
   height: 180rpx;
   width: 180rpx;
   border-radius: 10rpx;
@@ -210,7 +213,7 @@
   display: block;
   border: 1rpx solid #e7e7e7;
 }
-.container .recommendation .concentration .scroll-view_H .silde .warp .box view {
+.home .container .recommendation .concentration .scroll-view_H .silde .warp .box view {
   position: absolute;
   top: 10rpx;
   right: 10rpx;
@@ -219,17 +222,17 @@
   padding-right: 5rpx;
   display: block;
 }
-.container .recommendation .concentration .scroll-view_H .silde .warp .box view ._i {
+.home .container .recommendation .concentration .scroll-view_H .silde .warp .box view ._i {
   vertical-align: baseline;
   font-size: 18rpx;
   width: 200rpx;
   text-align: right;
 }
-.container .recommendation .concentration .scroll-view_H .silde .warp .text {
+.home .container .recommendation .concentration .scroll-view_H .silde .warp .text {
   display: block;
   height: 70rpx;
 }
-.container .recommendation .concentration .scroll-view_H .silde .warp .text .textitem {
+.home .container .recommendation .concentration .scroll-view_H .silde .warp .text .textitem {
   display: block;
   font-size: 25rpx;
   overflow: hidden;
@@ -244,10 +247,10 @@
   height: 100%;
   word-break: break-all;
 }
-.container .songNew .topTile .right view {
+.home .container .songNew .topTile .right view {
   padding-left: 5rpx;
 }
-.container .songNew .topTile .right view ._i {
+.home .container .songNew .topTile .right view ._i {
   vertical-align: middle;
   display: initial;
   width: 30rpx;
@@ -255,51 +258,51 @@
   border: 0;
   float: left;
 }
-.container .songNew .topTile .right view text {
+.home .container .songNew .topTile .right view text {
   text-align: left;
   float: left;
   vertical-align: middle;
 }
-.container .songNew .concentration .swiper {
+.home .container .songNew .concentration .swiper {
   width: 397%;
   height: 100%;
 }
-.container .songNew .concentration .swiper swiper-item {
+.home .container .songNew .concentration .swiper swiper-item {
   width: 710rpx !important;
   height: 100%;
   float: left;
   padding-right: 10rpx;
 }
-.container .songNew .concentration .swiper swiper-item .smallList {
+.home .container .songNew .concentration .swiper swiper-item .smallList {
   width: 100%;
   height: 100%;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   padding-bottom: 18rpx;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde text {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde text {
   position: unset;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .left {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .left {
   -webkit-box-flex: 1.6;
   -webkit-flex: 1.6;
           flex: 1.6;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .left image {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .left image {
   height: 74rpx;
   width: 74rpx;
   border-radius: 5rpx;
   border: 1rpx solid #e7e7e7;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .center {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .center {
   -webkit-box-flex: 10;
   -webkit-flex: 10;
           flex: 10;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) {
   width: 450rpx;
   display: block;
   overflow: hidden;
@@ -307,40 +310,40 @@
   white-space: nowrap;
   line-height: 1.2;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) text:nth-of-type(1) {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) text:nth-of-type(1) {
   font-size: 30rpx;
   color: #000;
   font-weight: bold;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) text:nth-of-type(2) {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) text:nth-of-type(2) {
   font-size: 26rpx;
   color: #909090;
   width: 240rpx;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(2) {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(2) {
   font-size: 26rpx;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .right {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .right {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .right .icon {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .right .icon {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.container .songNew .concentration .swiper swiper-item .smallList .towsilde .right .icon ._i {
+.home .container .songNew .concentration .swiper swiper-item .smallList .towsilde .right .icon ._i {
   -webkit-box-flex: 2;
   -webkit-flex: 2;
           flex: 2;
   font-size: 40rpx;
   color: #41b883;
 }
-.container .musicCalendar {
+.home .container .musicCalendar {
   padding: 30rpx 0;
 }
-.container .musicCalendar .details {
+.home .container .musicCalendar .details {
   width: 688rpx;
   height: 220rpx;
   border: solid #e9e9e9 2rpx;
@@ -348,49 +351,49 @@
   margin: 0 auto;
   box-shadow: 1px 1px 8rpx #e9e9e9;
 }
-.container .musicCalendar .details .top {
+.home .container .musicCalendar .details .top {
   height: 80rpx;
   padding: 23rpx 24rpx;
   box-sizing: border-box;
 }
-.container .musicCalendar .details .top .p ._i {
+.home .container .musicCalendar .details .top .p ._i {
   font-size: 33rpx;
   font-weight: bold;
   color: #41b883;
   vertical-align: bottom;
 }
-.container .musicCalendar .details .top .p text {
+.home .container .musicCalendar .details .top .p text {
   font-size: 32rpx;
   color: #41b883;
   padding-left: 12rpx;
 }
-.container .musicCalendar .details .contentsd {
+.home .container .musicCalendar .details .contentsd {
   height: 140rpx;
 }
-.container .musicCalendar .details .contentsd swiper {
+.home .container .musicCalendar .details .contentsd swiper {
   height: 100%;
   width: 100%;
 }
-.container .musicCalendar .details .contentsd swiper .swiper-item {
+.home .container .musicCalendar .details .contentsd swiper .swiper-item {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.container .musicCalendar .details .contentsd swiper .swiper-item .left {
+.home .container .musicCalendar .details .contentsd swiper .swiper-item .left {
   float: left;
   width: 520rpx;
   box-sizing: border-box;
   padding-left: 23rpx;
   padding-top: 20rpx;
 }
-.container .musicCalendar .details .contentsd swiper .swiper-item .left text:nth-of-type(1) {
+.home .container .musicCalendar .details .contentsd swiper .swiper-item .left text:nth-of-type(1) {
   font-size: 26rpx;
   font-weight: bold;
   color: #191919;
   padding-bottom: 15rpx;
   display: block;
 }
-.container .musicCalendar .details .contentsd swiper .swiper-item .left txet:nth-of-type(2) {
+.home .container .musicCalendar .details .contentsd swiper .swiper-item .left txet:nth-of-type(2) {
   font-size: 26rpx;
   font-weight: 500;
   color: #4c4c4c;
@@ -399,12 +402,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.container .musicCalendar .details .contentsd swiper .swiper-item .right {
+.home .container .musicCalendar .details .contentsd swiper .swiper-item .right {
   float: left;
   width: 168rpx;
   overflow: hidden;
 }
-.container .musicCalendar .details .contentsd swiper .swiper-item .right image {
+.home .container .musicCalendar .details .contentsd swiper .swiper-item .right image {
   width: 110rpx;
   height: 110rpx;
   border-radius: 10rpx;
@@ -412,52 +415,52 @@
   margin: 0 auto;
   border: 1rpx solid #e7e7e7;
 }
-.container .newDisc {
+.home .container .newDisc {
   padding: 0 0 28rpx;
 }
-.container .newDisc .topTile .left .p {
+.home .container .newDisc .topTile .left .p {
   color: #d6d6d6;
   font-size: 28rpx;
 }
-.container .newDisc .topTile .left .p .active {
+.home .container .newDisc .topTile .left .p .active {
   color: #000;
 }
-.container .newDisc .topTile .left .p text {
+.home .container .newDisc .topTile .left .p text {
   color: #989898;
   display: inline-block;
 }
-.container .newDisc .topTile .left .p text:nth-of-type(2) {
+.home .container .newDisc .topTile .left .p text:nth-of-type(2) {
   padding-left: 10rpx;
 }
-.container .newDisc .topTile .left .p text:nth-of-type(1) {
+.home .container .newDisc .topTile .left .p text:nth-of-type(1) {
   padding-right: 10rpx;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H {
   width: 710rpx;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde {
   width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
   height: 100rpx;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .left {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .left {
   -webkit-box-flex: 1.5;
   -webkit-flex: 1.5;
           flex: 1.5;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .left image {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .left image {
   height: 74rpx;
   width: 74rpx;
   border-radius: 5rpx;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center {
   -webkit-box-flex: 9;
   -webkit-flex: 9;
           flex: 9;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) {
   width: 420rpx;
   display: block;
   overflow: hidden;
@@ -465,7 +468,7 @@
   white-space: nowrap;
   line-height: 1.2;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) text:nth-of-type(1) {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) text:nth-of-type(1) {
   font-size: 30rpx;
   color: #000;
   font-weight: 600;
@@ -477,7 +480,7 @@
   vertical-align: middle;
   line-height: 1.2;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) text:nth-of-type(2) {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) text:nth-of-type(2) {
   font-size: 20rpx;
   color: #909090;
   width: 240rpx;
@@ -487,21 +490,21 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(2) {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(2) {
   font-size: 22rpx;
   color: #666;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .right {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .right {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .right .icon {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .right .icon {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
 }
-.container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .right .icon ._i {
+.home .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .right .icon ._i {
   -webkit-box-flex: 2;
   -webkit-flex: 2;
           flex: 2;
@@ -609,6 +612,37 @@ uni-drawer .content .lowerPart .userProfile .bottomBar view ._i {
 uni-drawer .content .lowerPart .userProfile .bottomBar view text {
   font-size: 24rpx;
   color: #333333;
+}
+.dark {
+  background-color: #222;
+  color: #ffffff;
+}
+.dark .container .search .warp {
+  background-color: #dddddd;
+}
+.dark .container .recommendation .topTile .left text {
+  color: #ffffff;
+}
+.dark .container .recommendation .topTile .left text text {
+  color: #c5c5c5;
+}
+.dark .container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) text:nth-of-type(1) {
+  color: #ffffff;
+}
+.dark .container .musicCalendar .details {
+  background-color: #dddddd;
+}
+.dark .container .musicCalendar .details .contentsd swiper .swiper-item .left text:nth-of-type(2) {
+  color: #333;
+}
+.dark .container .newDisc .topTile .left .p {
+  color: #d3d3d3;
+}
+.dark .container .newDisc .topTile .left .p .active {
+  color: #ffffff;
+}
+.dark .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) text:nth-of-type(1) {
+  color: #ffffff;
 }
 
 page {

@@ -170,6 +170,16 @@ var _default =
       set: function set(v) {
         // 使用vuex中的mutations中定义好的方法来改变
         this.$store.commit('setsongInfo', v);
+      } },
+
+    isDark: {
+      //音乐信息
+      get: function get() {
+        return this.$store.state.isDark;
+      },
+      set: function set(v) {
+        // 使用vuex中的mutations中定义好的方法来改变
+        this.$store.commit('setisDark', v);
       } } },
 
 
@@ -182,18 +192,7 @@ var _default =
 
     } },
 
-  // watch: {
-  // 	isPlay: function(newV) {
-  // 		console.log('变化'+newV);
-  // 		if (newV) {
-  // 			this.playAudio();
-  // 		} else {
-  // 			this.pauseAudio();
-  // 		}
-  // 	}
-  // },
-  created: function created() {
-  } };exports.default = _default;
+  created: function created() {} };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

@@ -1,5 +1,5 @@
 <template>
-	<view class="playBar">
+	<view class="playBar" :class="isDark ? 'dark' : ''">
 		<view class="left">
 			<view class="musicImg">
 				<view class="package"><image :src="songInfo.picUrl" mode="aspectFit"></image></view>
@@ -55,10 +55,20 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setsongInfo', v);
 			}
+		},
+		isDark: {
+			//音乐信息
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				// 使用vuex中的mutations中定义好的方法来改变
+				this.$store.commit('setisDark', v);
+			}
 		}
 	},
 	methods: {
-		broadcast:function(){
+		broadcast: function() {
 			uni.navigateTo({
 				url: '/pages/broadcastDetails/broadcastDetails',
 				animationType: 'pop-in',
@@ -66,18 +76,7 @@ export default {
 			});
 		}
 	},
-	// watch: {
-	// 	isPlay: function(newV) {
-	// 		console.log('变化'+newV);
-	// 		if (newV) {
-	// 			this.playAudio();
-	// 		} else {
-	// 			this.pauseAudio();
-	// 		}
-	// 	}
-	// },
-	created() {
-	}
+	created() {}
 };
 </script>
 
@@ -179,5 +178,10 @@ export default {
 			flex: 1;
 		}
 	}
+}
+
+.dark {
+	background-color: #333;
+	border-top: 1px solid #222;
 }
 </style>
