@@ -245,6 +245,9 @@ export default {
 		changing: function(e) {
 			console.log('----changing----');
 			console.log(e);
+			this.$store.commit("setsongCurrentTime", e.value/100*this.songDuration);
+			this.jumpSeek(e.value/100*this.songDuration);
+			this.lyricsCurTime = (e.value/100*this.songDuration/1000).toFixed(0);
 		},
 		changed: function(e) {
 			console.log('----changend----');
@@ -253,12 +256,12 @@ export default {
 			this.$store.commit("setsongCurrentTime", e.value/100*this.songDuration);
 			this.jumpSeek(e.value/100*this.songDuration);
 			this.lyricsCurTime = (e.value/100*this.songDuration/1000).toFixed(0);
-			console.log((e.value/100*this.songDuration/1000).toFixed(0))
 		}
 	},
 	watch: {
 		songInfo: function() {
 			this.getlyric();
+			this.getCurrentTime();
 		},
 		songCurrentTime: function() {
 			this.lyricsCurTime = (this.songCurrentTime / 1000).toFixed(0);

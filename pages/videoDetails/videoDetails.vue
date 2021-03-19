@@ -2,7 +2,7 @@
 	<view class="videoDetails" :style="{ height: pageHeight }">
 		<view class="videoMain">
 			<view class="videoPlay">
-				<video
+				<video id="myVideo"
 					preload="preload"
 					controls="controls"
 					:poster="videoDetails.coverUrl"
@@ -11,6 +11,7 @@
 					x5-video-player-fullscreen="true"
 					x5-video-orientation="portraint"
 					:src="videoUrl"
+					object-fit="contain"
 				>
 <!-- 					<source :src="videoUrl" type="video/mp4" /> -->
 				</video>
@@ -119,7 +120,11 @@ export default {
 			relatedVideo: [], //相关视频
 			bottomTips: '',
 			pageHeight:"100vh",
+			videoContext:''//视频实例
 		};
+	},
+	onReady: function (res) {
+	        this.videoContext = uni.createVideoContext('myVideo')
 	},
 	onLoad(options) {
 		const eventChannel = this.getOpenerEventChannel();
@@ -156,6 +161,9 @@ export default {
 			var day = date.getDate() <= 9 ? '0' + date.getDate() : date.getDate();
 			return year + '-' + month + '-' + day;
 		}
+	},
+	onHide: function() {
+		this.videoContext.pause();
 	},
 	methods: {
 		getMVDetailInfo: function() {//获取MV详情
@@ -327,6 +335,8 @@ export default {
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
+					that.videoContext.pause();
+					console.log(that.videoContext)
 					uni.navigateTo({
 						url: '/pages/videoDetails/videoDetails',
 						success: function(res) {

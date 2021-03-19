@@ -125,7 +125,7 @@
 					>
 						<uni-grid :column="2" :show-border="false" :square="false">
 							<uni-grid-item v-for="(item, index) in videosList" :key="index">
-								<view class="warp">
+								<view class="warp" @click="openVideoDatails(item.vid)">
 									<view class="image">
 										<image :src="item.coverUrl" :alt="item.data.title" ref="imageError" mode="aspectFill" />
 										<!-- <image :src="item.data.creator.avatarUrl" :alt="item.data.creator.nickname" mode="aspectFill" /> -->
@@ -337,6 +337,7 @@ export default {
 						this.albumVisible = false;
 						this.subscriberVisible = false;
 						this.videosList = res.data.result.videos;
+						console.log(this.videosList )
 					} else if (typeId == 100) {
 						this.singleVisible = false;
 						this.playlistsVisible = false;
@@ -508,6 +509,42 @@ export default {
 				fail: err => {
 					that.bottomTips = '';
 					console.log(err);
+				}
+			});
+		},
+		openVideoDatails:function(id){
+			let that =this;
+			uni.getStorage({
+				key: 'profile',
+				success(res) {
+					uni.navigateTo({
+						url: '/pages/videoDetails/videoDetails',
+						success: function(res) {
+							res.eventChannel.emit('videoId', {
+								videoId: id,
+								videoType: that.videoType
+							});
+						},
+						animationType: 'pop-in',
+						animationDuration: 200
+					});
+				},
+				fail(err) {
+					console.log(err);
+			
+					uni.showModal({
+						title: '',
+						content: '请登录',
+						success: function(res) {
+							if (res.confirm) {
+								uni.navigateTo({
+									url: '/pages/login/login',
+									animationType: 'pop-in',
+									animationDuration: 200
+								});
+							}
+						}
+					});
 				}
 			});
 		}

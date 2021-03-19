@@ -1,0 +1,50 @@
+.newDisc {
+  background-color: #FFFFFF;
+}
+.newDisc .navbarSorll {
+  width: 100%;
+  padding: 10rpx 20rpx 10rpx;
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  background-color: #f7f7f7;
+}
+.newDisc .navbarSorll scroll-view {
+  width: 100%;
+  height: 46rpx;
+  white-space: nowrap;
+}
+.newDisc .navbarSorll scroll-view view {
+  display: inline-block;
+  width: 120rpx;
+  margin-right: 20rpx;
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #545454;
+  text-align: center;
+  touch-action: pan-x;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.newDisc .navbarSorll scroll-view view:last-child {
+  margin-right: 0;
+}
+.newDisc .navbarSorll scroll-view .active {
+  font-size: 31rpx;
+  font-weight: bold;
+  position: relative;
+}
+.newDisc .navbarSorll scroll-view .active::before {
+  content: "";
+  height: 10rpx;
+  border-radius: 10rpx;
+  width: 50rpx;
+  background-color: rgba(27, 248, 145, 0.8);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+

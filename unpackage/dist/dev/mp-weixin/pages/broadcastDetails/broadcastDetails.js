@@ -414,6 +414,9 @@ var DcSlider = function DcSlider() {__webpack_require__.e(/*! require.ensure | c
     changing: function changing(e) {
       console.log('----changing----');
       console.log(e);
+      this.$store.commit("setsongCurrentTime", e.value / 100 * this.songDuration);
+      this.jumpSeek(e.value / 100 * this.songDuration);
+      this.lyricsCurTime = (e.value / 100 * this.songDuration / 1000).toFixed(0);
     },
     changed: function changed(e) {
       console.log('----changend----');
@@ -422,12 +425,12 @@ var DcSlider = function DcSlider() {__webpack_require__.e(/*! require.ensure | c
       this.$store.commit("setsongCurrentTime", e.value / 100 * this.songDuration);
       this.jumpSeek(e.value / 100 * this.songDuration);
       this.lyricsCurTime = (e.value / 100 * this.songDuration / 1000).toFixed(0);
-      console.log((e.value / 100 * this.songDuration / 1000).toFixed(0));
     } },
 
   watch: {
     songInfo: function songInfo() {
       this.getlyric();
+      this.getCurrentTime();
     },
     songCurrentTime: function songCurrentTime() {
       this.lyricsCurTime = (this.songCurrentTime / 1000).toFixed(0);

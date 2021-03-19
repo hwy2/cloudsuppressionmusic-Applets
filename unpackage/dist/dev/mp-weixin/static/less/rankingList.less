@@ -147,12 +147,17 @@
 					flex: 5;
 					padding: 15upx 0 0 15upx;
 					box-sizing: border-box;
+					width: 256*2upx;
 
 					text {
 						display: block;
 						padding-bottom: 5upx;
 						font-size: 25upx;
 						color: #494949;
+						width: 90%;
+						overflow: hidden; //隐藏文字
+						text-overflow: ellipsis; //显示...
+						white-space: nowrap; //不换行
 					}
 
 					text:nth-of-type(1) {

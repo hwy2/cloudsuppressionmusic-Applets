@@ -103,6 +103,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/newDisc/newDisc",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "新碟上架",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

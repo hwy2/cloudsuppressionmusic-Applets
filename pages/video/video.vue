@@ -2,14 +2,21 @@
 	<view class="videoList">
 		<!-- 顶部导航栏 -->
 		<view class="navbarSorll">
-			<scroll-view scroll-x="true" :scroll-into-view="scrollLeft" scroll-left="0">
-				<view :class="{ active: item.active }" v-for="(item, index) in videoGroupList" :key="index" :id="'text' + index" @click="setVideoGroupID(item.id, index)">
+			<scroll-view scroll-x="true" :scroll-into-view="scrollLeft" scroll-left="0" ref="scrollList">
+				<view
+					:class="{ active: item.active }"
+					v-for="(item, index) in videoGroupList"
+					:key="index"
+					:id="'text' + index"
+					:ref="'text' + index"
+					@click="setVideoGroupID(item.id, index)"
+				>
 					<text>{{ item.name }}</text>
 				</view>
 			</scroll-view>
 		</view>
 
-		<view class="list" @touchmove.stop.prevent>
+		<view class="list" @touchmove.stop.prevent @touchstart="start" @touchend="end">
 			<hr-pull-load
 				@refresh="refresh"
 				@loadMore="loadMore"
@@ -90,8 +97,12 @@ export default {
 			videoList: [], //视频列表
 			cookie: '',
 			page: 1,
-			videoId: '' ,//视频id
-			videoType:'video',//
+			videoId: '', //视频id
+			videoType: 'video', //
+			startData: {
+				clientX: 0,
+				clientY: 0
+			}
 		};
 	},
 	computed: {
@@ -238,7 +249,7 @@ export default {
 				item['active'] = false;
 			});
 			this.videoGroupList[index].active = true;
-			this.videoList ={};
+			this.videoList = {};
 			if (id === 1000) {
 				this.videoType = 'mv';
 			} else {
@@ -246,8 +257,8 @@ export default {
 			}
 			this.getVideoList();
 		},
-		openVideoDatails:function(id){
-			let that =this;
+		openVideoDatails: function(id) {
+			let that = this;
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
@@ -265,7 +276,7 @@ export default {
 				},
 				fail(err) {
 					console.log(err);
-			
+
 					uni.showModal({
 						title: '',
 						content: '请登录',
@@ -281,6 +292,63 @@ export default {
 					});
 				}
 			});
+		},
+		start(e) {
+			this.startData.clientX = e.changedTouches[0].clientX;
+			this.startData.clientY = e.changedTouches[0].clientY;
+		},
+		end: function(e) {
+			// console.log(e)
+			const subX = e.changedTouches[0].clientX - this.startData.clientX;
+			const subY = e.changedTouches[0].clientY - this.startData.clientY;
+			let that = this;
+			if (subY > 50 || subY < -50) {
+				console.log('上下滑');
+			} else {
+				if (subX > 50) {
+					console.log('右滑');
+					try {
+						that.videoGroupList.forEach(function(item, index, array) {
+							if (item.active) {
+								if (index <= that.videoGroupList.length - 1 && (index - 1) >= 0) {
+									array[index].active = false;
+									array[index - 1].active = true;
+									that.$nextTick(function() {
+										that.scrollLeft = 'text' + (index - 1);
+										console.log(that.scrollLeft);
+									});
+									that.scrollLeft = '';
+									that.setVideoGroupID(array[index - 1].id, index - 1);
+								}
+
+								throw new Error('跳出循环');
+							}
+						});
+					} catch (e) {}
+				} else if (subX < -50) {
+					console.log('左滑');
+					try {
+						that.videoGroupList.forEach(function(item, index, array) {
+							if (item.active) {
+								if (index <= that.videoGroupList.length - 1) {
+									array[index].active = false;
+									array[index + 1].active = true;
+									that.$nextTick(function() {
+										that.scrollLeft = 'text' + (index + 1);
+										console.log(that.scrollLeft);
+									});
+									that.scrollLeft = '';
+									that.setVideoGroupID(array[index + 1].id, index + 1);
+								}
+
+								throw new Error('跳出循环');
+							}
+						});
+					} catch (e) {}
+				} else {
+					console.log('无效');
+				}
+			}
 		}
 	},
 	created() {

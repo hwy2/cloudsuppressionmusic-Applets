@@ -12,7 +12,8 @@
     "pages/broadcastDetails/broadcastDetails",
     "pages/rankingDetails/rankingDetails",
     "pages/videoDetails/videoDetails",
-    "pages/latestMusic/latestMusic"
+    "pages/latestMusic/latestMusic",
+    "pages/newDisc/newDisc"
   ],
   "subPackages": [],
   "window": {
@@ -24,6 +25,5 @@
   "requiredBackgroundModes": [
     "audio"
   ],
-  "usingComponents": {},
-  "sitemapLocation": "sitemap63.json"
+  "usingComponents": {}
 }

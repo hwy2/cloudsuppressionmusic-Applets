@@ -186,12 +186,17 @@
           flex: 5;
   padding: 15rpx 0 0 15rpx;
   box-sizing: border-box;
+  width: 512rpx;
 }
 .rankingList .officialList scroll-view .scroll-item .right text {
   display: block;
   padding-bottom: 5rpx;
   font-size: 25rpx;
   color: #494949;
+  width: 90%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .rankingList .officialList scroll-view .scroll-item .right text:nth-of-type(1) {
   color: #1aad19;

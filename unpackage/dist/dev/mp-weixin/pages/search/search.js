@@ -502,6 +502,7 @@ __webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableA
             _this2.albumVisible = false;
             _this2.subscriberVisible = false;
             _this2.videosList = res.data.result.videos;
+            console.log(_this2.videosList);
           } else if (typeId == 100) {
             _this2.singleVisible = false;
             _this2.playlistsVisible = false;
@@ -673,6 +674,42 @@ __webpack_require__(/*! @/static/less/search.less */ 57);function _toConsumableA
         fail: function fail(err) {
           that.bottomTips = '';
           console.log(err);
+        } });
+
+    },
+    openVideoDatails: function openVideoDatails(id) {
+      var that = this;
+      uni.getStorage({
+        key: 'profile',
+        success: function success(res) {
+          uni.navigateTo({
+            url: '/pages/videoDetails/videoDetails',
+            success: function success(res) {
+              res.eventChannel.emit('videoId', {
+                videoId: id,
+                videoType: that.videoType });
+
+            },
+            animationType: 'pop-in',
+            animationDuration: 200 });
+
+        },
+        fail: function fail(err) {
+          console.log(err);
+
+          uni.showModal({
+            title: '',
+            content: '请登录',
+            success: function success(res) {
+              if (res.confirm) {
+                uni.navigateTo({
+                  url: '/pages/login/login',
+                  animationType: 'pop-in',
+                  animationDuration: 200 });
+
+              }
+            } });
+
         } });
 
     } },

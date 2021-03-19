@@ -165,8 +165,15 @@ Vue.prototype.nextSong = function(number, songlist) {
 Vue.prototype.lastSong = function(number, songlist) {
 	if (songlist.length > 1 && number < songlist.length - 1 && number != 0) {
 		this.$store.commit("setserialNumber", number - 1);
-		songlist[number - 1]["picUrl"] = songlist[number - 1].al.picUrl;
-		this.getplayMusic(songlist[number - 1].id, songlist[number - 1]);
+		// songlist[number - 1]["picUrl"] = songlist[number - 1].al.picUrl;
+		if (!songlist[number - 1].picUrl) {
+			if(songlist[number - 1].al){
+				songlist[number - 1]["picUrl"] = songlist[number - 1].al.picUrl;
+			}else if(songlist[number - 1].album){
+				songlist[number - 1]["picUrl"] = songlist[number - 1].album.picUrl;
+			}
+		}
+		this.getplayMusic(songlist[number + 1].id ? songlist[number + 1].id : songlist[number + 1].resourceId, songlist[number - 1]);
 	} else {
 		// this.$store.commit("setisPlay", false);
 		if (number == 0) {

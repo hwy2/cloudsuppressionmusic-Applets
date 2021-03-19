@@ -3,7 +3,8 @@
 		<!-- 状态栏、标题栏 -->
 		<view class="topnavbar">
 			<view class="status_bar" :style="{ height: headerPadding }"></view>
-			<uni-nav-bar left-icon="bars" title="网抑云" @click-left="openDrawer()"></uni-nav-bar>
+			<uni-nav-bar title="网抑云"></uni-nav-bar>
+			<!-- <uni-nav-bar left-icon="bars" title="网抑云" @click-left="openDrawer()"></uni-nav-bar> -->
 		</view>
 
 		<!-- 内容区 -->
@@ -189,6 +190,7 @@
 					<view class="right">
 						<view>
 							<text v-if="!clickFlag" @click="openLatestMusic">更多新歌</text>
+							<!-- <text v-else @click="openNewDisc()">更多新碟</text> -->
 							<text v-else>更多新碟</text>
 						</view>
 					</view>
@@ -745,7 +747,7 @@ export default {
 				}
 			});
 		},
-		openLatestMusic:function() {
+		openLatestMusic: function() {
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
@@ -757,7 +759,36 @@ export default {
 				},
 				fail(err) {
 					console.log(err);
-			
+
+					uni.showModal({
+						title: '',
+						content: '请登录',
+						success: function(res) {
+							if (res.confirm) {
+								uni.navigateTo({
+									url: '/pages/login/login',
+									animationType: 'pop-in',
+									animationDuration: 200
+								});
+							}
+						}
+					});
+				}
+			});
+		},
+		openNewDisc: function() {
+			uni.getStorage({
+				key: 'profile',
+				success(res) {
+					uni.navigateTo({
+						url: '/pages/newDisc/newDisc',
+						animationType: 'pop-in',
+						animationDuration: 200
+					});
+				},
+				fail(err) {
+					console.log(err);
+
 					uni.showModal({
 						title: '',
 						content: '请登录',

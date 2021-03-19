@@ -570,7 +570,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
 __webpack_require__(/*! @/static/less/index.less */ 20); //
+//
+//
 //
 //
 //
@@ -936,9 +940,7 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
         }, success: function success(res) {that.swipeList = res.data.data.blocks[0].extInfo.banners;res.data.data.blocks.forEach(function (item) {if (item.uiElement) {if (item.uiElement.subTitle) {if (item.uiElement.subTitle.title == '推荐歌单') {that.recommendedSongList = item;}if (item.uiElement.subTitle.title == '专属场景歌单') {that.exclusiveScene = item;}if (item.uiElement.subTitle.title == '音乐日历') {that.musicCalendar = item;}}if (item.uiElement.mainTitle) {if (item.uiElement.mainTitle.title == '私人定制') {that.personalTailor = item;}}}if (item.creatives) {if (item.creatives[0].uiElement) {if (item.creatives[0].uiElement.mainTitle) {if (item.creatives[0].uiElement.mainTitle.title == '新歌') {that.newSong = item;}}}}});uni.hideLoading();} });}, geticon: function geticon() {var that = this;uni.showLoading({ title: '加载中...', mask: true });uni.request({ url: 'https://wx.3dcw.cn/homepage/dragon/ball', method: 'GET', success: function success(res) {var a = 0;for (var i = 0; i < res.data.data.length; i++) {if (res.data.data[i].name == '每日推荐') {that.iconList.push(res.data.data[i]);a++;}if (res.data.data[i].name == '歌单') {that.iconList.push(res.data.data[i]);a++;}if (res.data.data[i].name == '排行榜') {that.iconList.push(res.data.data[i]);a++;}if (a >= 3) {break;}}var increased = [];increased[0] = { iconUrl: '../../static/images/wode.png', name: '我的' };increased[1] = { iconUrl: '../../static/images/shipin.png', name: '视频' };that.iconList.push(increased[0]);that.iconList.push(increased[1]);that.gethomedata();} });}, openDrawer: function openDrawer() {this.$refs.draw.open();}, closeDrawer: function closeDrawer() {this.leftdrawer = false;}, playMusic: function playMusic(songinfos, songinfospicUrl) {console.log(songinfos);var songId = songinfos.id ? songinfos.id : songinfos.resourceId;songinfos['picUrl'] = songinfospicUrl;this.$store.commit('setisPlay', true);this.$store.commit('setsongInfo', songinfos);this.getplayMusic(songId, songinfos);}, playMusicAll: function playMusicAll() {var that = this;var songAll = [];that.personalTailor.creatives.forEach(function (item) {item.resources.forEach(function (i) {var images = i.uiElement.image.imageUrl;i.picUrl = images;i.name = i.uiElement.mainTitle.title;songAll.push(i);});});that.$store.commit('setplaylist', songAll);that.$store.commit('setserialNumber', 0);that.getplayMusic(songAll[0].resourceId, songAll[0]);}, clearStorage: function clearStorage() {uni.clearStorage();uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}, changeFlag: function changeFlag() {//选择新歌|新碟
       this.clickFlag = !this.clickFlag;}, middleMethods: function middleMethods(index) {//根据index打开相应的方法
       switch (index) {case 0:uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/dailyRecommendation/recommendation', animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });break;case 1:uni.navigateTo({ url: '/pages/songSheet/songSheet', success: function success(res) {res.eventChannel.emit('songSheet', { songSheetType: '推荐' });}, animationType: 'pop-in', animationDuration: 200 });break;case 2:uni.navigateTo({ url: '/pages/rankingList/rankingList', animationType: 'pop-in', animationDuration: 200 });break;case 3:uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/me/me', animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });break;case 4:uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/video/video', animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });break;}}, jumpSheet: function jumpSheet(sheet) {uni.navigateTo({ url: '/pages/songSheet/songSheet', success: function success(res) {res.eventChannel.emit('songSheet', { songSheetType: sheet });}, animationType: 'pop-in', animationDuration: 200 });}, sheetDetails: function sheetDetails(sheetID) {// console.log(sheetID);
-      uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/sheetDetails/sheetDetails', success: function success(res) {res.eventChannel.emit('sheetDetails', { songListId: sheetID });}, animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });
-    },
-    openSearch: function openSearch() {
+      uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/sheetDetails/sheetDetails', success: function success(res) {res.eventChannel.emit('sheetDetails', { songListId: sheetID });}, animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });}, openSearch: function openSearch() {
       uni.navigateTo({
         url: '/pages/search/search',
         animationType: 'pop-in',
@@ -980,6 +982,35 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
         success: function success(res) {
           uni.navigateTo({
             url: '/pages/latestMusic/latestMusic',
+            animationType: 'pop-in',
+            animationDuration: 200 });
+
+        },
+        fail: function fail(err) {
+          console.log(err);
+
+          uni.showModal({
+            title: '',
+            content: '请登录',
+            success: function success(res) {
+              if (res.confirm) {
+                uni.navigateTo({
+                  url: '/pages/login/login',
+                  animationType: 'pop-in',
+                  animationDuration: 200 });
+
+              }
+            } });
+
+        } });
+
+    },
+    openNewDisc: function openNewDisc() {
+      uni.getStorage({
+        key: 'profile',
+        success: function success(res) {
+          uni.navigateTo({
+            url: '/pages/newDisc/newDisc',
             animationType: 'pop-in',
             animationDuration: 200 });
 

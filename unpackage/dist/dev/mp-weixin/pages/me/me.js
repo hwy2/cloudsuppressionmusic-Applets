@@ -330,22 +330,24 @@ var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.en
       songListVisible: false, //歌单详情
       cookie: '' };}, computed: { isShow: { //播放状态
       get: function get() {return this.$store.state.isShow;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
-        this.$store.commit('setisShow', v);} } }, methods: { getUserDetail: function getUserDetail(uid) {uni.showLoading({ mask: true, title: '加载中...' });var that = this;uni.getStorage({ key: 'cookie', success: function success(cookieRes) {that.cookie = cookieRes.data;uni.request({ url: 'https://wx.3dcw.cn/user/detail', method: 'GET', data: { t: Date.parse(new Date()), uid: uid, cookie: cookieRes.data }, success: function success(res) {that.userDetail = res.data;}, fail: function fail(err) {console.log(err);} });}, fail: function fail(err) {uni.showToast({ icon: 'none', title: '未登录，无法查看' });setTimeout(function () {uni.hideToast();}, 3000);} });}, getUserPlaylist: function getUserPlaylist(uid) {var that = this;uni.request({ url: 'https://wx.3dcw.cn/user/playlist', method: 'GET', data: { t: Date.parse(new Date()), uid: uid }, success: function success(res) {that.userPlaylist = res.data;that.songListId = res.data.playlist[0].id;uni.hideLoading();for (var i = 1; i < res.data.playlist.length; i++) {if (uid == res.data.playlist[i].creator.userId) {that.createSongLists.push(res.data.playlist[i]);} else {that.collectionSongLists.push(res.data.playlist[i]);}}} });}, getPlaylistMusic: function getPlaylistMusic() {uni.showLoading({ mask: true, title: "加载中..." });var that = this;uni.request({ url: 'https://wx.3dcw.cn/playlist/detail', method: 'GET', data: { cookie: that.cookie, t: Date.parse(new Date()), id: that.songListId }, success: function success(res) {if (res.data.code === 200) {
-            that.getIntelligence(res.data.playlist.tracks[0].id);
-          }
-        }, fail: function fail(err) {
-          uni.hideLoading();
-          console.log(err);
-        } });
-
-    },
-    notImplemented: function notImplemented() {
-      uni.showToast({
-        title: '未实现',
-        icon: 'none' });
-
-    },
-    getIntelligence: function getIntelligence(songId) {
+        this.$store.commit('setisShow', v);} } }, methods: { getUserDetail: function getUserDetail(uid) {uni.showLoading({ mask: true, title: '加载中...' });var that = this;uni.getStorage({ key: 'cookie', success: function success(cookieRes) {that.cookie = cookieRes.data;uni.request({ url: 'https://wx.3dcw.cn/user/detail', method: 'GET', data: { t: Date.parse(new Date()), uid: uid, cookie: cookieRes.data }, success: function success(res) {that.userDetail = res.data;}, fail: function fail(err) {console.log(err);} });}, fail: function fail(err) {uni.showToast({ icon: 'none', title: '未登录，无法查看' });setTimeout(function () {uni.hideToast();}, 3000);} });}, getUserPlaylist: function getUserPlaylist(uid) {var that = this;uni.request({ url: 'https://wx.3dcw.cn/user/playlist', method: 'GET', data: { t: Date.parse(new Date()), uid: uid }, success: function success(res) {that.userPlaylist = res.data;that.songListId = res.data.playlist[0].id;uni.hideLoading();for (var i = 1; i < res.data.playlist.length; i++) {if (uid == res.data.playlist[i].creator.userId) {that.createSongLists.push(res.data.playlist[i]);} else {that.collectionSongLists.push(res.data.playlist[i]);}}} });}, getPlaylistMusic: function getPlaylistMusic() {uni.showLoading({ mask: true, title: "加载中..." });var that = this;var songlist = that.$store.getters.getsongInfo;that.getIntelligence(songlist.id ? songlist.id : songlist.resourceId); // uni.request({
+      // 	url: 'https://wx.3dcw.cn/playlist/detail',
+      // 	method: 'GET',
+      // 	data: {
+      // 		cookie: that.cookie,
+      // 		t: Date.parse(new Date()),
+      // 		id: that.songListId
+      // 	},
+      // 	success: function(res) {
+      // 		if (res.data.code === 200) {
+      // 			that.getIntelligence(res.data.playlist.tracks[0].id);
+      // 		}
+      // 	},fail: (err) => {
+      // 		uni.hideLoading()
+      // 		console.log(err)
+      // 	}
+      // });
+    }, notImplemented: function notImplemented() {uni.showToast({ title: '未实现', icon: 'none' });}, getIntelligence: function getIntelligence(songId) {
       var that = this;
       uni.request({
         url: 'https://wx.3dcw.cn/playmode/intelligence/list',
