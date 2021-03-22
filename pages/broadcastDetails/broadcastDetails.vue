@@ -19,7 +19,7 @@
 			</view>
 			<view class="operation">
 				<view class="tool">
-					<i class="iconfont iconshoucang"></i>
+					<i class="iconfont iconshoucang" @click="likeMusic(true)"></i>
 					<i class="iconfont iconxiazai"></i>
 					<i class="iconfont iconktv"></i>
 					<i class="iconfont iconpinglun"></i>
@@ -31,7 +31,7 @@
 					<text class="end">{{ songDuration | formatDateTime(this) }}</text>
 				</view>
 				<view class="roadcast">
-					<i class="iconfont iconliebiaoxunhuan"></i>
+					<i class="iconfont iconliebiaoxunhuan" ></i>
 					<i class="iconfont iconshangyishoushangyige" @click="lastSongs()"></i>
 					<i v-if="!isPlay" class="iconfont iconbofang1" @click="playMusic()"></i>
 					<i v-if="isPlay" class="iconfont iconzanting" @click="pauseAudio()"></i>
@@ -62,7 +62,8 @@ export default {
 			cuAreaStyle: {
 				width: '100%'
 			},
-			lyricsCurTime: 0 //当前歌词进度
+			lyricsCurTime: 0 ,//当前歌词进度
+			cookie:""
 		};
 	},
 	onLoad() {
@@ -202,10 +203,12 @@ export default {
 			this.getCurrentTime();
 		},
 		nextSongs: function() {
+			this.$store.commit("setsongCurrentTime","0:00");
 			this.nextSong(this.serialNumber, this.playlist);
 			this.getCurrentTime();
 		},
 		lastSongs: function() {
+			this.$store.commit("setsongCurrentTime","0:00");
 			this.lastSong(this.serialNumber, this.playlist);
 			this.getCurrentTime();
 		},
@@ -215,6 +218,7 @@ export default {
 			uni.getStorage({
 				key: 'cookie',
 				success: cookieRes => {
+					that.cookie = cookieRes.data;
 					uni.request({
 						url: 'https://wx.3dcw.cn/lyric',
 						data: {
@@ -256,6 +260,40 @@ export default {
 			this.$store.commit("setsongCurrentTime", e.value/100*this.songDuration);
 			this.jumpSeek(e.value/100*this.songDuration);
 			this.lyricsCurTime = (e.value/100*this.songDuration/1000).toFixed(0);
+		},
+		likeMusic:function(boolen){
+			let that =this;
+			uni.showLoading({
+				mask:true,
+				title:"处理中..."
+			})
+			uni.request({
+				url:"https://wx.3dcw.cn/like",
+				data:{
+					id:that.songInfo.id?that.songInfo.id:that.songInfo.resourceId,
+					// like:boolen,
+					cookie:this.cookie
+				},
+				success: (res) => {
+					console.log(res);
+					uni.hideLoading();
+					if(res.data.code == 200){
+						uni.showToast({
+							icon:"none",
+							title:res.data.msg
+						})
+					}else{
+						uni.showToast({
+							icon:"none",
+							title:res.data.msg
+						})
+					}
+				},
+				fail: (err) => {
+					console.log(err);
+					uni.hideLoading();
+				}
+			})
 		}
 	},
 	watch: {

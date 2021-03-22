@@ -1,5 +1,5 @@
 .home {
-  height: 100%;
+  min-height: 100vh;
 }
 .home .container {
   padding: 149rpx 20rpx 108rpx;
@@ -511,10 +511,15 @@
   font-size: 40rpx;
   color: #41b883;
 }
+.home .tl-show {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
 uni-drawer .content {
-  padding: 129rpx 0 0 0;
   width: 480rpx;
-  background-color: #ffffff;
+  background-color: #f8f8f8;
   height: 100vh;
   font-family: 'Microsoft YaHei';
   overflow-y: auto;
@@ -523,99 +528,311 @@ uni-drawer .content {
   -webkit-user-select: none;
           user-select: none;
 }
-uni-drawer .content .lowerPart {
-  width: 480rpx;
-  height: auto;
-  background-color: #fff;
-  border-radius: 20rpx 20rpx 0 0;
-  border-top: solid #494949 1px;
-  padding: 34rpx 0 72rpx;
-  touch-action: pan-y;
-  box-sizing: border-box;
-}
-uni-drawer .content .lowerPart .search {
-  padding: 0rpx 0 40rpx;
-}
-uni-drawer .content .lowerPart .userProfile {
-  border-top: 2rpx solid #d0d0d0;
-  border-radius: 30rpx;
-  padding: 30rpx 0 0;
-}
-uni-drawer .content .lowerPart .userProfile .top {
+uni-drawer .content .user {
+  height: 45px;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  padding-bottom: 28rpx;
-  padding: 0 30rpx;
+  padding: 0 10rpx;
 }
-uni-drawer .content .lowerPart .userProfile .top .left {
+uni-drawer .content .user .left {
   -webkit-box-flex: 7.5;
   -webkit-flex: 7.5;
           flex: 7.5;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
-uni-drawer .content .lowerPart .userProfile .top .left image {
+uni-drawer .content .user .left .avatarUrl {
   width: 56rpx;
   height: 56rpx;
   vertical-align: middle;
   border-radius: 50rpx;
 }
-uni-drawer .content .lowerPart .userProfile .top .left text {
+uni-drawer .content .user .left .nickname {
   font-size: 23rpx;
   color: #202020;
   vertical-align: middle;
   padding-left: 14rpx;
 }
-uni-drawer .content .lowerPart .userProfile .top .right {
+uni-drawer .content .user .right {
   -webkit-box-flex: 2.5;
   -webkit-flex: 2.5;
           flex: 2.5;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
-uni-drawer .content .lowerPart .userProfile .top .right .signIn {
+uni-drawer .content .user .right .signIn {
   text-decoration: none;
   color: #fff;
   width: 90rpx;
   height: 40rpx;
   border-radius: 36rpx;
-  background-color: #f9412c;
+  background-color: #09bb07;
   font-size: 22rpx;
   display: block;
   text-align: center;
   line-height: 36rpx;
   float: right;
 }
-uni-drawer .content .lowerPart .userProfile .top .right .signIn ._i {
+uni-drawer .content .user .right .signIn .iconfont {
   font-size: 24rpx;
   padding-right: 5rpx;
   display: inline-block;
 }
-uni-drawer .content .lowerPart .userProfile .bottomBar {
+uni-drawer .content .lowerPart {
+  width: 480rpx;
+  margin: 0 auto;
+  height: auto;
+  box-sizing: border-box;
+  touch-action: pan-y;
+  padding-top: 20rpx;
+}
+uni-drawer .content .lowerPart .information {
+  width: 460rpx;
+  margin: 0 auto 30rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+uni-drawer .content .lowerPart .information .scroll-view {
+  width: 100%;
+  height: 100%;
+}
+uni-drawer .content .lowerPart .information .scroll-view .scroll-view-item {
+  width: 100%;
+  height: 80rpx;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  padding-top: 36rpx;
-  padding-bottom: 36rpx;
-  border-bottom: 2px solid #f2f2f2;
+  padding: 0 10rpx;
+  box-sizing: border-box;
 }
-uni-drawer .content .lowerPart .userProfile .bottomBar view {
+uni-drawer .content .lowerPart .information .scroll-view .scroll-view-item .left {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+uni-drawer .content .lowerPart .information .scroll-view .scroll-view-item .left .iconfont {
+  font-size: 34rpx;
+  width: 40rpx;
+  height: 36rpx;
+  display: inline-block;
+}
+uni-drawer .content .lowerPart .information .scroll-view .scroll-view-item .left .msg {
+  height: 100%;
+  vertical-align: middle;
+  font-size: 26rpx;
+  display: inline-block;
+  padding-left: 10rpx;
+}
+uni-drawer .content .lowerPart .information .scroll-view .scroll-view-item .right {
   -webkit-box-flex: 2;
   -webkit-flex: 2;
           flex: 2;
-  text-align: center;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
 }
-uni-drawer .content .lowerPart .userProfile .bottomBar view ._i {
-  text-align: center;
-  font-size: 40rpx;
-  color: #de2134;
-  font-weight: bold;
-  line-height: 1.1;
+uni-drawer .content .lowerPart .information .scroll-view .scroll-view-item .right .iconfont {
+  text-align: right;
+  width: 40rpx;
+  height: 36rpx;
+  font-size: 28rpx;
+  display: inline-block;
 }
-uni-drawer .content .lowerPart .userProfile .bottomBar view text {
+uni-drawer .content .lowerPart .information .scroll-view .scroll-view-item .right .message {
+  height: 40rpx;
+  width: 40rpx;
+  display: inline-block;
+  border-radius: 50rpx;
+  background-color: #09bb07;
+  color: #ffffff;
+  line-height: 40rpx;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 20rpx;
+}
+uni-drawer .content .lowerPart .other {
+  width: 460rpx;
+  margin: 0 auto 30rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+}
+uni-drawer .content .lowerPart .other .topTile {
+  padding-left: 20rpx;
   font-size: 24rpx;
-  color: #333333;
+  height: 80rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  border-bottom: 1px solid #f8f8f8;
+  color: #999;
+}
+uni-drawer .content .lowerPart .other .scroll-view {
+  width: 100%;
+  height: 100%;
+}
+uni-drawer .content .lowerPart .other .scroll-view .scroll-view-item {
+  width: 100%;
+  height: 80rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+uni-drawer .content .lowerPart .other .scroll-view .scroll-view-item .left {
+  -webkit-box-flex: 8;
+  -webkit-flex: 8;
+          flex: 8;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  padding-left: 10rpx;
+  box-sizing: border-box;
+}
+uni-drawer .content .lowerPart .other .scroll-view .scroll-view-item .left .iconfont {
+  font-size: 34rpx;
+  width: 40rpx;
+  height: 36rpx;
+  display: inline-block;
+}
+uni-drawer .content .lowerPart .other .scroll-view .scroll-view-item .left .msg {
+  height: 100%;
+  vertical-align: middle;
+  font-size: 26rpx;
+  display: inline-block;
+  padding-left: 10rpx;
+}
+uni-drawer .content .lowerPart .other .scroll-view .scroll-view-item .right {
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+          flex: 2;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+uni-drawer .content .lowerPart .logout {
+  height: 80rpx;
+  width: 460rpx;
+  margin: 0 auto 30rpx;
+  background-color: #ffffff;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+uni-drawer .content .lowerPart .logout .clear {
+  line-height: 80rpx;
+  width: 100%;
+  height: 80rpx;
+  margin: 0 auto;
+  background-color: #ffffff;
+  color: #ff3333;
+  font-size: 32rpx;
+}
+uni-drawer .dark {
+  background-color: #222;
+}
+uni-drawer .dark .user .left .nickname {
+  color: #fff;
+}
+uni-drawer .dark .lowerPart .information,
+uni-drawer .dark .lowerPart .other,
+uni-drawer .dark .lowerPart .logout {
+  background-color: #a6a6a6;
+}
+uni-drawer .dark .lowerPart .other .topTile {
+  color: #ffffff;
+}
+uni-drawer .dark .lowerPart .logout .clear {
+  background-color: #a6a6a6;
 }
 .dark {
   background-color: #222;
   color: #ffffff;
+}
+.dark .topnavbar .status_bar {
+  background-color: #333333;
+}
+.dark .topnavbar .uni-navbar__content_view {
+  background-color: #333333 !important;
+}
+.dark .topnavbar .uni-navbar__content_view .uni-nav-bar-text,
+.dark .topnavbar .uni-navbar__content_view .data-v-0bf90c00 {
+  color: #FFFFFF !important;
+}
+.dark .topnavbar .uni-navbar--border.data-v-4afea59e {
+  border-bottom-color: #5f5f5f !important;
 }
 .dark .container .search .warp {
   background-color: #dddddd;

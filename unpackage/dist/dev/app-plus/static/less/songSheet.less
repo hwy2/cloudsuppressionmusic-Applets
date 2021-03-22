@@ -1,0 +1,175 @@
+.songSheet {
+	height: 100vh;
+	.navbarSorll {
+		width: 100%;
+		padding: 10upx 20upx 10upx;
+		overflow: auto;
+		box-sizing: border-box;
+		position: relative;
+		background-color: #f7f7f7;
+
+		scroll-view {
+			width: 100%;
+			height: 46upx;
+			white-space: nowrap;
+			view {
+				display: inline-block;
+				width: 145upx;
+				margin-right: 20upx;
+				font-size: 30upx;
+				line-height: 1.5;
+				color: #545454;
+				text-align: center;
+				touch-action: pan-x;
+				overflow: hidden; //隐藏文字
+				text-overflow: ellipsis; //显示...
+				white-space: nowrap; //不换行
+			}
+			view:last-child {
+				margin-right: 0;
+			}
+			.active {
+				// color: #04f88a;
+				font-size: 31upx;
+				font-weight: bold;
+				position: relative;
+				
+				&::before{
+					content: "";
+					height: 10upx;
+					border-radius: 10upx;
+					width: 50upx;
+					background-color: rgba(27,248,145,0.8);
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+
+		.more {
+			position: fixed;
+			top: 0upx;
+			right: 0;
+			height: 56upx;
+			width: 56upx;
+			text-align: center;
+			line-height: 56upx;
+			// background: linear-gradient(#fdf3f2, #fffdfd);
+			background-color: #f7f7f7;
+
+			i {
+				width: 100%;
+				height: 100%;
+				display: block;
+				font-size: 50upx;
+				text-align: center;
+				line-height: 56upx;
+			}
+		}
+	}
+
+	.sheet {
+		padding-top: 15upx;
+		background-color: #fff;
+		overflow: auto;
+		height: 90vh;
+
+		hr-pull-load {
+			width: 100%;
+			height: 100%;
+			display: block;
+			box-sizing: border-box;
+
+			uni-grid {
+				width: 100%;
+				display: block;
+				padding-bottom: 30upx;
+
+				uni-grid-item {
+					height: 320upx;
+
+					.warp {
+						position: relative;
+						width: 220upx;
+						height: 300upx;
+						border-radius: 20upx;
+						margin: 0 auto;
+						box-shadow: 1upx 1upx 10upx #c6c6c6;
+
+						image {
+							width: 220upx;
+							height: 220upx;
+							display: block;
+							margin: 0 auto;
+							border-radius: 20upx 20upx 0 0;
+							overflow: hidden;
+						}
+
+						.playVolume {
+							position: absolute;
+							top: 10upx;
+							right: 12upx;
+							color: #fff;
+							font-size: 16upx;
+
+							view {
+								font-size: 26upx;
+								padding-right: 20upx;
+							}
+						}
+
+						text {
+							display: block;
+							font-size: 25upx;
+							width: 100%;
+							overflow: hidden;
+							text-overflow: ellipsis;
+							-webkit-line-clamp: 2; //长度超过2行显示……
+							-webkit-box-orient: vertical;
+							display: -webkit-box;
+							width: 90%;
+							margin: 0 auto;
+							word-break: break-all;
+							line-height: 1.5;
+							padding: 2upx;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	uni-drawer {
+		.categories-warp {
+			padding: 20upx;
+			height: 96.5vh;
+			.bigcategories {
+				height: 100%;
+				.scroll-view-big {
+					.bigText {
+						font-size: 28upx;
+					}
+					.smallcategories {
+						.scroll-view-small {
+							text {
+								float: left;
+								width: 30%;
+								height: 60upx;
+								background-color: rgb(243, 243, 243);
+								border-radius: 10upx;
+								text-align: center;
+								line-height: 60upx;
+								margin-right: 3%;
+								margin-bottom: 3%;
+								font-size: 24upx;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+

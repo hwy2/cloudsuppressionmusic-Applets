@@ -1,8 +1,8 @@
 .rankingList {
-  height: 86vh;
+  height: 100vh;
   overflow: auto;
   padding-bottom: 120rpx;
-  background-color: #f7f7f7;
+  background-color: #F8F8F8;
   padding-top: 20rpx;
 }
 .rankingList .listRecommendation,

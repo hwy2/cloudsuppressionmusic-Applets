@@ -2,7 +2,8 @@
 	<view class="videoDetails" :style="{ height: pageHeight }">
 		<view class="videoMain">
 			<view class="videoPlay">
-				<video id="myVideo"
+				<video
+					id="myVideo"
 					preload="preload"
 					controls="controls"
 					:poster="videoDetails.coverUrl"
@@ -13,7 +14,7 @@
 					:src="videoUrl"
 					object-fit="contain"
 				>
-<!-- 					<source :src="videoUrl" type="video/mp4" /> -->
+					<!-- 					<source :src="videoUrl" type="video/mp4" /> -->
 				</video>
 			</view>
 			<view class="videosub">
@@ -24,25 +25,25 @@
 						<view @click="switchNavigation('评论')" :class="showComments ? 'navigation active' : 'navigation'"><text>评论</text></view>
 					</scroll-view>
 				</view>
-				<view class="substance" >
+				<view class="substance">
 					<view class="briefIntroduction" v-if="!showComments">
 						<view class="creator">
-							<image :src="videoDetails.creator.avatarUrl||videoDetails.artists[0].img1v1Url" :alt="videoDetails.creator.nickname" mode="aspectFit" />
-							<text>{{ videoDetails.creator.nickname||videoDetails.artists[0].name }}</text>
+							<image :src="videoDetails.creator.avatarUrl || videoDetails.artists[0].img1v1Url" :alt="videoDetails.creator.nickname" mode="aspectFit" />
+							<text>{{ videoDetails.creator.nickname || videoDetails.artists[0].name }}</text>
 						</view>
 						<view class="videoName">
-							<text>{{ videoDetails.title||videoDetails.name }}</text>
+							<text>{{ videoDetails.title || videoDetails.name }}</text>
 						</view>
 						<view class="likePlaying clearfix">
 							<view class="p">
 								<i class=" iconfont iconicon--">
-									<text v-if=" videoDetails.playTime">{{ videoDetails.playTime | retainDoubleDigit  }}</text>
-									<text v-else>{{videoDetails.playCount | retainDoubleDigit}}</text>
+									<text v-if="videoDetails.playTime">{{ videoDetails.playTime | retainDoubleDigit }}</text>
+									<text v-else>{{ videoDetails.playCount | retainDoubleDigit }}</text>
 								</i>
 							</view>
 							<view class="p">
 								<i class=" iconfont icondianzan">
-									<text>{{ videoDetails.praisedCount || videoDetails.subCount}}</text>
+									<text>{{ videoDetails.praisedCount || videoDetails.subCount }}</text>
 								</i>
 							</view>
 						</view>
@@ -119,12 +120,12 @@ export default {
 			page: 1, //页码
 			relatedVideo: [], //相关视频
 			bottomTips: '',
-			pageHeight:"100vh",
-			videoContext:''//视频实例
+			pageHeight: '100vh',
+			videoContext: '' //视频实例
 		};
 	},
-	onReady: function (res) {
-	        this.videoContext = uni.createVideoContext('myVideo')
+	onReady: function(res) {
+		this.videoContext = uni.createVideoContext('myVideo');
 	},
 	onLoad(options) {
 		const eventChannel = this.getOpenerEventChannel();
@@ -138,12 +139,11 @@ export default {
 				that.getVideoDetail();
 			}
 		});
-		
-		
-		let  statusBarHeight= uni.getSystemInfoSync()['statusBarHeight'];
-		if(statusBarHeight>=44){
-			this.pageHeight="95vh";
-		};
+
+		let statusBarHeight = uni.getSystemInfoSync()['statusBarHeight'];
+		if (statusBarHeight >= 44) {
+			this.pageHeight = '95vh';
+		}
 	},
 	filters: {
 		retainDoubleDigit: function(data) {
@@ -166,7 +166,8 @@ export default {
 		this.videoContext.pause();
 	},
 	methods: {
-		getMVDetailInfo: function() {//获取MV详情
+		getMVDetailInfo: function() {
+			//获取MV详情
 			let that = this;
 			uni.getStorage({
 				key: 'cookie',
@@ -192,7 +193,8 @@ export default {
 				}
 			});
 		},
-		getVideoDetail: function() {//获取视频详情
+		getVideoDetail: function() {
+			//获取视频详情
 			let that = this;
 			uni.getStorage({
 				key: 'cookie',
@@ -218,7 +220,8 @@ export default {
 				}
 			});
 		},
-		getVideoUrl: function() {//获取视频链接
+		getVideoUrl: function() {
+			//获取视频链接
 			let that = this;
 			uni.request({
 				url: 'https://wx.3dcw.cn/video/url',
@@ -236,7 +239,8 @@ export default {
 				}
 			});
 		},
-		getVideoDetailInfo: function() {//视频评论
+		getVideoDetailInfo: function() {
+			//视频评论
 			let that = this;
 			uni.request({
 				url: 'https://wx.3dcw.cn/comment/video',
@@ -252,7 +256,8 @@ export default {
 				}
 			});
 		},
-		getrelatedVideoAll: function() {//相关视频
+		getrelatedVideoAll: function() {
+			//相关视频
 			let that = this;
 			uni.request({
 				url: 'https://wx.3dcw.cn/related/allvideo',
@@ -268,7 +273,8 @@ export default {
 				}
 			});
 		},
-		getMVurl: function() {//获取mv链接
+		getMVurl: function() {
+			//获取mv链接
 			let that = this;
 			uni.request({
 				url: 'https://wx.3dcw.cn/mv/url',
@@ -286,26 +292,29 @@ export default {
 				}
 			});
 		},
-		switchNavigation: function(data) {//简介评论切换
+		switchNavigation: function(data) {
+			//简介评论切换
 			if (data === '简介') {
 				this.showComments = false;
 			} else {
 				this.showComments = true;
 			}
 		},
-		loadMore: function() {//上拉刷新
+		loadMore: function() {
+			//上拉刷新
 			this.bottomTips = 'loading';
 			this.getExampleData();
 		},
-		getExampleData: function() {//刷新函数
+		getExampleData: function() {
+			//刷新函数
 			let that = this;
-			let url ='';
+			let url = '';
 			if (that.videoType == 'mv') {
-				url='https://wx.3dcw.cn/comment/mv';
+				url = 'https://wx.3dcw.cn/comment/mv';
 			} else {
-				url="https://wx.3dcw.cn/comment/video";
+				url = 'https://wx.3dcw.cn/comment/video';
 			}
-			
+
 			uni.request({
 				url: url,
 				data: {
@@ -330,13 +339,14 @@ export default {
 				}
 			});
 		},
-		openVideoDatails:function(id){//打开视频页
-			let that =this;
+		openVideoDatails: function(id) {
+			//打开视频页
+			let that = this;
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
 					that.videoContext.pause();
-					console.log(that.videoContext)
+					console.log(that.videoContext);
 					uni.navigateTo({
 						url: '/pages/videoDetails/videoDetails',
 						success: function(res) {
@@ -351,7 +361,7 @@ export default {
 				},
 				fail(err) {
 					console.log(err);
-			
+
 					uni.showModal({
 						title: '',
 						content: '请登录',
@@ -368,7 +378,8 @@ export default {
 				}
 			});
 		},
-		getMVCommentInfo:function(){//获取MV评论
+		getMVCommentInfo: function() {
+			//获取MV评论
 			let that = this;
 			uni.request({
 				url: 'https://wx.3dcw.cn/comment/mv',
@@ -384,8 +395,15 @@ export default {
 				}
 			});
 		}
+	},
+	onShow: function() {
+		if(this.$store.getters.getisPlay){
+			this.pauseAudio();
+			this.$store.commit("setplayMessage",false);
+		}
+		if(this.videoContext){
+			this.videoContext.play();
+		}
 	}
 };
 </script>
-
-<style></style>

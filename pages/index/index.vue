@@ -3,12 +3,12 @@
 		<!-- 状态栏、标题栏 -->
 		<view class="topnavbar">
 			<view class="status_bar" :style="{ height: headerPadding }"></view>
-			<uni-nav-bar title="网抑云"></uni-nav-bar>
-			<!-- <uni-nav-bar left-icon="bars" title="网抑云" @click-left="openDrawer()"></uni-nav-bar> -->
+			<!-- <uni-nav-bar title="网抑云"></uni-nav-bar> 都为空 -->
+			<uni-nav-bar left-icon="bars" title="网抑云" @click-left="openDrawer()"></uni-nav-bar>
 		</view>
 
 		<!-- 内容区 -->
-		<view class="container" :style="{ 'padding-top': containerPaddingTop }">
+		<view class="container" :style="{ 'padding-top': containerPaddingTop }" :class="mask ? 'tl-show' : ''">
 			<!-- <view class="search"><uni-search-bar @confirm="search" @input="input"></uni-search-bar></view> -->
 			<view class="search">
 				<view class="warp" @click="openSearch()">
@@ -291,48 +291,65 @@
 		</view>
 
 		<!-- 抽屉 -->
-		<uni-drawer :visible="true" :mask="true" :maskClick="true" mode="left" ref="draw" :width="240">
-			<view class="content">
-				<view class="lowerPart">
-					<!-- 搜索框 -->
-					<view class="search"><uni-search-bar @confirm="search" @input="input"></uni-search-bar></view>
-
-					<!-- 用户信息 -->
-					<view class="userProfile">
-						<view class="top clearfix">
-							<view class="left" @click="openMe()">
-								<image :src="profile.avatarUrl" mode="aspectFill"></image>
-								<text>{{ profile.nickname }}</text>
-							</view>
-							<view class="right">
-								<view class="signIn" @click="dailySignin()">
-									<i class="iconfont iconqiandao"></i>
-									<text>{{ signIn }}</text>
-								</view>
-							</view>
-						</view>
-						<view class="bottomBar">
-							<view>
-								<i class="iconfont iconyoujian"></i>
-								<text>我的消息</text>
-							</view>
-							<view>
-								<i class="iconfont iconhaoyou"></i>
-								<text>我的好友</text>
-							</view>
-							<view>
-								<i class="iconfont iconzhuye"></i>
-								<text>个人主页</text>
-							</view>
-							<view>
-								<i class="iconfont iconquanmianshidai-"></i>
-								<text>个性装扮</text>
-							</view>
+		<uni-drawer :visible="true" :mask="true" :maskClick="true" mode="left" ref="draw" :width="240" @change="changeDrawer($event)">
+			<view class="content" :class="isDark ? 'dark' : ''">
+				<view class="status_bar" :style="{ height: headerPadding }"></view>
+				<view class="user">
+					<view class="left" @click="openMe()">
+						<view class="">
+							<image :src="profile.avatarUrl" mode="aspectFill" class="avatarUrl"></image>
+							<text class="nickname">{{ profile.nickname }} ></text>
 						</view>
 					</view>
+					<view class="right">
+						<view class="signIn" @click="dailySignin()">
+							<i class="iconfont iconqiandao"></i>
+							<text>{{ signIn }}</text>
+						</view>
+					</view>
+				</view>
 
-					<!--  -->
-					<view class="ss"><button @click="clearStorage">clearStorage</button></view>
+				<view class="lowerPart">
+					<!-- 我的消息 -->
+					<view class="information">
+						<scroll-view class="scroll-view" scroll-y="true" scroll-left="0">
+							<view class="scroll-view-item ">
+								<view class="left">
+									<view class="">
+										<i class="iconfont iconyoujian"></i>
+										<text class="msg">我的消息</text>
+									</view>
+								</view>
+								<view class="right">
+									<view class="">
+										<text class="message">{{ 10 }}</text>
+										<i class="iconfont iconzuojiantou-cu"></i>
+									</view>
+								</view>
+							</view>
+						</scroll-view>
+					</view>
+
+					<view class="other">
+						<view class="topTile"><text>其他</text></view>
+						<scroll-view class="scroll-view" scroll-y="true" scroll-left="0">
+							<view class="scroll-view-item ">
+								<view class="left">
+									<view class="" >
+										<i class="iconfont iconyueliang"></i>
+										<text class="msg">夜间模式</text>
+									</view>
+								</view>
+								<view class="right">
+									<view><switch style="transform:scale(0.7)" :checked="isDark" @change="switch1Change" /></view>
+								</view>
+							</view>
+						</scroll-view>
+					</view>
+					
+					<view class="logout">
+						<button class="clear" @click="clearStorage">退出登录</button>
+					</view>
 				</view>
 			</view>
 		</uni-drawer>
@@ -353,7 +370,7 @@ export default {
 	components: { uniGrid, uniGridItem, uniSearchBar, uniDrawer, musicPlaybar },
 	data() {
 		return {
-			day: '',
+			day: '', //当前日期
 			signIn: '签到',
 			profile: [], //用户信息
 			swipeList: [], //轮播图list
@@ -365,7 +382,8 @@ export default {
 			newSong: [], //新歌新碟
 			clickFlag: false, //判断是否为新歌栏
 			headerPadding: '', //当前状态栏高度
-			containerPaddingTop: '' //当前内容区距离顶部高度
+			containerPaddingTop: '', //当前内容区距离顶部高度
+			mask: false //遮罩层是否显示
 		};
 	},
 	filters: {
@@ -380,6 +398,7 @@ export default {
 		}
 	},
 	onLoad() {
+		//获取当前状态栏高度
 		this.headerPadding = uni.getSystemInfoSync()['statusBarHeight'] + 'px';
 		this.containerPaddingTop = uni.getSystemInfoSync()['statusBarHeight'] - 25 + 149 + 'rpx';
 	},
@@ -415,7 +434,7 @@ export default {
 			}
 		},
 		isDark: {
-			//音乐信息
+			//是否夜间模式
 			get() {
 				return this.$store.state.isDark;
 			},
@@ -442,7 +461,7 @@ export default {
 					let temp = [['推荐歌单', '专属场景歌单', '音乐日历'], ['recommendedSongList', 'exclusiveScene', 'musicCalendar']];
 					res.data.data.blocks
 						.filter(item => {
-							return item?.uiElement?.subTitle || item?.uiElement?.mainTitle;
+							return item?.uiElement?.subTitle || item?.uiElement?.mainTitle; //使用filter（）函数过滤 可用链?.判断是否存在
 						})
 						.forEach(item => {
 							let index = temp[0].findIndex(k => k == item.uiElement?.subTitle?.title || k == item.uiElement?.mainTitle?.title);
@@ -464,6 +483,7 @@ export default {
 			});
 		},
 		geticon: function() {
+			//二级导航图标
 			let that = this;
 			uni.showLoading({
 				title: '加载中...',
@@ -511,12 +531,19 @@ export default {
 			});
 		},
 		openDrawer: function() {
+			//打开抽屉
 			this.$refs.draw.open();
+			this.mask = true;
 		},
-		closeDrawer: function() {
-			this.leftdrawer = false;
+		changeDrawer: function(e) {
+			//抽屉状态变化
+			if (!e) {
+				this.leftdrawer = false;
+				this.mask = false;
+			}
 		},
 		playMusic: function(songinfos, songinfospicUrl) {
+			//播放音乐
 			console.log(songinfos);
 			let songId = songinfos.id ? songinfos.id : songinfos.resourceId;
 			songinfos['picUrl'] = songinfospicUrl;
@@ -525,6 +552,7 @@ export default {
 			this.getplayMusic(songId, songinfos);
 		},
 		playMusicAll: function() {
+			//播放全部音乐
 			let that = this;
 			let songAll = [];
 
@@ -541,6 +569,7 @@ export default {
 			that.getplayMusic(songAll[0].resourceId, songAll[0]);
 		},
 		clearStorage: function() {
+			//清理缓存
 			uni.clearStorage();
 			uni.navigateTo({
 				url: '/pages/login/login',
@@ -553,7 +582,7 @@ export default {
 			this.clickFlag = !this.clickFlag;
 		},
 		middleMethods: function(index) {
-			//根据index打开相应的方法
+			//二级导航跳转
 			switch (index) {
 				case 0:
 					uni.getStorage({
@@ -668,6 +697,7 @@ export default {
 			}
 		},
 		jumpSheet: function(sheet) {
+			//跳转到歌单界面
 			uni.navigateTo({
 				url: '/pages/songSheet/songSheet',
 				success: function(res) {
@@ -680,6 +710,7 @@ export default {
 			});
 		},
 		sheetDetails: function(sheetID) {
+			//跳转到歌单详情页面
 			// console.log(sheetID);
 
 			uni.getStorage({
@@ -716,6 +747,7 @@ export default {
 			});
 		},
 		openSearch: function() {
+			//打开搜索页
 			uni.navigateTo({
 				url: '/pages/search/search',
 				animationType: 'pop-in',
@@ -723,6 +755,7 @@ export default {
 			});
 		},
 		openMe: function() {
+			//打开我的页面
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
@@ -752,6 +785,7 @@ export default {
 			});
 		},
 		openLatestMusic: function() {
+			//打开新歌列表页
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
@@ -781,6 +815,7 @@ export default {
 			});
 		},
 		openNewDisc: function() {
+			//打开新碟页面
 			uni.getStorage({
 				key: 'profile',
 				success(res) {
@@ -808,18 +843,23 @@ export default {
 					});
 				}
 			});
+		},
+		switch1Change: function(e) {
+			this.$store.commit('setisDark', e.target.value);
 		}
 	},
 	created() {
 		this.geticon();
 		let data = new Date();
 		this.day = data.getDate() <= 9 ? '0' + data.getDate() : data.getDate();
-		this.$store.commit('setisDark', false);
+		// this.$store.commit('setisDark', false); //默认设置为日间模式
+		this.$store.commit('setplayMessage', true); //设置消息正常，不会被视频播放顶掉
 		console.log('isDark:', this.isDark);
 	},
 	beforeCreate() {
 		let that = this;
 		uni.getStorage({
+			//判断是否已登录
 			key: 'profile',
 			success: function(res) {
 				that.profile = res.data;
@@ -833,8 +873,9 @@ export default {
 		});
 	},
 	onUnload() {
-		this.$store.commit('setisPlay', false);
+		this.$store.commit('setisPlay', false); //离开设置播放状态为false
 	}
+	
 };
 </script>
 <style lang="less">

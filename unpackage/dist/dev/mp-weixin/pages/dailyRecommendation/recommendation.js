@@ -208,7 +208,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-__webpack_require__(/*! @/static/less/dailyRecommendation.less */ 36); //
+__webpack_require__(/*! @/static/less/dailyRecommendation.less */ 37); //
 //
 //
 //
@@ -287,7 +287,7 @@ __webpack_require__(/*! @/static/less/dailyRecommendation.less */ 36); //
 //
 //
 //
-var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { month: '', day: '', backgroudURl: '', dailySongs: '', //每日推荐歌曲
+var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { month: '', day: '', backgroudURl: '', dailySongs: '', //每日推荐歌曲
       topBannerHeight: '20vh' //头图
     };}, computed: { isShow: { //播放状态
       get: function get() {return this.$store.state.isShow;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变

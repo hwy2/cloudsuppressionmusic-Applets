@@ -1,5 +1,5 @@
 .home {
-	height: 100%;
+	min-height: 100vh;
 	.container {
 		padding: 149upx 20upx 108upx;
 		font-size: 14upx;
@@ -543,14 +543,20 @@
 			}
 		}
 	}
+
+	.tl-show {
+		overflow: hidden;
+		position: fixed;
+		height: 100%;
+		width: 100%;
+	}
 }
 
 // 左侧抽屉栏
 uni-drawer {
 	.content {
-		padding: 129upx 0 0 0;
 		width: 480upx;
-		background-color: #ffffff;
+		background-color: #f8f8f8;
 		height: 100vh;
 		font-family: 'Microsoft YaHei';
 		overflow-y: auto;
@@ -558,94 +564,252 @@ uni-drawer {
 		touch-action: none;
 		user-select: none;
 
+		.user {
+			height: 45px;
+			display: flex;
+			padding: 0 10upx;
+			.left {
+				flex: 7.5;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.avatarUrl {
+					width: 56upx;
+					height: 56upx;
+					vertical-align: middle;
+					border-radius: 50upx;
+				}
+
+				.nickname {
+					font-size: 23upx;
+					color: #202020;
+					vertical-align: middle;
+					padding-left: 14upx;
+				}
+			}
+			.right {
+				flex: 2.5;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				.signIn {
+					text-decoration: none;
+					color: #fff;
+					width: 90upx;
+					height: 40upx;
+					border-radius: 36upx;
+					background-color: #09bb07;
+					font-size: 22upx;
+					display: block;
+					text-align: center;
+					line-height: 36upx;
+					float: right;
+
+					.iconfont {
+						font-size: 24upx;
+						padding-right: 5upx;
+						display: inline-block;
+					}
+				}
+			}
+		}
+
 		.lowerPart {
 			width: 480upx;
+			margin: 0 auto;
 			height: auto;
-			background-color: #fff;
-			border-radius: 20upx 20upx 0 0;
-			border-top: solid #494949 1px;
 			box-sizing: border-box;
-			padding: 34upx 0 72upx;
 			touch-action: pan-y;
-			box-sizing: border-box;
+			padding-top: 20upx;
 
-			.search {
-				padding: 0upx 0 40upx;
-			}
+			.information {
+				width: 460upx;
+				margin: 0 auto 30upx;
+				background-color: #ffffff;
+				border-radius: 10upx;
 
-			.userProfile {
-				border-top: 2upx solid #d0d0d0;
-				border-radius: 30upx;
-				padding: 30upx 0 0;
+				.scroll-view {
+					width: 100%;
+					height: 100%;
 
-				.top {
-					display: flex;
-					padding-bottom: 28upx;
-					padding: 0 30upx;
-					.left {
-						flex: 7.5;
-						image {
-							width: 56upx;
-							height: 56upx;
-							vertical-align: middle;
-							border-radius: 50upx;
-						}
+					.scroll-view-item {
+						width: 100%;
+						height: 80upx;
+						display: flex;
+						padding: 0 10rpx;
+						box-sizing: border-box;
 
-						text {
-							font-size: 23upx;
-							color: #202020;
-							vertical-align: middle;
-							padding-left: 14upx;
-						}
-					}
-					.right {
-						flex: 2.5;
+						.left {
+							flex: 8;
+							height: 100%;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							padding-left: 10upx;
+							box-sizing: border-box;
 
-						.signIn {
-							text-decoration: none;
-							color: #fff;
-							width: 90upx;
-							height: 40upx;
-							border-radius: 36upx;
-							background-color: #f9412c;
-							font-size: 22upx;
-							display: block;
-							text-align: center;
-							line-height: 36upx;
-							float: right;
-
-							i {
-								font-size: 24upx;
-								padding-right: 5upx;
+							.iconfont {
+								font-size: 34upx;
+								width: 40upx;
+								height: 36upx;
 								display: inline-block;
+							}
+							.msg {
+								height: 100%;
+								vertical-align: middle;
+								font-size: 26upx;
+								display: inline-block;
+								padding-left: 10upx;
+							}
+						}
+
+						.right {
+							flex: 2;
+							height: 100%;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							.iconfont {
+								text-align: right;
+								width: 40upx;
+								height: 36upx;
+								font-size: 28upx;
+								display: inline-block;
+							}
+							.message {
+								height: 40upx;
+								width: 40upx;
+								display: inline-block;
+								border-radius: 50upx;
+								background-color: #09bb07;
+								color: #ffffff;
+								line-height: 40upx;
+								text-align: center;
+								vertical-align: middle;
+								font-size: 20upx;
 							}
 						}
 					}
 				}
+			}
 
-				.bottomBar {
+			.other {
+				width: 460upx;
+				margin: 0 auto 30upx;
+				background-color: #ffffff;
+				border-radius: 10upx;
+
+				.topTile {
+					padding-left: 20upx;
+					font-size: 24upx;
+					height: 80upx;
 					display: flex;
-					padding-top: 36upx;
-					padding-bottom: 36upx;
-					border-bottom: 2px solid #f2f2f2;
+					flex-direction: column;
+					justify-content: center;
+					border-bottom: 1px solid #f8f8f8;
+					color: #999;
+				}
 
-					view {
-						flex: 2;
-						text-align: center;
+				.scroll-view {
+					width: 100%;
+					height: 100%;
 
-						i {
-							text-align: center;
-							font-size: 40upx;
-							color: #de2134;
-							font-weight: bold;
-							line-height: 1.1;
+					.scroll-view-item {
+						width: 100%;
+						height: 80upx;
+						display: flex;
+						padding: 0 10rpx;
+						box-sizing: border-box;
+
+						.left {
+							flex: 8;
+							height: 100%;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							padding-left: 10upx;
+							box-sizing: border-box;
+
+							.iconfont {
+								font-size: 34upx;
+								width: 40upx;
+								height: 36upx;
+								display: inline-block;
+							}
+							.msg {
+								height: 100%;
+								vertical-align: middle;
+								font-size: 26upx;
+								display: inline-block;
+								padding-left: 10upx;
+							}
 						}
 
-						text {
-							font-size: 24upx;
-							color: #333333;
+						.right {
+							flex: 2;
+							height: 100%;
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
 						}
 					}
+				}
+			}
+
+			.logout {
+				height: 80upx;
+				width: 460upx;
+				margin: 0 auto 30upx;
+				background-color: #ffffff;
+				border-radius: 10upx;
+				display: flex;
+				text-align: center;
+				flex-direction: column;
+				justify-content: center;
+
+				.clear {
+					line-height: 80upx;
+					width: 100%;
+					height: 80upx;
+					margin: 0 auto;
+					background-color: #ffffff;
+					color: #ff3333;
+					font-size: 32upx;
+				}
+			}
+		}
+	}
+
+	.dark {
+		background-color: #222;
+
+		.user {
+			.left {
+				.nickname {
+					color: #fff;
+				}
+			}
+		}
+
+		.lowerPart {
+			.information,
+			.other,
+			.logout {
+				background-color: #a6a6a6;
+			}
+
+			.other {
+				.topTile {
+					color: #ffffff;
+				}
+			}
+
+			.logout {
+				.clear {
+					background-color: #a6a6a6;
 				}
 			}
 		}
@@ -655,6 +819,22 @@ uni-drawer {
 .dark {
 	background-color: #222;
 	color: #ffffff;
+
+	.topnavbar {
+		.status_bar{
+			background-color: #333333;
+		}
+		.uni-navbar__content_view{
+			background-color: #333333 !important;
+			.uni-nav-bar-text,.data-v-0bf90c00{
+				color: #FFFFFF !important;
+			}
+		}
+		
+		.uni-navbar--border.data-v-4afea59e{
+			border-bottom-color: #5f5f5f !important;
+		}
+	}
 
 	.container {
 		.search {

@@ -8,7 +8,7 @@
 .videoDetails .videoMain .videoPlay {
   width: 100%;
   touch-action: none;
-  height: 29vh;
+  height: 34.9vh;
 }
 .videoDetails .videoMain .videoPlay video {
   width: 100%;
@@ -17,7 +17,7 @@
 }
 .videoDetails .videoMain .videosub {
   background-color: #fff;
-  height: 71%;
+  height: 65.1%;
 }
 .videoDetails .videoMain .videosub .levelNavigation {
   height: 8%;

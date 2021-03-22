@@ -74,10 +74,10 @@
 }
 .songListDetails .information .rigth .details {
   padding-top: 24rpx;
-  height: 50rpx;
+  height: 88rpx;
 }
 .songListDetails .information .rigth .details .description {
-  height: ;
+  height: 100%;
   display: block;
   font-size: 29rpx;
   color: rgba(255, 255, 255, 0.5);
@@ -265,8 +265,7 @@
   padding-bottom: 60rpx;
 }
 
-
 .status_bar {
-	background-color: #aea9ad;
+  background-color: #aea9ad;
 }
 

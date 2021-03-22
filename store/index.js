@@ -14,7 +14,7 @@ const store = new Vuex.Store({
 		songCurrentTime: '00:00', //播放当前进度
 		showLyric: false,//显示歌词
 		isDark:true,//黑夜模式
-		
+		playMessage:true//消息
 	},
 	getters: {
 		getsongInfo(state) {
@@ -46,6 +46,9 @@ const store = new Vuex.Store({
 		},
 		getisDark(state) {
 			return state.isDark;
+		},
+		getplayMessage(state){
+			return state.playMessage;
 		}
 	},
 	mutations: {
@@ -87,6 +90,10 @@ const store = new Vuex.Store({
 		},
 		setisDark(state, status) {
 			state.isDark = status;
+			uni.setStorageSync("store", state)
+		},
+		setplayMessage(state,status){
+			state.playMessage = status;
 			uni.setStorageSync("store", state)
 		}
 	},

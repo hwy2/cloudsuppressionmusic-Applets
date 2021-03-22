@@ -22,7 +22,7 @@
 					<text class="nickname">{{ songInformation.creator.nickname }}</text>
 				</view>
 				<view class="details">
-					<text class="description" selectable="true">{{ songInformation.description }}</text>
+					<text :title="songInformation.description" class="description" selectable="true">{{ songInformation.description }}</text>
 				</view>
 			</view>
 		</view>
@@ -238,7 +238,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less">
 .status_bar {
 	background-color: #aea9ad;
 }

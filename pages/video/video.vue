@@ -218,7 +218,8 @@ export default {
 			this.getExampleData();
 		},
 		getExampleData: function() {
-			let params = {},that=this;
+			let params = {},
+				that = this;
 			this.page++;
 			params['id'] = this.videoGroupId;
 			params['cookie'] = this.cookie;
@@ -299,11 +300,11 @@ export default {
 			// console.log(e)
 			const subX = e.changedTouches[0].clientX - this.startData.clientX;
 			const subY = e.changedTouches[0].clientY - this.startData.clientY;
-			
-			if (subX > 50) {
+
+			if (subX > 100) {//原本50太短了，容易误触
 				console.log('右滑');
-				let i=0;
-				while(i<this.videoGroupList.length){
+				let i = 0;
+				while (i < this.videoGroupList.length) {
 					if (this.videoGroupList[i].active && i <= this.videoGroupList.length - 1 && i - 1 >= 0) {
 						this.videoGroupList[i].active = false;
 						this.videoGroupList[i - 1].active = true;
@@ -311,15 +312,15 @@ export default {
 							this.scrollLeft = 'text' + (i - 1);
 						});
 						this.scrollLeft = '';
-						this.setVideoGroupID( this.videoGroupList[i - 1].id,i - 1);
+						this.setVideoGroupID(this.videoGroupList[i - 1].id, i - 1);
 						break;
 					}
 					i++;
 				}
-			} else if (subX < -50) {
+			} else if (subX < -100) {
 				console.log('左滑');
-				let i=0;
-				while(i<this.videoGroupList.length){
+				let i = 0;
+				while (i < this.videoGroupList.length) {
 					if (this.videoGroupList[i].active && i <= this.videoGroupList.length - 1 && i + 1 <= this.videoGroupList.length - 1) {
 						this.videoGroupList[i].active = false;
 						this.videoGroupList[i + 1].active = true;
@@ -327,7 +328,7 @@ export default {
 							this.scrollLeft = 'text' + (i + 1);
 						});
 						this.scrollLeft = '';
-						this.setVideoGroupID(this.videoGroupList[i +1].id,i + 1);
+						this.setVideoGroupID(this.videoGroupList[i + 1].id, i + 1);
 						break;
 					}
 					i++;
@@ -335,13 +336,17 @@ export default {
 			} else {
 				console.log('无效');
 			}
-						
 		}
 	},
 	created() {
 		this.getVideoGroupList();
+	},
+	onShow() {
+		if (!this.$store.getters.getplayMessage) {
+			this.$store.commit('setplayMessage', true);
+			this.$store.commit('setisPlay', true);
+			this.playAudio();
+		}
 	}
 };
 </script>
-
-<style></style>

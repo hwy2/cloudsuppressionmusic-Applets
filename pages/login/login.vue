@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import '../../static/less/login.less';
+import '@/static/less/login.less';
 import uniPopup from '@/components/uni-popup/uni-popup.vue';
 import uniPopupMessage from '@/components/uni-popup-message/uni-popup-message.vue';
 export default {
@@ -157,4 +157,3 @@ export default {
 };
 </script>
 
-<style></style>

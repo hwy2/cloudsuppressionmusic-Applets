@@ -232,7 +232,7 @@ export default {
 			// console.log(e)
 			const subX = e.changedTouches[0].clientX - this.startData.clientX;
 			const subY = e.changedTouches[0].clientY - this.startData.clientY;
-			if (subX > 50) {
+			if (subX > 100) {
 				console.log('右滑');
 				let i=0;
 				while(i<this.category.length){
@@ -248,7 +248,7 @@ export default {
 					}
 					i++;
 				}
-			} else if (subX < -50) {
+			} else if (subX < -100) {
 				console.log('左滑');
 				let i=0;
 				while(i<this.category.length){
@@ -293,4 +293,3 @@ export default {
 };
 </script>
 
-<style></style>
