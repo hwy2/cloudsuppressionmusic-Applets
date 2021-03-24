@@ -32,13 +32,13 @@
 				font-size: 31upx;
 				font-weight: bold;
 				position: relative;
-				
-				&::before{
-					content: "";
+
+				&::before {
+					content: '';
 					height: 10upx;
 					border-radius: 10upx;
 					width: 50upx;
-					background-color: rgba(27,248,145,0.8);
+					background-color: rgba(27, 248, 145, 0.8);
 					position: absolute;
 					bottom: 0;
 					left: 50%;
@@ -63,13 +63,9 @@
 		}
 
 		.bottomContainer {
-			background-color: #fff;
 			display: block;
 			// height: 75vh;
 			.bgc {
-				// transform: translateY(-33upx);
-				background-color: #fff;
-				// border-radius: 33upx;
 				height: 100%;
 				border-top: 3upx solid #999;
 				touch-action: pan-y;
@@ -90,7 +86,7 @@
 
 						.iconfont {
 							font-size: 38upx;
-							color: #242424;
+
 							margin-right: 18upx;
 							vertical-align: middle;
 							line-height: 1.4;
@@ -99,14 +95,14 @@
 
 							.icoText {
 								font-size: 27upx;
-								color: #242424;
+
 								vertical-align: inherit;
 								line-height: 1;
 								padding-left: 10rpx;
 								vertical-align: middle;
 							}
-							
-							.sumber{
+
+							.sumber {
 								color: #919191;
 								font-size: 24upx;
 								vertical-align: middle;
@@ -163,7 +159,7 @@
 										line-height: 1.4;
 										.text1 {
 											font-size: 28upx;
-											color: #000;
+											
 											font-weight: bold;
 										}
 									}
@@ -199,6 +195,31 @@
 							padding-bottom: 30upx;
 						}
 					}
+				}
+			}
+		}
+	}
+}
+
+.dark {
+	background-color: #333;
+	color: #ffffff;
+
+	.navbarSorll {
+		background-color: #333;
+
+		scroll-view {
+			view {
+				color: #ffffff;
+			}
+		}
+	}
+
+	.contentArea {
+		.bottomContainer {
+			.bgc {
+				.songsBar {
+					background-color: #333;
 				}
 			}
 		}

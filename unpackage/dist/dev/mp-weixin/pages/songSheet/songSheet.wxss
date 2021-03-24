@@ -36,7 +36,7 @@
   position: relative;
 }
 .songSheet .navbarSorll scroll-view .active::before {
-  content: "";
+  content: '';
   height: 10rpx;
   border-radius: 10rpx;
   width: 50rpx;
@@ -67,7 +67,6 @@
 }
 .songSheet .sheet {
   padding-top: 15rpx;
-  background-color: #fff;
   overflow: auto;
   height: 90vh;
 }
@@ -148,5 +147,28 @@
   margin-right: 3%;
   margin-bottom: 3%;
   font-size: 24rpx;
+}
+.dark {
+  background-color: #333;
+  color: #ffffff;
+}
+.dark .navbarSorll {
+  background-color: #333;
+}
+.dark .navbarSorll scroll-view view {
+  color: #ffffff;
+}
+.dark .navbarSorll .more {
+  background-color: #333;
+}
+.dark .sheet hr-pull-load uni-grid uni-grid-item .warp {
+  box-shadow: 1rpx 1rpx 10rpx #565656;
+}
+.dark uni-drawer .categories-warp {
+  background-color: #333;
+  color: #ffffff;
+}
+.dark uni-drawer .categories-warp .bigcategories .scroll-view-big .smallcategories .scroll-view-small text {
+  background-color: #4f4f4f;
 }
 

@@ -1,5 +1,5 @@
 <template>
-	<view class="me">
+	<view class="me" :class="isDark ? 'dark' : ''">
 		<view class="main">
 			<view class="profile">
 				<view class="left"><image class="img" :src="userDetail.profile.avatarUrl" mode="aspectFit"></image></view>
@@ -121,6 +121,26 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisShow', v);
 			}
+		},
+		isDark: {
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				this.$store.comnit('setisDark', v);
+			}
+		}
+	},
+	onShow() {
+		if (this.isDark) {
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
 		}
 	},
 	methods: {

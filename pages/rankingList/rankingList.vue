@@ -1,5 +1,5 @@
 <template>
-	<view class="rankingList">
+	<view class="rankingList" :class="isDark ? 'dark' : ''">
 		<view class="listDetail">
 			<!-- 榜单推荐 -->
 			<view class="listRecommendation">
@@ -133,6 +133,27 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisShow', v);
 			}
+		},
+		isDark: {
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				this.$store.comnit('setisDark', v);
+			}
+		}
+	},
+	onShow() {
+		if (this.isDark) {
+			this.navbarBGC = '#333';
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
 		}
 	},
 	methods: {
@@ -272,5 +293,3 @@ export default {
 	}
 };
 </script>
-
-

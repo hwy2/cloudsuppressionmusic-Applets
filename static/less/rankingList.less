@@ -2,7 +2,7 @@
 	height: 100vh;
 	overflow: auto;
 	padding-bottom: 120upx;
-	background-color: #F8F8F8;
+	background-color: #f8f8f8;
 	padding-top: 20upx;
 
 	// 榜单推荐
@@ -14,8 +14,8 @@
 		width: 98%;
 		border-radius: 20upx;
 		background-color: #fff;
-		margin: 0 auto 20upx;
-		box-shadow: 10upx 10upx 20upx #f0f0f0;
+		margin: 0 auto 40upx;
+		box-shadow: 1upx 1upx 10upx #f0f0f0;
 		.top {
 			padding: 15upx 0;
 
@@ -23,7 +23,6 @@
 				display: block;
 				font-size: 28upx;
 				font-weight: bold;
-				color: black;
 				padding-left: 32upx;
 			}
 		}
@@ -94,13 +93,13 @@
 
 	//官方榜
 	.officialList {
+		padding:  0 0 20upx 0;
 		.top {
 			padding: 15px 0;
 
 			text {
 				font-size: 28upx;
 				font-weight: bold;
-				color: black;
 				padding-left: 32upx;
 			}
 		}
@@ -136,8 +135,8 @@
 
 					text {
 						position: absolute;
-						bottom: 30upx;
-						left: 15upx;
+						bottom: 20upx;
+						left: 25upx;
 						color: #fff;
 						font-size: 18upx;
 					}
@@ -147,7 +146,7 @@
 					flex: 5;
 					padding: 15upx 0 0 15upx;
 					box-sizing: border-box;
-					width: 256*2upx;
+					width: 256 * 2upx;
 
 					text {
 						display: block;
@@ -170,6 +169,38 @@
 						color: #a1dcc1;
 					}
 				}
+			}
+		}
+	}
+}
+
+.dark {
+	background-color: #333;
+	color: #ffffff;
+
+	.listRecommendation,
+	.featureList,
+	.globalList,
+	.regionalList,
+	.musicStyleList {
+		background-color: #4f4f4f;
+		box-shadow: 1upx 1upx 10upx #565656;
+
+		uni-grid {
+			uni-grid-item {
+				.text {
+					text {
+						color: #ffffff;
+					}
+				}
+			}
+		}
+	}
+
+	.officialList{
+		scroll-view {
+			.scroll-item {
+				background-color: #4f4f4f;
 			}
 		}
 	}

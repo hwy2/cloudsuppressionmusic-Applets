@@ -1,5 +1,5 @@
 <template>
-	<view class="Daily">
+	<view class="Daily" :class="isDark ? 'dark' : ''">
 		<view class="topBanner" :style="{ height: topBannerHeight }">
 			<view class="bgc" :style="{ background: backgroudURl }">
 				<view class="dateTime">
@@ -101,9 +101,28 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisShow', v);
 			}
+		},
+		isDark: {
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				this.$store.comnit('setisDark', v);
+			}
 		}
 	},
-
+	onShow() {
+		if (this.isDark) {
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
+		}
+	},
 	methods: {
 		getDailyMusic: function(cookie) {
 			uni.showLoading({
@@ -139,9 +158,9 @@ export default {
 		},
 		playMusicAll: function() {
 			uni.showLoading({
-				mask:true,
-				title:"加载中"
-			})
+				mask: true,
+				title: '加载中'
+			});
 			this.$store.commit('setplaylist', this.dailySongs);
 			this.$store.commit('setserialNumber', 0);
 			let songlist = this.dailySongs;

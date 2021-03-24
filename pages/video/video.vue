@@ -1,5 +1,5 @@
 <template>
-	<view class="videoList">
+	<view class="videoList" :class="isDark ? 'dark' : ''">
 		<!-- 顶部导航栏 -->
 		<view class="navbarSorll">
 			<scroll-view scroll-x="true" :scroll-into-view="scrollLeft" scroll-left="0" ref="scrollList">
@@ -114,6 +114,14 @@ export default {
 			set(v) {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisShow', v);
+			}
+		},
+		isDark: {
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				this.$store.comnit('setisDark', v);
 			}
 		}
 	},
@@ -301,7 +309,8 @@ export default {
 			const subX = e.changedTouches[0].clientX - this.startData.clientX;
 			const subY = e.changedTouches[0].clientY - this.startData.clientY;
 
-			if (subX > 100) {//原本50太短了，容易误触
+			if (subX > 100) {
+				//原本50太短了，容易误触
 				console.log('右滑');
 				let i = 0;
 				while (i < this.videoGroupList.length) {
@@ -346,6 +355,18 @@ export default {
 			this.$store.commit('setplayMessage', true);
 			this.$store.commit('setisPlay', true);
 			this.playAudio();
+		}
+		
+		if (this.isDark) {
+			console.log(0)
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
 		}
 	}
 };

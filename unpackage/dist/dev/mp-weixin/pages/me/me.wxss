@@ -269,4 +269,43 @@
 .me .collectionSongLists {
   padding-top: 0;
 }
+.dark {
+  background-color: #333;
+  color: #ffffff;
+}
+.dark .profile .center .p1 {
+  color: #ffffff;
+}
+.dark .profile .center .p2 .span {
+  background-color: #4f4f4f;
+  color: #ffffff;
+}
+.dark .favoriteMusic {
+  background-color: #4f4f4f;
+}
+.dark .favoriteMusic .center .p1 {
+  color: #ffffff;
+}
+.dark .favoriteMusic .right .intelligence {
+  background-color: #666666;
+}
+.dark .favoriteMusic .right .intelligence .iconfont .span {
+  color: #ffffff;
+}
+.dark .createSongList .bgc {
+  background-color: #4f4f4f;
+}
+.dark .createSongList .bgc .top .left .p {
+  color: #FFFFFF;
+}
+.dark .createSongList .bgc .top .right .iconjia1,
+.dark .createSongList .bgc .top .right .iconziyuan {
+  color: #FFFFFF;
+}
+.dark .createSongList .bgc .contentText .scroll-view .scroll-item .left .center .name {
+  color: #FFFFFF;
+}
+.dark .createSongList .bgc .contentText .scroll-view .scroll-item .right .iconfont {
+  color: #FFFFFF;
+}
 

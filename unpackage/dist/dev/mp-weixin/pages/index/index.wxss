@@ -5,6 +5,7 @@
   padding: 149rpx 20rpx 108rpx;
   font-size: 14rpx;
   line-height: 24rpx;
+  box-sizing: border-box;
 }
 .home .container .search {
   padding: 16rpx 0;
@@ -519,7 +520,7 @@
 }
 uni-drawer .content {
   width: 480rpx;
-  background-color: #f8f8f8;
+  background-color: #ececec;
   height: 100vh;
   font-family: 'Microsoft YaHei';
   overflow-y: auto;
@@ -797,69 +798,80 @@ uni-drawer .content .lowerPart .logout .clear {
   height: 80rpx;
   margin: 0 auto;
   background-color: #ffffff;
-  color: #ff3333;
+  color: #ff1b1b1b 3;
   font-size: 32rpx;
-}
-uni-drawer .dark {
-  background-color: #222;
-}
-uni-drawer .dark .user .left .nickname {
-  color: #fff;
-}
-uni-drawer .dark .lowerPart .information,
-uni-drawer .dark .lowerPart .other,
-uni-drawer .dark .lowerPart .logout {
-  background-color: #a6a6a6;
-}
-uni-drawer .dark .lowerPart .other .topTile {
-  color: #ffffff;
-}
-uni-drawer .dark .lowerPart .logout .clear {
-  background-color: #a6a6a6;
+  color: #e60920;
 }
 .dark {
-  background-color: #222;
+  background-color: #333;
   color: #ffffff;
 }
 .dark .topnavbar .status_bar {
-  background-color: #333333;
+  background-color: #333;
 }
 .dark .topnavbar .uni-navbar__content_view {
-  background-color: #333333 !important;
+  background-color: #333 !important;
 }
 .dark .topnavbar .uni-navbar__content_view .uni-nav-bar-text,
 .dark .topnavbar .uni-navbar__content_view .data-v-0bf90c00 {
   color: #FFFFFF !important;
 }
 .dark .topnavbar .uni-navbar--border.data-v-4afea59e {
-  border-bottom-color: #5f5f5f !important;
+  border-bottom-color: #2a2a2a !important;
 }
 .dark .container .search .warp {
-  background-color: #dddddd;
+  background-color: #4f4f4f;
 }
 .dark .container .recommendation .topTile .left text {
   color: #ffffff;
 }
 .dark .container .recommendation .topTile .left text text {
-  color: #c5c5c5;
+  color: #4f4f4f;
 }
 .dark .container .songNew .concentration .swiper swiper-item .smallList .towsilde .center view:nth-of-type(1) text:nth-of-type(1) {
   color: #ffffff;
 }
 .dark .container .musicCalendar .details {
-  background-color: #dddddd;
+  background-color: #4f4f4f;
+  box-shadow: 1px 1px 8rpx #636363;
+}
+.dark .container .musicCalendar .details .contentsd swiper .swiper-item .left text:nth-of-type(1) {
+  color: #fff;
 }
 .dark .container .musicCalendar .details .contentsd swiper .swiper-item .left text:nth-of-type(2) {
-  color: #333;
+  color: #fff;
 }
 .dark .container .newDisc .topTile .left .p {
-  color: #d3d3d3;
+  color: #4f4f4f;
 }
 .dark .container .newDisc .topTile .left .p .active {
   color: #ffffff;
 }
 .dark .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(1) text:nth-of-type(1) {
   color: #ffffff;
+}
+.dark .container .newDisc .concentration .swiper swiper-item .scroll-view_H .silde .center view:nth-of-type(2) {
+  color: #b1b1b1;
+}
+.dark .content {
+  background-color: #333;
+}
+.dark .content .status_bar {
+  background-color: #333;
+}
+.dark .content .user .left .nickname {
+  color: #fff;
+}
+.dark .content .lowerPart .information,
+.dark .content .lowerPart .other,
+.dark .content .lowerPart .logout {
+  background-color: #4f4f4f;
+}
+.dark .content .lowerPart .other .topTile {
+  color: #ffffff;
+}
+.dark .content .lowerPart .logout .clear {
+  background-color: #4f4f4f;
 }
 
 page {

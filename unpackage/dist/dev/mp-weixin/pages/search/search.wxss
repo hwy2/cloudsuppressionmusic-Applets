@@ -2,35 +2,27 @@
   box-sizing: border-box;
   line-height: 1;
 }
-.search .topnavbar {
-  position: fixed;
-  z-index: 998;
-  width: 100%;
-  background-color: #fff;
-}
-.search .topnavbar .status_bar {
-  height: 25px;
-  width: 100%;
-}
 .search .container {
-  padding: 149rpx 20rpx 20rpx;
+  padding: 0 0rpx 20rpx;
   font-size: 14rpx;
   line-height: 24rpx;
 }
 .search .container .searchBar {
   padding: 10rpx 0 0;
 }
+.search .container .searchBar .data-v-c880309c.wanted-circle {
+  height: 65vh;
+}
 .search .container .resultBlock {
   height: 83.3vh;
   width: 100%;
-  width: 98%;
   display: block;
   margin: 0 auto;
 }
 .search .container .resultBlock .classificationList {
   width: 100%;
   box-sizing: border-box;
-  background-color: #fff;
+  box-shadow: 0rpx 10rpx 15rpx #eeeeee;
 }
 .search .container .resultBlock .classificationList .navbarSorll {
   width: 100%;
@@ -133,7 +125,6 @@
 .search .container .resultBlock .playlistsResults .scroll-view_H .scroll-view-item_H .left .center .p .text1,
 .search .container .resultBlock .videos .scroll-view_H .scroll-view-item_H .left .center .p .text1 {
   font-size: 29rpx;
-  color: #000;
   font-weight: bold;
   line-height: 1.5;
 }
@@ -289,5 +280,27 @@
 }
 .search .container .resultBlock .videos hr-pull-load uni-grid uni-grid-item:last-child {
   padding-bottom: 80rpx;
+}
+.dark {
+  background-color: #333;
+  color: #ffffff;
+}
+.dark .container .searchBar .search input.data-v-c880309c {
+  background-color: #4f4f4f;
+  color: #FFFFFF;
+}
+.dark .container .searchBar .s-circle .list view.data-v-c880309c {
+  background-color: #4f4f4f;
+  color: #ffffff;
+}
+.dark .container .searchBar .wanted-circle .list view.data-v-c880309c {
+  background-color: #4f4f4f;
+  color: #ffffff;
+}
+.dark .container .resultBlock .classificationList {
+  box-shadow: 0rpx 10rpx 15rpx #363636;
+}
+.dark .container .resultBlock .classificationList .navbarSorll scroll-view view {
+  color: #FFFFFF;
 }
 

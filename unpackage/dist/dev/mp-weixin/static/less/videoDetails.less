@@ -16,14 +16,12 @@
 		}
 
 		.videosub {
-			background-color: #fff;
 			height: 65.1%;
 
 			.levelNavigation {
 				height: 8%;
 				scroll-view {
 					height: 75upx;
-					background-color: #fff;
 					box-shadow: 0 20upx 10upx #f8f8f8;
 					touch-action: none;
 					font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -35,7 +33,6 @@
 
 						text {
 							font-size: 30upx;
-							color: #000;
 							font-weight: bold;
 							line-height: 75upx;
 						}
@@ -77,7 +74,6 @@
 
 						text {
 							padding-left: 10upx;
-							color: #000;
 							font-weight: bold;
 							font-size: 28upx;
 						}
@@ -88,7 +84,6 @@
 
 						text {
 							font-size: 30upx;
-							color: #000;
 							line-height: 1.5;
 						}
 					}
@@ -120,7 +115,6 @@
 								font-size: 30upx;
 								font-weight: bold;
 								line-height: 1.5;
-								color: #000;
 							}
 						}
 
@@ -229,6 +223,54 @@
 								text {
 									font-size: 30upx;
 									color: #333;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.dark{
+	background-color: #333;
+	color: #FFFFFF;
+	
+	.videoMain{
+		.videosub{
+			.levelNavigation{
+				scroll-view{
+					box-shadow: 0 20upx 10upx #303030;
+				}
+			}
+			
+			.substance{
+				.briefIntroduction{
+					.related{
+						.related-title {
+							box-shadow: 0 20upx 10upx #303030;
+						}
+					}
+				}
+			
+				.discuss{
+					scroll-view {
+						.scroll-item {
+							.top {
+								.center {
+									text:nth-of-type(1) {
+										color: #dedede;
+									}
+									text:nth-of-type(2) {
+										color: #d9d9d9;
+									}
+								}
+							}
+						
+							.contentss{
+								text {
+									color: #FFFFFF;
 								}
 							}
 						}

@@ -2,7 +2,7 @@
   height: 100vh;
   overflow: auto;
   padding-bottom: 120rpx;
-  background-color: #F8F8F8;
+  background-color: #f8f8f8;
   padding-top: 20rpx;
 }
 .rankingList .listRecommendation,
@@ -13,8 +13,8 @@
   width: 98%;
   border-radius: 20rpx;
   background-color: #fff;
-  margin: 0 auto 20rpx;
-  box-shadow: 10rpx 10rpx 20rpx #f0f0f0;
+  margin: 0 auto 40rpx;
+  box-shadow: 1rpx 1rpx 10rpx #f0f0f0;
 }
 .rankingList .listRecommendation .top,
 .rankingList .featureList .top,
@@ -31,7 +31,6 @@
   display: block;
   font-size: 28rpx;
   font-weight: bold;
-  color: black;
   padding-left: 32rpx;
 }
 .rankingList .listRecommendation uni-grid,
@@ -124,13 +123,15 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.rankingList .officialList {
+  padding: 0 0 20rpx 0;
+}
 .rankingList .officialList .top {
   padding: 15px 0;
 }
 .rankingList .officialList .top text {
   font-size: 28rpx;
   font-weight: bold;
-  color: black;
   padding-left: 32rpx;
 }
 .rankingList .officialList scroll-view {
@@ -175,8 +176,8 @@
 }
 .rankingList .officialList scroll-view .scroll-item .left text {
   position: absolute;
-  bottom: 30rpx;
-  left: 15rpx;
+  bottom: 20rpx;
+  left: 25rpx;
   color: #fff;
   font-size: 18rpx;
 }
@@ -206,5 +207,27 @@
 }
 .rankingList .officialList scroll-view .scroll-item .right text:nth-of-type(3) {
   color: #a1dcc1;
+}
+.dark {
+  background-color: #333;
+  color: #ffffff;
+}
+.dark .listRecommendation,
+.dark .featureList,
+.dark .globalList,
+.dark .regionalList,
+.dark .musicStyleList {
+  background-color: #4f4f4f;
+  box-shadow: 1rpx 1rpx 10rpx #565656;
+}
+.dark .listRecommendation uni-grid uni-grid-item .text text,
+.dark .featureList uni-grid uni-grid-item .text text,
+.dark .globalList uni-grid uni-grid-item .text text,
+.dark .regionalList uni-grid uni-grid-item .text text,
+.dark .musicStyleList uni-grid uni-grid-item .text text {
+  color: #ffffff;
+}
+.dark .officialList scroll-view .scroll-item {
+  background-color: #4f4f4f;
 }
 

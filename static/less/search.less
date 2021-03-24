@@ -1,38 +1,32 @@
 .search {
 	box-sizing: border-box;
 	line-height: 1;
-	.topnavbar {
-		position: fixed;
-		z-index: 998;
-		width: 100%;
-		background-color: #fff;
-		.status_bar {
-			height: var(--status-bar-height);
-			width: 100%;
-		}
-	}
 
 	.container {
-		padding: 149upx 20upx 20upx;
+		padding: 0 0upx 20upx;
 		font-size: 14upx;
 		line-height: 24upx;
 
 		.searchBar {
 			padding: 10upx 0 0;
+			
+			.data-v-c880309c.wanted-circle{
+				height: 65vh;
+			}
 		}
 
 		.resultBlock {
 			height: 83.3vh;
 			width: 100%;
-			width: 98%;
 			display: block;
 			margin: 0 auto;
 
 			.classificationList {
 				width: 100%;
 				box-sizing: border-box;
-				background-color: #fff;
-
+				// border-bottom: 1rpx solid #d3d3d3;
+				box-shadow: 0upx 10rpx 15upx #eeeeee;
+		
 				.navbarSorll {
 					width: 100%;
 					padding: 20upx 0;
@@ -70,7 +64,7 @@
 
 			.singleResults,
 			.playlistsResults,
-			.videos{
+			.videos {
 				width: 100%;
 				height: 75vh;
 				padding: 20upx 0 0;
@@ -110,7 +104,7 @@
 									line-height: 1.4;
 									.text1 {
 										font-size: 29upx;
-										color: #000;
+										// color: #000;
 										font-weight: bold;
 										line-height: 1.5;
 									}
@@ -163,16 +157,16 @@
 					}
 				}
 			}
-			
-			.videos{
+
+			.videos {
 				hr-pull-load {
 					width: 100%;
 					height: 100%;
-				
+
 					uni-grid {
 						width: 100%;
 						height: 100%;
-				
+
 						uni-grid-item {
 							height: 520upx;
 							.warp {
@@ -182,14 +176,14 @@
 								display: block;
 								margin: 0 auto;
 								box-shadow: 1upx 1upx 10upx #c6c6c6;
-				
+
 								.image {
 									height: 400upx;
 									width: 100%;
 									border-radius: 15upx 15upx 0 0;
 									position: relative;
 									overflow: hidden;
-				
+
 									&::before {
 										content: '';
 										position: absolute;
@@ -230,7 +224,7 @@
 									padding: 10upx 10upx;
 									height: 100upx;
 									box-sizing: border-box;
-				
+
 									.text {
 										font-size: 26upx;
 										width: 100%;
@@ -250,7 +244,7 @@
 									box-sizing: border-box;
 									.p:nth-of-type(1) {
 										flex: 2;
-				
+
 										.iconfont {
 											font-size: 26upx;
 										}
@@ -264,9 +258,47 @@
 								}
 							}
 						}
-						
-						uni-grid-item:last-child{
+
+						uni-grid-item:last-child {
 							padding-bottom: 80upx;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.dark {
+	background-color: #333;
+	color: #ffffff;
+	
+	.container{
+		.searchBar {
+			// height: 95vh;
+			.search input.data-v-c880309c {
+				background-color: #4f4f4f;
+				color: #FFFFFF;
+			}
+			
+			.s-circle .list view.data-v-c880309c {
+				background-color: #4f4f4f;
+				color: #ffffff;
+			}
+			
+			.wanted-circle .list view.data-v-c880309c {
+				background-color: #4f4f4f;
+				color: #ffffff;
+			}
+		}
+	
+		.resultBlock{
+			.classificationList{
+					box-shadow: 0upx 10rpx 15upx #363636;
+				.navbarSorll{
+					scroll-view{
+						view {
+							color: #FFFFFF;
 						}
 					}
 				}

@@ -91,7 +91,6 @@
   line-height: 1.8;
   font-size: 26rpx;
   font-weight: bold;
-  color: #000;
   width: 408rpx;
   overflow: hidden;
   text-overflow: ellipsis;

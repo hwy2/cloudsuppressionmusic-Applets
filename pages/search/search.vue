@@ -1,11 +1,7 @@
 <template>
-	<view class="search">
-		<view class="topnavbar">
-			<view class="status_bar" :style="{ height: headerPadding }"></view>
-			<uni-nav-bar left-icon="back" @click-left="back()" background-color="#ffffff" title="搜索"></uni-nav-bar>
-		</view>
+	<view class="search" :class="isDark ? 'dark' : ''">
 
-		<view class="container" :style="{ padding: containerPadding + ' 0 0' }">
+		<view class="container" >
 			<view class="searchBar">
 				<zy-search
 					:is-focus="true"
@@ -228,6 +224,26 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisShow', v);
 			}
+		},
+		isDark: {
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				this.$store.comnit('setisDark', v);
+			}
+		}
+	},
+	onShow() {
+		if (this.isDark) {
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
 		}
 	},
 	methods: {

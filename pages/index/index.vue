@@ -252,7 +252,7 @@
 							<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
 								<view class="scroll-view-item_H silde" v-for="(song, indexs) in newSong.creatives[3].resources" :key="indexs">
 									<view class="left"><image :src="song.uiElement.image.imageUrl" mode="aspectFit" /></view>
-									<view class="center">
+									<view class="center" >
 										<view>
 											<text>{{ song.uiElement.mainTitle.title }}</text>
 
@@ -292,7 +292,7 @@
 
 		<!-- 抽屉 -->
 		<uni-drawer :visible="true" :mask="true" :maskClick="true" mode="left" ref="draw" :width="240" @change="changeDrawer($event)">
-			<view class="content" :class="isDark ? 'dark' : ''">
+			<view class="content">
 				<view class="status_bar" :style="{ height: headerPadding }"></view>
 				<view class="user">
 					<view class="left" @click="openMe()">
@@ -335,7 +335,7 @@
 						<scroll-view class="scroll-view" scroll-y="true" scroll-left="0">
 							<view class="scroll-view-item ">
 								<view class="left">
-									<view class="" >
+									<view class="">
 										<i class="iconfont iconyueliang"></i>
 										<text class="msg">夜间模式</text>
 									</view>
@@ -346,10 +346,8 @@
 							</view>
 						</scroll-view>
 					</view>
-					
-					<view class="logout">
-						<button class="clear" @click="clearStorage">退出登录</button>
-					</view>
+
+					<view class="logout"><button class="clear" @click="clearStorage">退出登录</button></view>
 				</view>
 			</view>
 		</uni-drawer>
@@ -442,6 +440,41 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisDark', v);
 			}
+		}
+	},
+	watch: {
+		isDark: function(valOld) {
+			if (valOld) {
+				uni.setNavigationBarColor({
+					frontColor: '#ffffff',
+					backgroundColor: '#333',
+					animation: {
+						duration: 400,
+						timingFunc: 'easeIn'
+					}
+				});
+			}else{
+				uni.setNavigationBarColor({
+					frontColor: '#000000',
+					backgroundColor: '#FFFFFF',
+					animation: {
+						duration: 400,
+						timingFunc: 'easeIn'
+					}
+				});
+			}
+		}
+	},
+	onShow() {
+		if (this.isDark) {
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
 		}
 	},
 	methods: {
@@ -875,7 +908,6 @@ export default {
 	onUnload() {
 		this.$store.commit('setisPlay', false); //离开设置播放状态为false
 	}
-	
 };
 </script>
 <style lang="less">

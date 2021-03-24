@@ -1,5 +1,5 @@
 <template>
-	<view class="videoDetails" :style="{ height: pageHeight }">
+	<view class="videoDetails" :style="{ height: pageHeight }" :class="isDark ? 'dark' : ''">
 		<view class="videoMain">
 			<view class="videoPlay">
 				<video
@@ -164,6 +164,16 @@ export default {
 	},
 	onHide: function() {
 		this.videoContext.pause();
+	},
+	computed:{
+		isDark: {
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				this.$store.comnit('setisDark', v);
+			}
+		}
 	},
 	methods: {
 		getMVDetailInfo: function() {
@@ -403,6 +413,17 @@ export default {
 		}
 		if(this.videoContext){
 			this.videoContext.play();
+		}
+		
+		if (this.isDark) {
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
 		}
 	}
 };

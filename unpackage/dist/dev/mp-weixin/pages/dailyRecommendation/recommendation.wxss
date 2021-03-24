@@ -51,12 +51,10 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 .Daily .bottomContainer {
-  background-color: #fff;
   display: block;
   height: 75vh;
 }
 .Daily .bottomContainer .bgc {
-  background-color: #fff;
   height: 100%;
   border-top: 3rpx solid #999;
   touch-action: pan-y;
@@ -126,7 +124,6 @@
 .Daily .bottomContainer .bgc .songsBar .left .iconfont,
 .Daily .bottomContainer .bgc .songsBar .right .iconfont {
   font-size: 38rpx;
-  color: #242424;
   margin-right: 18rpx;
   vertical-align: middle;
   line-height: 1.4;
@@ -136,7 +133,6 @@
 .Daily .bottomContainer .bgc .songsBar .left .iconfont .icoText,
 .Daily .bottomContainer .bgc .songsBar .right .iconfont .icoText {
   font-size: 27rpx;
-  color: #242424;
   vertical-align: inherit;
   line-height: 1;
   padding-left: 10rpx;
@@ -193,7 +189,6 @@
 }
 .Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p .text1 {
   font-size: 28rpx;
-  color: #000;
   font-weight: bold;
 }
 .Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H .left .center .p2 {
@@ -225,5 +220,12 @@
 }
 .Daily .bottomContainer .bgc .songWarp .scroll-view_H .scroll-view-item_H:last-child {
   padding-bottom: 30rpx;
+}
+.dark {
+  background-color: #333;
+  color: #ffffff;
+}
+.dark .bottomContainer .bgc .topStyle {
+  background-color: #333;
 }
 

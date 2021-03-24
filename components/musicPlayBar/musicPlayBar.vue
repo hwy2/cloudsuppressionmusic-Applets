@@ -138,7 +138,6 @@ export default {
 				line-height: 1.8;
 				font-size: 26upx;
 				font-weight: bold;
-				color: #000;
 				width: 408upx;
 				overflow: hidden; //隐藏文字
 				text-overflow: ellipsis; //显示...
@@ -183,5 +182,7 @@ export default {
 .dark {
 	background-color: #333;
 	border-top: 1px solid #222;
+	
+	
 }
 </style>

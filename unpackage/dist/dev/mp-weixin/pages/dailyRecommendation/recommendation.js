@@ -208,7 +208,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-__webpack_require__(/*! @/static/less/dailyRecommendation.less */ 37); //
+__webpack_require__(/*! @/static/less/dailyRecommendation.less */ 36); //
 //
 //
 //
@@ -287,12 +287,31 @@ __webpack_require__(/*! @/static/less/dailyRecommendation.less */ 37); //
 //
 //
 //
-var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { month: '', day: '', backgroudURl: '', dailySongs: '', //每日推荐歌曲
+var musicPlaybar = function musicPlaybar() {__webpack_require__.e(/*! require.ensure | components/musicPlayBar/musicPlayBar */ "components/musicPlayBar/musicPlayBar").then((function () {return resolve(__webpack_require__(/*! @/components/musicPlayBar/musicPlayBar.vue */ 160));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { musicPlaybar: musicPlaybar }, data: function data() {return { month: '', day: '', backgroudURl: '', dailySongs: '', //每日推荐歌曲
       topBannerHeight: '20vh' //头图
     };}, computed: { isShow: { //播放状态
       get: function get() {return this.$store.state.isShow;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
-        this.$store.commit('setisShow', v);} } }, methods: { getDailyMusic: function getDailyMusic(cookie) {uni.showLoading({ title: '加载中...', mask: true });var that = this; // 获取每日推荐歌曲
-      uni.request({ url: 'https://wx.3dcw.cn/recommend/songs', method: 'GET', data: { cookie: cookie, t: Date.parse(new Date()) }, success: function success(res) {console.log('每日推荐', res.data);if (res.data.code === 200) {that.backgroudURl = 'url(' + res.data.data.dailySongs[0].al.picUrl + ') no-repeat center center;background-size: cover;';that.dailySongs = res.data.data.dailySongs;uni.hideLoading();}}, fail: function fail(err) {uni.hideLoading();console.log('每日推荐获取失败:' + err);} });}, playMusic: function playMusic(songInfo) {songInfo['picUrl'] = songInfo.al.picUrl;this.getplayMusic(songInfo.id, songInfo);}, playMusicAll: function playMusicAll() {uni.showLoading({ mask: true, title: "加载中" });this.$store.commit('setplaylist', this.dailySongs);this.$store.commit('setserialNumber', 0);var songlist = this.dailySongs;this.playMusic(songlist[0]);} }, created: function created() {var data = new Date();this.month = data.getMonth() < 9 ? '0' + (data.getMonth() + 1) : data.getMonth() + 1;this.day = data.getDate() <= 9 ? '0' + data.getDate() : data.getDate();var that = this;uni.getStorage({ key: 'cookie', success: function success(res) {that.getDailyMusic(res.data);}, fail: function fail(err) {console.log(err);uni.showToast({ icon: 'none',
+        this.$store.commit('setisShow', v);} }, isDark: { get: function get() {return this.$store.state.isDark;}, set: function set(v) {this.$store.comnit('setisDark', v);} } }, onShow: function onShow() {if (this.isDark) {uni.setNavigationBarColor({ frontColor: '#ffffff', backgroundColor: '#333', animation: { duration: 400, timingFunc: 'easeIn' } });}}, methods: { getDailyMusic: function getDailyMusic(cookie) {uni.showLoading({ title: '加载中...', mask: true });var that = this; // 获取每日推荐歌曲
+      uni.request({ url: 'https://wx.3dcw.cn/recommend/songs', method: 'GET', data: { cookie: cookie, t: Date.parse(new Date()) }, success: function success(res) {console.log('每日推荐', res.data);if (res.data.code === 200) {that.backgroudURl = 'url(' + res.data.data.dailySongs[0].al.picUrl + ') no-repeat center center;background-size: cover;';that.dailySongs = res.data.data.dailySongs;uni.hideLoading();}}, fail: function fail(err) {uni.hideLoading();console.log('每日推荐获取失败:' + err);} });}, playMusic: function playMusic(songInfo) {songInfo['picUrl'] = songInfo.al.picUrl;this.getplayMusic(songInfo.id, songInfo);}, playMusicAll: function playMusicAll() {uni.showLoading({ mask: true, title: '加载中' });this.$store.commit('setplaylist', this.dailySongs);this.$store.commit('setserialNumber', 0);
+      var songlist = this.dailySongs;
+      this.playMusic(songlist[0]);
+    } },
+
+  created: function created() {
+    var data = new Date();
+    this.month = data.getMonth() < 9 ? '0' + (data.getMonth() + 1) : data.getMonth() + 1;
+    this.day = data.getDate() <= 9 ? '0' + data.getDate() : data.getDate();
+
+    var that = this;
+    uni.getStorage({
+      key: 'cookie',
+      success: function success(res) {
+        that.getDailyMusic(res.data);
+      },
+      fail: function fail(err) {
+        console.log(err);
+        uni.showToast({
+          icon: 'none',
           title: '未登录，无法查看' });
 
 

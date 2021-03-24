@@ -45,7 +45,6 @@
           transform: translateX(-50%);
 }
 .videoList .list {
-  background-color: #ffffff;
   overflow: auto;
   height: 90vh;
   padding: 0;
@@ -155,5 +154,15 @@
 }
 .videoList .list hr-pull-load uni-grid uni-grid-item:last-child {
   padding-bottom: 80rpx;
+}
+.dark {
+  background-color: #333;
+  color: #FFFFFF;
+}
+.dark .navbarSorll {
+  background-color: #333;
+}
+.dark .navbarSorll scroll-view view {
+  color: #ffffff;
 }
 

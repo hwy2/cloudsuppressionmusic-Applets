@@ -1,5 +1,5 @@
 <template>
-	<view class="songSheet">
+	<view class="songSheet" :class="isDark ? 'dark' : ''">
 		<!-- 顶部导航栏 -->
 		<view class="navbarSorll">
 			<scroll-view scroll-x="true" :scroll-into-view="scrollLeft" scroll-left="0">
@@ -125,6 +125,28 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisShow', v);
 			}
+		},
+		isDark: {
+			get() {
+				return this.$store.state.isDark;
+			},
+			set(v) {
+				this.$store.comnit('setisDark', v);
+			}
+		}
+	},
+	watch: {
+	},
+	onShow() {
+		if (this.isDark) {
+			uni.setNavigationBarColor({
+				frontColor: '#ffffff',
+				backgroundColor: '#333',
+				animation: {
+					duration: 400,
+					timingFunc: 'easeIn'
+				}
+			});
 		}
 	},
 	methods: {

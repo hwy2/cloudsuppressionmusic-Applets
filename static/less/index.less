@@ -4,6 +4,7 @@
 		padding: 149upx 20upx 108upx;
 		font-size: 14upx;
 		line-height: 24upx;
+		box-sizing: border-box;
 		.search {
 			padding: 16upx 0;
 
@@ -556,7 +557,7 @@
 uni-drawer {
 	.content {
 		width: 480upx;
-		background-color: #f8f8f8;
+		background-color: #ececec;
 		height: 100vh;
 		font-family: 'Microsoft YaHei';
 		overflow-y: auto;
@@ -776,40 +777,9 @@ uni-drawer {
 					height: 80upx;
 					margin: 0 auto;
 					background-color: #ffffff;
-					color: #ff3333;
+					color: #ff1b1b1b3;
 					font-size: 32upx;
-				}
-			}
-		}
-	}
-
-	.dark {
-		background-color: #222;
-
-		.user {
-			.left {
-				.nickname {
-					color: #fff;
-				}
-			}
-		}
-
-		.lowerPart {
-			.information,
-			.other,
-			.logout {
-				background-color: #a6a6a6;
-			}
-
-			.other {
-				.topTile {
-					color: #ffffff;
-				}
-			}
-
-			.logout {
-				.clear {
-					background-color: #a6a6a6;
+					color: #e60920;
 				}
 			}
 		}
@@ -817,29 +787,29 @@ uni-drawer {
 }
 
 .dark {
-	background-color: #222;
+	background-color: #333;
 	color: #ffffff;
 
 	.topnavbar {
 		.status_bar{
-			background-color: #333333;
+			background-color: #333;
 		}
 		.uni-navbar__content_view{
-			background-color: #333333 !important;
+			background-color: #333 !important;
 			.uni-nav-bar-text,.data-v-0bf90c00{
 				color: #FFFFFF !important;
 			}
 		}
 		
 		.uni-navbar--border.data-v-4afea59e{
-			border-bottom-color: #5f5f5f !important;
+			border-bottom-color: #2a2a2a !important;
 		}
 	}
 
 	.container {
 		.search {
 			.warp {
-				background-color: #dddddd;
+				background-color: #4f4f4f;
 			}
 		}
 		.recommendation {
@@ -848,7 +818,7 @@ uni-drawer {
 					text {
 						color: #ffffff;
 						text {
-							color: #c5c5c5;
+							color: #4f4f4f;
 						}
 					}
 				}
@@ -875,13 +845,17 @@ uni-drawer {
 		}
 		.musicCalendar {
 			.details {
-				background-color: #dddddd;
+				background-color: #4f4f4f;
+				box-shadow: 1px 1px 8rpx #636363;
 				.contentsd {
 					swiper {
 						.swiper-item {
 							.left {
+								text:nth-of-type(1) {
+									color: #fff;
+								}
 								text:nth-of-type(2) {
-									color: #333;
+									color: #fff;
 								}
 							}
 						}
@@ -894,7 +868,7 @@ uni-drawer {
 			.topTile {
 				.left {
 					.p {
-						color: #d3d3d3;
+						color: #4f4f4f;
 
 						.active {
 							color: #ffffff;
@@ -913,11 +887,51 @@ uni-drawer {
 										text:nth-of-type(1) {
 											color: #ffffff;
 										}
+										
+										
 									}
+									view:nth-of-type(2) {
+										color: #b1b1b1;
+									}
+									
 								}
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+
+	.content{
+		background-color: #333;
+		.status_bar{
+			background-color: #333;
+		}
+		.user {
+			.left {
+				.nickname {
+					color: #fff;
+				}
+			}
+		}
+		
+		.lowerPart {
+			.information,
+			.other,
+			.logout {
+				background-color: #4f4f4f;
+			}
+		
+			.other {
+				.topTile {
+					color: #ffffff;
+				}
+			}
+		
+			.logout {
+				.clear {
+					background-color: #4f4f4f;
 				}
 			}
 		}
