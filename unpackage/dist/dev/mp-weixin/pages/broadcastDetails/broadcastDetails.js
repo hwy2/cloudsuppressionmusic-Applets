@@ -369,7 +369,10 @@ var DcSlider = function DcSlider() {__webpack_require__.e(/*! require.ensure | c
     playMusic: function playMusic() {
       this.playAudio();
       this.isPlay = true;
-      this.getCurrentTime();
+      var that = this;
+      setTimeout(function () {
+        that.getCurrentTime();
+      }, 300);
     },
     nextSongs: function nextSongs() {
       this.$store.commit("setsongCurrentTime", "0:00");
@@ -449,7 +452,7 @@ var DcSlider = function DcSlider() {__webpack_require__.e(/*! require.ensure | c
           if (res.data.code == 200) {
             uni.showToast({
               icon: "none",
-              title: res.data.msg });
+              title: "喜欢成功" });
 
           } else {
             uni.showToast({
@@ -479,8 +482,8 @@ var DcSlider = function DcSlider() {__webpack_require__.e(/*! require.ensure | c
     this.getlyric();
     var audioUrl = this.getAudioUrl();
     console.log('sss', audioUrl);
-    var that = this;
     var innerAudioContext = '';
+    var that = this;
     if (!audioUrl) {
       innerAudioContext = uni.createInnerAudioContext();
       innerAudioContext.src = this.$store.getters.getsongPlayUrl;

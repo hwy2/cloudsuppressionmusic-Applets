@@ -584,7 +584,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
 __webpack_require__(/*! @/static/less/index.less */ 20); //
+//
+//
+//
+//
+//
 //
 //
 //
@@ -955,8 +965,8 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
       clickFlag: false, //判断是否为新歌栏
       headerPadding: '', //当前状态栏高度
       containerPaddingTop: '', //当前内容区距离顶部高度
-      mask: false //遮罩层是否显示
-    };}, filters: { //拦截器
+      mask: false, //遮罩层是否显示
+      cookie: '' };}, filters: { //拦截器
     retainDoubleDigit: function retainDoubleDigit(data) {// 将数据转万
       if (data > 100000000) {return (data / 100000000).toFixed(2) + '亿';} else {return (data / 10000).toFixed(2) + '万';}} }, onLoad: function onLoad() {//获取当前状态栏高度
     this.headerPadding = uni.getSystemInfoSync()['statusBarHeight'] + 'px';this.containerPaddingTop = uni.getSystemInfoSync()['statusBarHeight'] - 25 + 149 + 'rpx';}, computed: { isShow: { //播放状态
@@ -967,7 +977,9 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
       get: function get() {return this.$store.state.songInfo;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
         this.$store.commit('setsongInfo', v);} }, isDark: { //是否夜间模式
       get: function get() {return this.$store.state.isDark;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
-        this.$store.commit('setisDark', v);} } }, watch: { isDark: function isDark(valOld) {if (valOld) {uni.setNavigationBarColor({ frontColor: '#ffffff', backgroundColor: '#333', animation: { duration: 400, timingFunc: 'easeIn' } });} else {uni.setNavigationBarColor({ frontColor: '#000000', backgroundColor: '#FFFFFF', animation: { duration: 400, timingFunc: 'easeIn' } });}} }, onShow: function onShow() {if (this.isDark) {uni.setNavigationBarColor({ frontColor: '#ffffff', backgroundColor: '#333', animation: { duration: 400, timingFunc: 'easeIn' } });}}, methods: { gethomedata: function gethomedata() {//获取首页数据
+        this.$store.commit('setisDark', v);} }, signInState: { //签到状态
+      get: function get() {return this.$store.state.signInState;}, set: function set(v) {// 使用vuex中的mutations中定义好的方法来改变
+        this.$store.commit('setsignInState', v);} } }, watch: { isDark: function isDark(valOld) {if (valOld) {uni.setNavigationBarColor({ frontColor: '#ffffff', backgroundColor: '#333', animation: { duration: 400, timingFunc: 'easeIn' } });} else {uni.setNavigationBarColor({ frontColor: '#000000', backgroundColor: '#FFFFFF', animation: { duration: 400, timingFunc: 'easeIn' } });}} }, onShow: function onShow() {if (this.isDark) {uni.setNavigationBarColor({ frontColor: '#ffffff', backgroundColor: '#333', animation: { duration: 400, timingFunc: 'easeIn' } });}}, methods: { gethomedata: function gethomedata() {//获取首页数据
       var that = this;uni.request({ url: 'https://wx.3dcw.cn/homepage/block/page', method: 'GET', data: { refresh: true // t: Date.parse(new Date())
         }, success: function success(res) {console.log(res.data.data.blocks);that.swipeList = res.data.data.blocks[0].extInfo.banners;var temp = [['推荐歌单', '专属场景歌单', '音乐日历'], ['recommendedSongList', 'exclusiveScene', 'musicCalendar']];res.data.data.blocks.filter(function (item) {var _item$uiElement, _item$uiElement2;return (item === null || item === void 0 ? void 0 : (_item$uiElement = item.uiElement) === null || _item$uiElement === void 0 ? void 0 : _item$uiElement.subTitle) || (item === null || item === void 0 ? void 0 : (_item$uiElement2 = item.uiElement) === null || _item$uiElement2 === void 0 ? void 0 : _item$uiElement2.mainTitle); //使用filter（）函数过滤 可用链?.判断是否存在
           }).forEach(function (item) {var _item$uiElement5, _item$uiElement5$main;var index = temp[0].findIndex(function (k) {var _item$uiElement3, _item$uiElement3$subT, _item$uiElement4, _item$uiElement4$main;return k == ((_item$uiElement3 = item.uiElement) === null || _item$uiElement3 === void 0 ? void 0 : (_item$uiElement3$subT = _item$uiElement3.subTitle) === null || _item$uiElement3$subT === void 0 ? void 0 : _item$uiElement3$subT.title) || k == ((_item$uiElement4 = item.uiElement) === null || _item$uiElement4 === void 0 ? void 0 : (_item$uiElement4$main = _item$uiElement4.mainTitle) === null || _item$uiElement4$main === void 0 ? void 0 : _item$uiElement4$main.title);});if (index >= 0) {that[temp[1][index]] = item;}if (((_item$uiElement5 = item.uiElement) === null || _item$uiElement5 === void 0 ? void 0 : (_item$uiElement5$main = _item$uiElement5.mainTitle) === null || _item$uiElement5$main === void 0 ? void 0 : _item$uiElement5$main.title) == '私人定制') {that.personalTailor = item;}});that.newSong = res.data.data.blocks.filter(function (item) {var _item$creatives, _item$creatives$, _item$creatives$$uiEl, _item$creatives$$uiEl2;return (item === null || item === void 0 ? void 0 : (_item$creatives = item.creatives) === null || _item$creatives === void 0 ? void 0 : (_item$creatives$ = _item$creatives[0]) === null || _item$creatives$ === void 0 ? void 0 : (_item$creatives$$uiEl = _item$creatives$.uiElement) === null || _item$creatives$$uiEl === void 0 ? void 0 : (_item$creatives$$uiEl2 = _item$creatives$$uiEl.mainTitle) === null || _item$creatives$$uiEl2 === void 0 ? void 0 : _item$creatives$$uiEl2.title) == '新歌';})[0];uni.hideLoading();}, fail: function fail(err) {console.log(e);} });}, geticon: function geticon() {//二级导航图标
@@ -981,7 +993,10 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
       switch (index) {case 0:uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/dailyRecommendation/recommendation', animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });break;case 1:uni.navigateTo({ url: '/pages/songSheet/songSheet', success: function success(res) {res.eventChannel.emit('songSheet', { songSheetType: '推荐' });}, animationType: 'pop-in', animationDuration: 200 });break;case 2:uni.navigateTo({ url: '/pages/rankingList/rankingList', animationType: 'pop-in', animationDuration: 200 });break;case 3:uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/me/me', animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });break;case 4:uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/video/video', animationType: 'pop-in', animationDuration: 200 });}, fail: function fail(err) {console.log(err);uni.showModal({ title: '', content: '请登录', success: function success(res) {if (res.confirm) {uni.navigateTo({ url: '/pages/login/login', animationType: 'pop-in', animationDuration: 200 });}} });} });break;}}, jumpSheet: function jumpSheet(sheet) {//跳转到歌单界面
       uni.navigateTo({ url: '/pages/songSheet/songSheet', success: function success(res) {res.eventChannel.emit('songSheet', { songSheetType: sheet });}, animationType: 'pop-in', animationDuration: 200 });}, sheetDetails: function sheetDetails(sheetID) {//跳转到歌单详情页面
       // console.log(sheetID);
-      uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/sheetDetails/sheetDetails', success: function success(res) {res.eventChannel.emit('sheetDetails', { songListId: sheetID });},
+      uni.getStorage({ key: 'profile', success: function success(res) {uni.navigateTo({ url: '/pages/sheetDetails/sheetDetails', success: function success(res) {res.eventChannel.emit('sheetDetails', {
+                songListId: sheetID });
+
+            },
             animationType: 'pop-in',
             animationDuration: 200 });
 
@@ -1105,6 +1120,39 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
     },
     switch1Change: function switch1Change(e) {
       this.$store.commit('setisDark', e.target.value);
+    },
+    dailySignin: function dailySignin() {var _this = this;
+      var that = this;
+      uni.showLoading({
+        mask: true });
+
+      uni.request({
+        url: 'https://wx.3dcw.cn/daily_signin',
+        data: {
+          cookie: that.cookie },
+
+        success: function success(res) {
+          if (res.data.code == 200) {
+            _this.signIn = '已签';
+            uni.showToast({
+              icon: 'none',
+              title: '签到成功！' });
+
+            that.$store.commit("setsignInState", { date: that.day, state: true });
+          } else {
+            uni.showToast({
+              icon: 'none',
+              title: res.data.msg });
+
+          }
+
+          uni.hideLoading();
+        },
+        fail: function fail(err) {
+          console.log(err);
+          uni.hideLoading();
+        } });
+
     } },
 
   created: function created() {
@@ -1114,6 +1162,19 @@ var uniGrid = function uniGrid() {__webpack_require__.e(/*! require.ensure | com
     // this.$store.commit('setisDark', false); //默认设置为日间模式
     this.$store.commit('setplayMessage', true); //设置消息正常，不会被视频播放顶掉
     console.log('isDark:', this.isDark);
+    var that = this;
+    uni.getStorage({
+      key: "cookie",
+      success: function success(res) {
+        that.cookie = res.data;
+      } });
+
+    if (this.signInState.state && this.day == this.signInState.date) {
+      this.signIn = "已签";
+    } else {
+      this.$store.commit("setsignInState", { date: this.day, state: false });
+    }
+
   },
   beforeCreate: function beforeCreate() {
     var that = this;

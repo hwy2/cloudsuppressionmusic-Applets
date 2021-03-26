@@ -14,7 +14,11 @@ const store = new Vuex.Store({
 		songCurrentTime: '00:00', //播放当前进度
 		showLyric: false,//显示歌词
 		isDark:true,//黑夜模式
-		playMessage:true//消息
+		playMessage:true,//消息
+		signInState:{
+			date:26,
+			state:true
+		}
 	},
 	getters: {
 		getsongInfo(state) {
@@ -49,6 +53,9 @@ const store = new Vuex.Store({
 		},
 		getplayMessage(state){
 			return state.playMessage;
+		},
+		getsignInState(state){
+			return state.signInState;
 		}
 	},
 	mutations: {
@@ -94,6 +101,10 @@ const store = new Vuex.Store({
 		},
 		setplayMessage(state,status){
 			state.playMessage = status;
+			uni.setStorageSync("store", state)
+		},
+		setsignInState(state,status){
+			state.signInState = status;
 			uni.setStorageSync("store", state)
 		}
 	},

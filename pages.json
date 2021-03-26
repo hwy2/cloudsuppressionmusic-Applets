@@ -9,7 +9,7 @@
 		{
 			"path": "pages/login/login",
 			"style": {
-				"navigationBarTitleText": "登录",
+				"navigationBarTitleText": "网易云账号登录",
 				"enablePullDownRefresh": false,
 				"navigationBarBackgroundColor": "#04f88a",
 				"navigationBarTextStyle": "#fff"

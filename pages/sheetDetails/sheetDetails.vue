@@ -180,7 +180,7 @@ export default {
 				key: 'cookie',
 				success: function(cookieRes) {
 					uni.request({
-						url: 'https://wx.3dcw.cn/album/detail',
+						url: 'https://wx.3dcw.cn/playlist/detail',
 						method: 'GET',
 						data: {
 							t: Date.parse(new Date()),

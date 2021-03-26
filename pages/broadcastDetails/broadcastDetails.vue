@@ -31,7 +31,7 @@
 					<text class="end">{{ songDuration | formatDateTime(this) }}</text>
 				</view>
 				<view class="roadcast">
-					<i class="iconfont iconliebiaoxunhuan" ></i>
+					<i class="iconfont icon23_shunxubofang" ></i>
 					<i class="iconfont iconshangyishoushangyige" @click="lastSongs()"></i>
 					<i v-if="!isPlay" class="iconfont iconbofang1" @click="playMusic()"></i>
 					<i v-if="isPlay" class="iconfont iconzanting" @click="pauseAudio()"></i>
@@ -63,7 +63,7 @@ export default {
 				width: '100%'
 			},
 			lyricsCurTime: 0 ,//当前歌词进度
-			cookie:""
+			cookie:"",
 		};
 	},
 	onLoad() {
@@ -200,7 +200,10 @@ export default {
 		playMusic: function() {
 			this.playAudio();
 			this.isPlay = true;
-			this.getCurrentTime();
+			let that = this;
+			setTimeout(function(){
+				that.getCurrentTime();
+			},300)
 		},
 		nextSongs: function() {
 			this.$store.commit("setsongCurrentTime","0:00");
@@ -280,7 +283,7 @@ export default {
 					if(res.data.code == 200){
 						uni.showToast({
 							icon:"none",
-							title:res.data.msg
+							title:"喜欢成功"
 						})
 					}else{
 						uni.showToast({
@@ -310,8 +313,8 @@ export default {
 		this.getlyric();
 		let audioUrl = this.getAudioUrl();
 		console.log('sss', audioUrl);
-		let that = this;
 		let innerAudioContext = '';
+		let that=this;
 		if (!audioUrl) {
 			innerAudioContext = uni.createInnerAudioContext();
 			innerAudioContext.src = this.$store.getters.getsongPlayUrl;

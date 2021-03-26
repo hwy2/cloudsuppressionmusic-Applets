@@ -252,7 +252,7 @@
 							<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
 								<view class="scroll-view-item_H silde" v-for="(song, indexs) in newSong.creatives[3].resources" :key="indexs">
 									<view class="left"><image :src="song.uiElement.image.imageUrl" mode="aspectFit" /></view>
-									<view class="center" >
+									<view class="center">
 										<view>
 											<text>{{ song.uiElement.mainTitle.title }}</text>
 
@@ -302,7 +302,12 @@
 						</view>
 					</view>
 					<view class="right">
-						<view class="signIn" @click="dailySignin()">
+						<view class="signIn" v-if="signInState.state">
+							<i class="iconfont iconqiandao"></i>
+							<text>{{ signIn }}</text>
+						</view>
+						
+						<view class="signIn" v-else @click="dailySignin()">
 							<i class="iconfont iconqiandao"></i>
 							<text>{{ signIn }}</text>
 						</view>
@@ -311,7 +316,7 @@
 
 				<view class="lowerPart">
 					<!-- 我的消息 -->
-					<view class="information">
+					<!-- <view class="information">
 						<scroll-view class="scroll-view" scroll-y="true" scroll-left="0">
 							<view class="scroll-view-item ">
 								<view class="left">
@@ -328,7 +333,7 @@
 								</view>
 							</view>
 						</scroll-view>
-					</view>
+					</view> -->
 
 					<view class="other">
 						<view class="topTile"><text>其他</text></view>
@@ -381,7 +386,8 @@ export default {
 			clickFlag: false, //判断是否为新歌栏
 			headerPadding: '', //当前状态栏高度
 			containerPaddingTop: '', //当前内容区距离顶部高度
-			mask: false //遮罩层是否显示
+			mask: false, //遮罩层是否显示
+			cookie: ''
 		};
 	},
 	filters: {
@@ -440,6 +446,15 @@ export default {
 				// 使用vuex中的mutations中定义好的方法来改变
 				this.$store.commit('setisDark', v);
 			}
+		},
+		signInState:{//签到状态
+			get() {
+				return this.$store.state.signInState;
+			},
+			set(v) {
+				// 使用vuex中的mutations中定义好的方法来改变
+				this.$store.commit('setsignInState', v);
+			}
 		}
 	},
 	watch: {
@@ -453,7 +468,7 @@ export default {
 						timingFunc: 'easeIn'
 					}
 				});
-			}else{
+			} else {
 				uni.setNavigationBarColor({
 					frontColor: '#000000',
 					backgroundColor: '#FFFFFF',
@@ -879,6 +894,39 @@ export default {
 		},
 		switch1Change: function(e) {
 			this.$store.commit('setisDark', e.target.value);
+		},
+		dailySignin: function() {
+			let that = this;
+			uni.showLoading({
+				mask: true
+			});
+			uni.request({
+				url: 'https://wx.3dcw.cn/daily_signin',
+				data: {
+					cookie: that.cookie
+				},
+				success: res => {
+					if (res.data.code == 200) {
+						this.signIn = '已签';
+						uni.showToast({
+							icon: 'none',
+							title: '签到成功！'
+						});
+						that.$store.commit("setsignInState",{date:that.day,state:true})
+					} else {
+						uni.showToast({
+							icon: 'none',
+							title: res.data.msg
+						});
+					}
+
+					uni.hideLoading();
+				},
+				fail: err => {
+					console.log(err);
+					uni.hideLoading();
+				}
+			});
 		}
 	},
 	created() {
@@ -888,6 +936,19 @@ export default {
 		// this.$store.commit('setisDark', false); //默认设置为日间模式
 		this.$store.commit('setplayMessage', true); //设置消息正常，不会被视频播放顶掉
 		console.log('isDark:', this.isDark);
+		let that =this;
+		uni.getStorage({
+			key:"cookie",
+			success:res=>{
+				that.cookie=res.data;
+			}
+		});
+		if(this.signInState.state&& this.day == this.signInState.date){
+			this.signIn="已签"
+		}else{
+				this.$store.commit("setsignInState",{date:this.day,state:false})
+		}
+		
 	},
 	beforeCreate() {
 		let that = this;
